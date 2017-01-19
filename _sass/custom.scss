@@ -1,0 +1,18 @@
+h1 small,
+h2 small,
+h3 small {
+    font-size: .6em;
+    opacity: .3;
+    text-transform: none;
+}
+
+.excerpt {
+    margin-bottom: 0;
+}
+
+.excerpt-more {
+    display: inline-block;
+    margin-bottom: 1em;
+    font-size: .9em;
+    color: darken($brand-color, 20%);
+}
