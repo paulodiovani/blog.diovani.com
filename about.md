@@ -1,12 +1,22 @@
 ---
-title: About Hagura
+title: About
 layout: post
 permalink: /about/
 ---
 
+This blog belongs to Paulo Diovani.
+
+Check <a href="{{site.baseurl}}/contact">contact page</a> to get in touch.
+
+## Hagura Theme
+
+Jekyll theme [Hagura](https://github.com/sharu725/hagura).
+
 For more themes, visit [https://blog.webjeda.com](https://blog.webjeda.com)
 
-Does the theme deserve a star?
+## License
 
-<a class="github-button" href="https://github.com/sharu725/hagura" data-style="mega" data-count-href="/sharu725/hagura/stargazers" data-count-api="/repos/sharu725/hagura#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sharu725/hagura on GitHub">Star</a>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+Hagura theme and all code samples published on this blog
+are under MIT License.
+
+Text content and images are under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/), unless specified differently.
