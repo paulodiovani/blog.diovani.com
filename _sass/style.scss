@@ -103,7 +103,7 @@ blockquote {
     }
 }
 
-menu {
+.menu {
     position: fixed;
     top: 50px;
     left: calc(50% + 400px);
@@ -115,16 +115,18 @@ menu {
         opacity: 1;
     }
 
-    menuitem {
+    .menuitem {
         display: block;
+        list-style: none;
     }
 
     @include media-query($on-laptop) {
         position: relative;
         top: 0;
         left: 0;
+        padding: 2em 0;
 
-        menuitem {
+        .menuitem {
             display: inline-block;
             margin-right: 1em;
         }
@@ -136,15 +138,17 @@ menu {
 }
 
 .home {
-    background-image: url(../images/left-arrow.svg);
-    background-repeat: no-repeat;
-    height: 30px;
-    width: 30px;
-    margin-top: .5em;
+    display: none;
+
     @include media-query($on-laptop) {
+        display: block;
+        background-image: url(../images/left-arrow.svg);
+        background-repeat: no-repeat;
         position: fixed;
         top: 90%;
         left: 90%;
+        height: 30px;
+        width: 30px;
         opacity: 0.6;
     }
 }

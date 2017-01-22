@@ -12,22 +12,24 @@ layout: compress
   {% seo %}
 </head>
 <body style="background-color: rgb(255, 255, 255)">
- <script src="{{site.baseurl}}/js/theme.min.js"></script>
-  <header></header>
 
-  {{ content }}
+  <main>
+    {{ content }}
+  </main>
 
-<footer>
-  <menu>
-    <menuitem><a href="{{site.baseurl}}/about/">About</a></menuitem>
-    <menuitem><a href="{{site.baseurl}}/contact/">Contact</a></menuitem>
-    <menuitem><a href="{{site.baseurl}}/"><div class="home"></div></a></menuitem>
-    <menuitem class="theme" onclick="theme()" style="background-image: url({{site.baseurl}}/images/theme.svg)"></menuitem>
-  </menu>
+  <nav>
+    <ul class="menu">
+      <li class="menuitem"><a href="{{site.baseurl}}/">Home</a></li>
+      <li class="menuitem"><a href="{{site.baseurl}}/about/">About</a></li>
+      <li class="menuitem"><a href="{{site.baseurl}}/contact/">Contact</a></li>
+      <li class="menuitem theme" onclick="theme()" style="background-image: url({{site.baseurl}}/images/theme.svg)"></li>
+    </ul>
 
-</footer>
+    <a href="{{site.baseurl}}/"><div class="home"></div></a>
+  </nav>
 
-{% include analytics.html %}
+  <script src="{{site.baseurl}}/js/theme.min.js"></script>
+  {% include analytics.html %}
 
 </body>
 </html>
