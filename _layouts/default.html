@@ -13,20 +13,20 @@ layout: compress
 </head>
 <body style="background-color: rgb(255, 255, 255)">
  <script src="{{site.baseurl}}/js/theme.min.js"></script>
-  <header>
-      <a href="{{site.baseurl}}/"><div class="home"></div></a>
-  </header>
+  <header></header>
 
   {{ content }}
 
 <footer>
+  <menu>
+    <menuitem><a href="{{site.baseurl}}/about/">About</a></menuitem>
+    <menuitem><a href="{{site.baseurl}}/contact/">Contact</a></menuitem>
+    <menuitem><a href="{{site.baseurl}}/"><div class="home"></div></a></menuitem>
+    <menuitem class="theme" onclick="theme()" style="background-image: url({{site.baseurl}}/images/theme.svg)"></menuitem>
+  </menu>
 
-    <div class="links">
-        <a href="{{site.baseurl}}/about/">About</a>
-        <a href="{{site.baseurl}}/contact/">Contact</a>
-    </div>
-    <div class="theme" onclick="theme()" style="    background-image: url({{site.baseurl}}/images/theme.svg)"></div>
 </footer>
+
 {% include analytics.html %}
 
 </body>
