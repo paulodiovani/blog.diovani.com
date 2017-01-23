@@ -103,22 +103,27 @@ blockquote {
     }
 }
 
-.menu {
-    position: fixed;
+aside {
+    position: absolute;
     top: 50px;
     left: calc(50% + 400px);
     opacity: .9;
-    margin: 0;
     padding: 2em 1em;
 
     &:hover{
         opacity: 1;
     }
 
-    .menuitem {
-        display: block;
-        list-style: none;
+    ul.menu {
+        margin: 0;
+        padding: 0;
+
+        li.menuitem {
+            display: block;
+            list-style: none;
+        }
     }
+
 
     @include media-query($on-laptop) {
         position: relative;
@@ -126,14 +131,15 @@ blockquote {
         left: 0;
         padding: 2em 0;
 
-        .menuitem {
+        ul.menu li.menuitem {
             display: inline-block;
             margin-right: 1em;
+
+            &.theme {
+                display: block;
+            }
         }
 
-        .theme {
-            display: block;
-        }
     }
 }
 

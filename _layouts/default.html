@@ -5,6 +5,7 @@ layout: compress
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="{{site.description}}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:900|Work+Sans" rel="stylesheet">
@@ -17,16 +18,26 @@ layout: compress
     {{ content }}
   </main>
 
-  <nav>
-    <ul class="menu">
-      <li class="menuitem"><a href="{{site.baseurl}}/">Home</a></li>
-      <li class="menuitem"><a href="{{site.baseurl}}/about/">About</a></li>
-      <li class="menuitem"><a href="{{site.baseurl}}/contact/">Contact</a></li>
-      <li class="menuitem theme" onclick="theme()" style="background-image: url({{site.baseurl}}/images/theme.svg)"></li>
-    </ul>
 
-    <a href="{{site.baseurl}}/"><div class="home"></div></a>
-  </nav>
+  <aside>
+    {% if page.url != "/" %}
+      <section>
+        <h2>Paulo Diovani</h2>
+        <div class="meta">{{site.description}}</div>
+      </section>
+    {% endif %}
+
+    <nav>
+      <ul class="menu">
+        <li class="menuitem"><a href="{{site.baseurl}}/">Home</a></li>
+        <li class="menuitem"><a href="{{site.baseurl}}/about/">About</a></li>
+        <li class="menuitem"><a href="{{site.baseurl}}/contact/">Contact</a></li>
+        <li class="menuitem theme" onclick="theme()" style="background-image: url({{site.baseurl}}/images/theme.svg)"></li>
+      </ul>
+
+      <a href="{{site.baseurl}}/"><div class="home"></div></a>
+    </nav>
+  </aside>
 
   <script src="https://use.fontawesome.com/75875ac355.js"></script>
   <script src="{{site.baseurl}}/js/theme.min.js"></script>
