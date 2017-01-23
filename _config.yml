@@ -3,7 +3,6 @@
 title: Paulo Diovani
 description: A personal blog about romance, technology and tabletop games
 repository: github.com/paulodiovani/blog.diovani.com
-baseurl: /blog.diovani.com # name of the repository
 
 social:
   email: paulo AT diovani DOT com
