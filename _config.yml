@@ -3,9 +3,10 @@
 title: Paulo Diovani
 baseurl: /blog.diovani.com # name of the repository
 
-email: paulo AT diovani DOT com
-linkedin: linkedin.com/in/paulodiovani
-twitter: paulodiovani
+social:
+  email: paulo AT diovani DOT com
+  linkedin: linkedin.com/in/paulodiovani
+  twitter: paulodiovani
 
 highlighter: rouge
 markdown: kramdown

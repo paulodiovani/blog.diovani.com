@@ -4,10 +4,10 @@ layout: post
 permalink: /contact/
 ---
 
-If you want to contact me
+If you want to get in touch by
 
-Email: <a href="mailto:{{site.email}}">{{site.email}}</a>
+Email: <a href="mailto:{{site.social.email}}">{{site.social.email}}</a>
 
-LinkedIn: <a href="https://{{site.linkedin}}">{{site.linkedin}}</a>
+LinkedIn: <a href="https://{{site.social.linkedin}}">{{site.social.linkedin}}</a>
 
-Twitter: <a href="https://twitter.com/{{site.twitter}}">@{{site.twitter}}</a>
+Twitter: <a href="https://twitter.com/{{site.social.twitter}}">@{{site.social.twitter}}</a>
