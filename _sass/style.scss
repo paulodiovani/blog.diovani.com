@@ -3,47 +3,44 @@
     -webkit-transition-timing-function: linear; Safari
     transition: all 0.2s;
     transition-timing-function: linear;
-      } */
+} */
 
 html, body {
     height: 100%;
 }
 
 body {
-        max-width: $content-width;
-        font-family: $base-font-family;
-        margin: 0 auto;
-        line-height: $base-line-height;
-        font-size: $base-font-size;
-        color: $text-color;
-        padding: 2em 1em;
-        text-rendering: optimizeLegibility;
-        height: 100%;
+    max-width: $content-width;
+    font-family: $base-font-family;
+    margin: 0 auto;
+    line-height: $base-line-height;
+    font-size: $base-font-size;
+    color: $text-color;
+    padding: 2em 1em;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+
     @include media-query($on-palm) {
         max-width: 100%;
         padding: 1em;
     }
+}
 
-    }
-
-    h1,h2,h3,h4,h5,h6 {
-         font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
-         font-weight: bold;
-         line-height: 1.8;
-         margin: 0;
-         text-transform: capitalize;
-    }
-
+h1,h2,h3,h4,h5,h6 {
+     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+     font-weight: bold;
+     line-height: 1.8;
+     margin: 0;
+     text-transform: capitalize;
+}
 
 a {
     color: $brand-color;
     text-decoration: none;
     &:hover{
-     color: $text-color;   
+        color: $text-color;
     }
 }
-
-
 
 p a {
     color: $text-color;
@@ -59,7 +56,6 @@ p a {
 
     }
 }
-
 
 figure {
     margin: 0;
@@ -93,8 +89,6 @@ blockquote {
     font-style: italic;
 }
 
-
-
 .headline {
     font-size: 4em;
         @include media-query($on-palm) {
@@ -109,28 +103,54 @@ blockquote {
     }
 }
 
-
-.home {
-    background-image: url(../images/left-arrow.svg);
-    background-repeat: no-repeat;
-    height: 40px;
-    width: 40px;
-    opacity: 0.9;
+.menu {
     position: fixed;
     top: 50px;
-    left: 50px;
+    left: calc(50% + 400px);
+    opacity: .9;
+    margin: 0;
+    padding: 2em 1em;
+
     &:hover{
-    opacity: 1;
+        opacity: 1;
     }
+
+    .menuitem {
+        display: block;
+        list-style: none;
+    }
+
     @include media-query($on-laptop) {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 2em 0;
+
+        .menuitem {
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        .theme {
+            display: block;
+        }
+    }
+}
+
+.home {
+    display: none;
+
+    @include media-query($on-laptop) {
+        display: block;
+        background-image: url(../images/left-arrow.svg);
+        background-repeat: no-repeat;
+        position: fixed;
         top: 90%;
         left: 90%;
         height: 30px;
         width: 30px;
         opacity: 0.6;
     }
-
-    
 }
 
 .video {
@@ -141,7 +161,7 @@ blockquote {
     }
     @include media-query($on-palm) {
         height: 180px;
-    }   
+    }
 }
 
 // Adding 'Contents' headline to the TOC
@@ -179,12 +199,3 @@ footer {
     position: relative;
     top: 2em;
 }
-
-/* Footer navigation links */
-.links a {
-    margin-right: 1em;
-}
-
-
-
-

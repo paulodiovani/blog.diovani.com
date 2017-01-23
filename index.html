@@ -5,18 +5,20 @@ layout: default
 
 {% for post in site.posts %}
 
-  <h3>
-    <a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a>
-    <small>
-      {{post.date | date_to_string}}
+  <section>
+    <h3>
+      <a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a>
+      <small>
+        {{post.date | date: '%B %d, %Y'}}
 
-      {% if post.categories.size >= 1 %}
-        in {{post.categories | array_to_sentence_string | replace: "_", "&nbsp;"}}
-      {% endif %}
-    </small>
-  </h3>
+        {% if post.categories.size >= 1 %}
+          in {{post.categories | array_to_sentence_string | replace: "_", "&nbsp;"}}
+        {% endif %}
+      </small>
+    </h3>
 
-  <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
-  <a class="excerpt-more" href="{{post.url | prepend: site.baseurl}}">Read more&hellip;</a>
+    <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+    <a class="excerpt-more" href="{{post.url | prepend: site.baseurl}}">Read more&hellip;</a>
+  </section>
 
 {% endfor %}
