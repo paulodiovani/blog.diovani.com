@@ -11,3 +11,5 @@ If you want to get in touch by
 <a href="https://{{site.social.linkedin}}"><i class="fa fa-linkedin"></i> {{site.social.linkedin}}</a>
 
 <a href="https://twitter.com/{{site.social.twitter}}"><i class="fa fa-twitter"></i> @{{site.social.twitter}}</a>
+
+<a href="https://{{site.social.github}}"><i class="fa fa-github"></i> {{site.social.github}}</a>
