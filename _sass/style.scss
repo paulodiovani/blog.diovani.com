@@ -108,7 +108,8 @@ aside {
     top: 50px;
     left: calc(50% + 400px);
     opacity: .9;
-    padding: 2em 1em;
+    padding: 2em 1em 0 1em;
+    margin: 0 0 4em 0;
 
     &:hover{
         opacity: 1;
@@ -129,7 +130,7 @@ aside {
         position: relative;
         top: 0;
         left: 0;
-        padding: 2em 0;
+        padding: 2em 0 0 0;
 
         ul.menu li.menuitem {
             display: inline-block;
@@ -203,5 +204,9 @@ aside {
 
 footer {
     position: relative;
-    top: 2em;
+    margin-top: 4em;
+
+    @include media-query($on-laptop) {
+        margin-top: 2em;
+    }
 }
