@@ -6,8 +6,8 @@ permalink: /contact/
 
 If you want to get in touch by
 
-Email: <a href="mailto:{{site.social.email}}">{{site.social.email}}</a>
+<a href="mailto:{{site.social.email}}"><i class="fa fa-envelope"></i> {{site.social.email}}</a>
 
-LinkedIn: <a href="https://{{site.social.linkedin}}">{{site.social.linkedin}}</a>
+<a href="https://{{site.social.linkedin}}"><i class="fa fa-linkedin"></i> {{site.social.linkedin}}</a>
 
-Twitter: <a href="https://twitter.com/{{site.social.twitter}}">@{{site.social.twitter}}</a>
+<a href="https://twitter.com/{{site.social.twitter}}"><i class="fa fa-twitter"></i> @{{site.social.twitter}}</a>
