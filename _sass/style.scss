@@ -90,22 +90,32 @@ blockquote {
 }
 
 .headline {
-    font-size: 4em;
+    font-size: 2em;
+
+    &::first-line {
+        font-size: 2em;
+
         @include media-query($on-palm) {
             font-size: 2em;
+        }
     }
 }
 
 .post-headline {
-    font-size: 4em;
+    font-size: 1.5em;
+
+    &::first-line {
+        font-size: 2em;
+
         @include media-query($on-palm) {
             font-size: 1.5em;
+        }
     }
 }
 
 aside {
     position: absolute;
-    top: 50px;
+    top: 2em;
     left: calc(50% + 400px);
     opacity: .9;
     padding: 2em 1em 0 1em;
