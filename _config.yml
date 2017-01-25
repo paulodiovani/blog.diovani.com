@@ -12,7 +12,12 @@ social:
 
 highlighter: rouge
 markdown: kramdown
-### exclude the instructions / write-up in the README.md
+
+# Markdown Processors
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 
 # Tracker
 #analytics: UA-83979019-1
