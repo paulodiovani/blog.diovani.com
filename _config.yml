@@ -27,7 +27,7 @@ kramdown:
   syntax_highlighter: rouge
 
 # Tracker
-#analytics: UA-83979019-1
+analytics: UA-2336911-2
 
 # Comments
 disqus-shortname: paulo-diovani
