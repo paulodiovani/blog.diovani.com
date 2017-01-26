@@ -98,6 +98,10 @@ blockquote {
     overflow: hidden;
     transition: max-height 1.5s ease-in-out;
 
+    @include media-query($on-palm) {
+        max-height: 108px;
+    }
+
     &:hover {
         max-height: 2000px;
     }
