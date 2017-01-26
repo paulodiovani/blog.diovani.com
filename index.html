@@ -15,7 +15,7 @@ layout: default
         {{post.date | date: '%B %d, %Y'}}
 
         {% if post.categories.size >= 1 %}
-          in {{post.categories | array_to_sentence_string | replace: "_", "&nbsp;"}}
+          in {{post.categories | array_to_sentence_string | replace: "-", "&nbsp;"}}
         {% endif %}
       </small>
     </h3>
