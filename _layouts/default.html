@@ -16,6 +16,14 @@ layout: compress
 </head>
 <body style="background-color: rgb(255, 255, 255)">
 
+  <header>
+    {% if page.image %}
+      <div id="header-image">
+        <img src="{{ page.image }}" title="Image credits: {{ page.image_credits | default: 'Unknown' }}">
+      </div>
+    {% endif %}
+  </header>
+
   <main>
     {{ content }}
   </main>
