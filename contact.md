@@ -2,6 +2,8 @@
 title: Contact
 layout: post
 permalink: /contact/
+image: /media/2017/message_in_a_bottle_by_jrivadulla-d53o80v.jpg
+image_credits: jrivadulla.deviantart.com
 ---
 
 If you want to get in touch by
