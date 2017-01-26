@@ -4,8 +4,12 @@ title: Paulo Diovani
 description: A personal blog about romance, technology and tabletop games
 repository: github.com/paulodiovani/blog.diovani.com
 
+# used by Atom Feed
 url: http://blog.diovani.com
 author: Paulo Diovani <paulo AT diovani DOT com>
+
+# do not display future posts
+future: false
 
 social:
   email: paulo AT diovani DOT com
