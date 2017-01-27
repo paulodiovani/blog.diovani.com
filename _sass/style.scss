@@ -20,6 +20,10 @@ body {
     text-rendering: optimizeLegibility;
     height: 100%;
 
+    @include media-query($on-laptop) {
+        margin: 0;
+    }
+
     @include media-query($on-palm) {
         max-width: 100%;
         padding: 1em;
@@ -102,7 +106,7 @@ blockquote {
 aside {
     position: absolute;
     top: 2em;
-    left: calc(50% + 400px);
+    left: calc(50% + #{$content-width} / 2);
     opacity: .9;
     padding: 0 1em;
     margin: 0 0 4em 0;
@@ -118,6 +122,7 @@ aside {
         li.menuitem {
             display: block;
             list-style: none;
+            white-space: nowrap;
         }
 
         li.menuheader {
@@ -128,6 +133,10 @@ aside {
     }
 
     @include media-query($on-laptop) {
+        left: calc(#{$content-width} + 1em);
+    }
+
+    @include media-query($on-tablet) {
         position: relative;
         top: 0;
         left: 0;

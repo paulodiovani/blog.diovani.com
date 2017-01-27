@@ -23,9 +23,8 @@ $grey-color-dark:  darken($grey-color, 25%);
 // Width of the content area
 $content-width:    800px;
 $on-palm:          600px;
+$on-tablet:        960px;
 $on-laptop:        1024px;
-
-
 
 // Use media queries like this:
 // @include media-query($on-palm) {
