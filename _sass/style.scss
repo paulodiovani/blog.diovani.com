@@ -109,7 +109,6 @@ aside {
     left: calc(50% + #{$content-width} / 2);
     opacity: .9;
     padding: 0 1em;
-    margin: 0 0 4em 0;
 
     &:hover{
         opacity: 1;
@@ -140,7 +139,8 @@ aside {
         position: relative;
         top: 0;
         left: 0;
-        padding: 2em 0 0 0;
+        padding: 0;
+        margin-bottom: 4em;
 
         ul.menu {
             li.menuitem {
@@ -223,6 +223,12 @@ abbr {
     font-size: .9em;
     opacity: .5;
     margin-bottom: 1em;
+}
+
+.index,
+article,
+#disqus_thread {
+    margin-bottom: 4em;
 }
 
 .index .index-post {
