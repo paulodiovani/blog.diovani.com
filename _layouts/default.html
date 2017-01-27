@@ -18,8 +18,9 @@ layout: compress
 
   <header>
     {% if page.image %}
-      <div id="header-image">
-        <img src="{{ page.image }}" title="Image credits: {{ page.image_credits | default: 'Unknown' }}">
+      <div id="header-image" title="Image credits: {{ page.image_credits | default: 'Unknown' }}"
+          style="background-image: url({{ page.image }})">
+        <img src="{{ page.image }}">
       </div>
     {% endif %}
   </header>

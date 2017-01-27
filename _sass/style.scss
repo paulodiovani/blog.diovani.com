@@ -158,10 +158,11 @@ abbr {
 #header-image {
     width: 100%;
     max-height: 145px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     transition: max-height 1.5s ease-in-out;
 
     @include media-query($on-palm) {
@@ -173,9 +174,8 @@ abbr {
     }
 
     img {
-        flex-shrink: 0;
-        min-width: 100%;
-        min-height: 100%
+        visibility: hidden;
+        width: 100%;
     }
 }
 

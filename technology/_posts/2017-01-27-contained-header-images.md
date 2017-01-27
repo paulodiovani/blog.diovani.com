@@ -7,34 +7,38 @@ image_credits: diovani.com
 
 I have just added header images to blog pages/posts, with a small animation to expand them to it's full size on hover.
 
-Images are contained inside a div element but filling it's width and height. The original style I got from [this StackOverflow question][so1] and added the hover style for showing the entire image.
+Images are contained inside a div element by using `background-size: cover` and expanded to full height with a `max-height` transition.
 
-The full SCSS code is bellow.
+Note that the same image is used as background and inside a `<img>` tag. This is necessary to know the height of the image and allow the animation on hover. The `<img>` tag, however, is set to `visibility: hidden`, as it's the centered background that we want to show.
+
+The full SCSS  and HTML code are bellow.
 
 ```scss
 #header-image {
     width: 100%;
     max-height: 145px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     transition: max-height 1.5s ease-in-out;
-
-    @include media-query($on-palm) {
-        max-height: 108px;
-    }
 
     &:hover {
         max-height: 2000px;
     }
 
     img {
-        flex-shrink: 0;
-        min-width: 100%;
-        min-height: 100%
+        visibility: hidden;
+        width: 100%;
     }
 }
+```
+
+```html
+<div id="header-image" style="background-image: url({{ "{{ page.image " }}}})">
+    <img src="{{ "{{ page.image " }}}}">
+</div>
 ```
 
 [so1]: http://stackoverflow.com/questions/14142378/css-filling-a-div-with-an-image-while-staying-in-proportion "CSS: filling a div with an image while staying in proportion"
