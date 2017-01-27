@@ -19,22 +19,32 @@ layout: default
   {% endif %}
 </section>
 
-{% for post in posts %}
+<section class="index">
 
-  <section>
-    <h3>
-      <a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a>
-      <small>
-        {{post.date | date: '%B %d, %Y'}}
+  {% for post in posts %}
 
-        {% if post.categories.size >= 1 %}
-          in {{post.categories | array_to_sentence_string | replace: "-", "&nbsp;"}}
-        {% endif %}
-      </small>
-    </h3>
+    <div class="index-post">
 
-    <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
-    <a class="excerpt-more" href="{{post.url | prepend: site.baseurl}}">Read more&hellip;</a>
-  </section>
+      <h3>
+        <a href="{{post.url | prepend: site.baseurl}}">
+          {% if post.image %}
+            <div class="index-post-image" style="background-image: url({{ post.image }})"></div>
+          {% endif %}
+          {{post.title}}
+        </a>
+        <small>
+          {{post.date | date: '%B %d, %Y'}}
 
-{% endfor %}
+          {% if post.categories.size >= 1 %}
+            in {{post.categories | array_to_sentence_string | replace: "-", "&nbsp;"}}
+          {% endif %}
+        </small>
+      </h3>
+
+      <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+      <a class="excerpt-more" href="{{post.url | prepend: site.baseurl}}">Read more&hellip;</a>
+    </div>
+
+  {% endfor %}
+
+</section>
