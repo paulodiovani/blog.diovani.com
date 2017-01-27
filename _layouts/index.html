@@ -2,11 +2,24 @@
 layout: default
 ---
 <section>
-  <h1 class="headline">{{site.title}}</h1>
-  <div class="meta">{{site.description}}</div>
+  {% if page.category_listing %}
+
+    <h1 class="headline">{{page.category_listing | replace: "-", "&nbsp;"}}</h1>
+    <div class="meta">All posts in {{page.category_listing | replace: "-", "&nbsp;"}}</div>
+
+    {% assign posts = site.categories[page.category_listing] %}
+
+  {% else %}
+
+    <h1 class="headline">{{site.title}}</h1>
+    <div class="meta">{{site.description}}</div>
+
+    {% assign posts = site.posts %}
+
+  {% endif %}
 </section>
 
-{% for post in site.posts %}
+{% for post in posts %}
 
   <section>
     <h3>

@@ -119,6 +119,12 @@ aside {
             display: block;
             list-style: none;
         }
+
+        li.menuheader {
+            display: block;
+            list-style: none;
+            margin-top: 1em;
+        }
     }
 
     @include media-query($on-laptop) {
@@ -127,12 +133,10 @@ aside {
         left: 0;
         padding: 2em 0 0 0;
 
-        ul.menu li.menuitem {
-            display: inline-block;
-            margin-right: 1em;
-
-            &.theme {
-                display: block;
+        ul.menu {
+            li.menuitem {
+                display: inline-block;
+                margin-right: 1em;
             }
         }
     }
@@ -255,10 +259,11 @@ abbr {
 
 /* Theme switch button */
 .theme {
+    display: block;
     background-size: contain;
     height: 40px;
     width: 40px;
-    margin: 1em 0;
+    margin: 1.8em 0 1em 0;
     cursor: pointer;
     &:hover {
         opacity: 0.9;
