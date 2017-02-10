@@ -70,7 +70,7 @@
 
 /* Embeded gist */
 /* from: https://github.com/StylishThemes/GitHub-Dark */
-.gist-file, .gist-data, .gist-meta {
+pre, code, .gist-file, .gist-data, .gist-meta {
   border-color: #323327 !important;
 }
 .gist-data, .gist-meta {
