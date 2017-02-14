@@ -11,11 +11,27 @@ We'll be using some concepts of _Functional Programming_. If you're not familiar
 
 The whole idea is to turn a _fat_ code like this:
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 00-example1.js %}
+```javascript
+request.get('http://example.com', (err, res, body) => {
+    if (!error && res.statusCode == 200) {
+        const content = body.replace(/(<([^>]+)>)/ig, '')
+
+        fs.writeFile('contents.txt', content, (err) => {
+            console.log('contents are saved.')
+        })
+    }
+})
+```
 
 To something more _flat_, like this:
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 00-example2.js %}
+```javascript
+request.get('http://example.com')
+.then(stripTags)
+.then(writeToFile)
+.then(console.log)
+.catch(console.error)
+```
 
 ## Example Case
 
@@ -27,7 +43,85 @@ Consider a script, that does the following:
 4. Get labels for each image from Google Cloud Vision
 5. Add author and labels in image as text
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 01-original.js %}
+```javascript
+'use strict'
+
+require('dotenv').config({ silent: true })
+
+const Exec = require('child_process').exec
+const Fs = require('fs')
+const Request = require('request')
+const Vision = require('@google-cloud/vision')
+
+const visionClient = Vision({
+    projectId: process.env.GCLOUD_PROJECT_ID,
+    keyFilename: process.env.GCLOUD_KEY_FILENAME
+})
+
+const imageUrl = (id) => `https://unsplash.it/${process.env.RESOLUTION}?image=${id}`
+
+const imageFilename = (id) => `img-${id}.jpg`
+
+const sample = (collection, quantity = 1) => {
+    const samples = []
+    const max = quantity - 1
+
+    for (let i = 0; i <= max; i++) {
+        const index = Math.ceil(Math.random() * collection.length -1)
+        samples.push(collection[index])
+    }
+
+    return samples
+}
+
+const applyLabels = (img, cb) => {
+    const labels = img.labels.slice(0, 3)
+    const command = `
+        convert ${imageFilename(img.id)} \
+        -pointsize 30 -font 'DejaVu-Sans-Bold' -strokewidth 2 \
+        -draw "gravity north stroke black fill white text 0,20 '${labels.join(' | ')}' " \
+        -draw "gravity south stroke black fill white text 0,20 'by ${img.author}' " \
+        ${imageFilename(img.id)}
+    `
+
+    Exec(command, cb)
+}
+
+/* request full image list from unsplash.it */
+Request.get('https://unsplash.it/list', (err, res, body) => {
+    if (err) {
+        return console.error(err)
+    }
+
+    /* get some samples */
+    const json = JSON.parse(body)
+    const images = sample(json, process.env.QUANTITY)
+
+    /* process each image... */
+    images.forEach((img) => {
+        /* download for local filesystem */
+        Request.get(imageUrl(img.id))
+        .pipe(Fs.createWriteStream(imageFilename(img.id)))
+        .on('close', () => {
+
+            /* send image to Google Cloud Vision to get image labels */
+            visionClient.detectLabels(imageUrl(img.id), (err, labels, apiRes) => {
+                if (err) {
+                    return console.error(err)
+                }
+                const data = Object.assign(img, { labels })
+
+                /* add text to images with image magic */
+                applyLabels(data, (err) => {
+                    if (err) {
+                        return console.error(err)
+                    }
+                })
+            })
+        })
+    })
+})
+```
 
 In short, the script download random images and add the author/photographer and google labels as annotations.
 
@@ -43,7 +137,48 @@ A first step is to exchange all callbacks for promises. In this example we'll us
 
 The main differences are shown bellow.
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 02-promises-partial.js %}
+```javascript
+const Promise = require('bluebird')
+const Exec = Promise.promisify(require('child_process').exec)
+
+/* ... */
+
+const applyLabels = (data) => {
+    /* ... */
+    return Exec(command)
+}
+
+/* ... */
+
+/* request full image list from unsplash.it */
+Request.get('https://unsplash.it/list')
+.then((body) => {
+    /* get some samples */
+    const json = JSON.parse(body)
+    const images = sample(json, process.env.QUANTITY)
+
+    /* process each image... */
+    images.forEach((img) => {
+        /* download for local filesystem */
+        new Promise((resolve, reject) => {
+            Request.get(imageUrl(img.id))
+            .pipe(Fs.createWriteStream(imageFilename(img.id)))
+            .on('close', resolve)
+            .on('error', reject)
+        })
+        /* send image to Google Cloud Vision to get image labels */
+        .then(() => visionClient.detectLabels(imageUrl(img.id)))
+        .then(([labels]) => {
+            const data = Object.assign(img, { labels })
+
+            /* add text to images with image magic */
+            return applyLabels(data)
+        })
+        .catch(console.error)
+    })
+})
+.catch(console.error)
+```
 
 Much better, right? But we still have some problems...
 
@@ -58,7 +193,41 @@ A `map` function looks great with promises because they allow us to keep chainin
 
 Using `map` is always recommended in place of a `forEach` loop.
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 03-map-partial.js %}
+```javascript
+/* request full image list from unsplash.it */
+Request.get('https://unsplash.it/list')
+.then((body) => {
+    /* get some samples */
+    const json = JSON.parse(body)
+    const images = sample(json, process.env.QUANTITY)
+
+    /* process each image... */
+    return images.map((img) => {
+        /* download for local filesystem */
+        return new Promise((resolve, reject) => {
+            Request.get(imageUrl(img.id))
+            .pipe(Fs.createWriteStream(imageFilename(img.id)))
+            .on('close', resolve)
+            .on('error', reject)
+        })
+        .then(() => img)
+    })
+})
+.then((promises) => Promise.all(promises))
+/* send images to Google Cloud Vision to get image labels */
+.then((images) => {
+    return images.map((img) => {
+        return visionClient.detectLabels(imageUrl(img.id))
+        .then(([labels]) => Object.assign(img, { labels }))
+    })
+})
+.then((promises) => Promise.all(promises))
+/* add text to images with image magic */
+.then((images) => {
+    return images.map((img) => applyLabels(img))
+})
+.catch(console.error)
+```
 
 Note the `Promise.all` lines. They're necessary because our `map` will return an array of promises that are still pending. `Promise.all` waits for every promise in the array to be fullfiled, and then returns a new array with their results.
 
@@ -70,7 +239,23 @@ Now we should extract the functions from the chain. In other words, we define al
 
 We also make sure all functions are _pure_ and _endomorphic_ or _isomorphic_. This means that they do not change anything outside it's scope and it's arguments and return value are of the same type or, at least, preserve the same structure.
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 04-extract-partial.js %}
+```javascript
+/* ... */
+
+const requestImageList = (url) => Request.get(url)
+
+/* ... */
+
+requestImageList('https://unsplash.it/list')
+.then((body) => JSON.parse(body))
+.then((json) => sample(json, process.env.QUANTITY))
+.then((images) => images.map(downloadImage))
+.then((promises) => Promise.all(promises))
+.then((images) => images.map(detectLabels))
+.then((promises) => Promise.all(promises))
+.then((images) => images.map(applyLabels))
+.catch(console.error)
+```
 
 By doing this, once we name the functions properly, we don't need any more comments to make things clear.
 
@@ -80,9 +265,29 @@ At last, we should _curry_ all functions that waits more than one argument, so w
 
 In our example, only the `sample` method needs to be curried.
 
-Note: This is where [Ramda][ramda] helps a lot. And with `map` too.
+Note: This is where [Ramda][ramda] helps a lot with it's `curry` method. And with `map` too.
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 05-curry-partial.js %}
+```javascript
+/* ... */
+
+const R = require('ramda')
+
+const sample = R.curry((quantity, collection) => {
+    /* ... */
+})
+
+/* ... */
+
+requestImageList('https://unsplash.it/list')
+.then(JSON.parse)
+.then(sample(process.env.QUANTITY))
+.then(R.map(downloadImage))
+.then(Promise.all)
+.then(R.map(detectLabels))
+.then(Promise.all)
+.then(R.map(applyLabels))
+.catch(console.error)
+```
 
 And _voilá_. Now the main code can easily be read as a sentence:
 
@@ -90,9 +295,81 @@ And _voilá_. Now the main code can easily be read as a sentence:
 
 A code like this is easily maintainable, because each function is just a small piece kept separately (it can even be moved to another, shared, module), and because the _promise chain_ is easy to read.
 
-The final, full script, is available below.
+The final, full script, is available below. All examples are also published on [this gist](https://gist.github.com/paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4).
 
-{% gist paulodiovani/9d3f644e2e7e255f7755c64cfd6b09f4 05-curry.js %}
+```javascript
+'use strict'
+
+require('dotenv').config({ silent: true })
+
+const Fs = require('fs')
+const Promise = require('bluebird')
+const R = require('ramda')
+const Request = require('request-promise')
+const Vision = require('@google-cloud/vision')
+const Exec = Promise.promisify(require('child_process').exec)
+
+const visionClient = Vision({
+    projectId: process.env.GCLOUD_PROJECT_ID,
+    keyFilename: process.env.GCLOUD_KEY_FILENAME
+})
+
+const imageUrl = (id) => `https://unsplash.it/${process.env.RESOLUTION}?image=${id}`
+
+const imageFilename = (id) => `img-${id}.jpg`
+
+const sample = R.curry((quantity, collection) => {
+    const samples = []
+    const max = quantity - 1
+
+    for (let i = 0; i <= max; i++) {
+        const index = Math.ceil(Math.random() * collection.length -1)
+        samples.push(collection[index])
+    }
+
+    return samples
+})
+
+const requestImageList = (url) => Request.get(url)
+
+const downloadImage = (img) => {
+    return new Promise((resolve, reject) => {
+        Request.get(imageUrl(img.id))
+        .pipe(Fs.createWriteStream(imageFilename(img.id)))
+        .on('close', resolve)
+        .on('error', reject)
+    })
+    .then(() => img)
+}
+
+const detectLabels = (img) => {
+    return visionClient.detectLabels(imageUrl(img.id))
+    .then(([labels]) => Object.assign(img, { labels }))
+}
+
+const applyLabels = (img) => {
+    const labels = img.labels.slice(0, 3)
+    const command = `
+        convert ${imageFilename(img.id)} \
+        -pointsize 30 -font 'DejaVu-Sans-Bold' -strokewidth 2 \
+        -draw "gravity north stroke black fill white text 0,20 '${labels.join(' | ')}' " \
+        -draw "gravity south stroke black fill white text 0,20 'by ${img.author}' " \
+        ${imageFilename(img.id)}
+    `
+
+    return Exec(command)
+}
+
+requestImageList('https://unsplash.it/list')
+.then(JSON.parse)
+.then(sample(process.env.QUANTITY))
+.then(R.map(downloadImage))
+.then(Promise.all)
+.then(R.map(detectLabels))
+.then(Promise.all)
+.then(R.map(applyLabels))
+.catch(console.error)
+```
 
 Hope it helps.
 
