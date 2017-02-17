@@ -7,7 +7,7 @@ image_credits: Netflix
 
 Uma amiga comentou esses dias no Facebook que _"Viu um episódio feliz de Black Mirror"_. Tratava-se do episódio entitulado _San Junipero_. O final é bonito e emocionante mas, fazendo uma breve análise, será mesmo?
 
-Eu fiquei curioso com o comentário dela, já que, até o momento, todos os episódio que havia visto possuem finais, no mínimo, desconcertantes. Muitos chegam a ser perturbadores, a ponto de nos fazer pensar o quanto nossa sociedade é egoista e opressora.
+Eu fiquei curioso com o comentário dela, já que, até o momento, todos os episódios que havia visto possuem finais, no mínimo, desconcertantes. Muitos chegam a ser perturbadores, a ponto de nos fazer pensar o quanto nossa sociedade é egoista e opressora.
 
 Aliás, este é o verdadeiro brilho da série. _Black Mirror_ não se trata de tecnologia, mas sim de pessoas. A tecnologia mostrada na série é apenas um atalho para mostrar o comportamento humano mais claramente.
 
@@ -39,7 +39,7 @@ Ou nem tanto?
 
 A ideia parece uma solução atraente, certo?
 
-Se não existe paraíso, criamos nossos próprio, levando a conciência de nossos mortos para um mundo virtual onde eles terão liberdade para viver como quiserem.
+Se não existe paraíso, criamos nossos próprio, levando a consciência de nossos mortos para um mundo virtual onde eles terão liberdade para viver como quiserem.
 
 O tema sequer é novo, já tendo sido explorado em outras histórias (Doctor Who, por exemplo).
 
@@ -59,7 +59,7 @@ Considerando isso é difícil imaginar que Yorkie e Kelly consigam ser _felizes 
 
 ### Seriam os _usuários em tempo integral_ ainda humanos?
 
-[Alan Turing](https://pt.wikipedia.org/wiki/Alan_Turing), conhecido com o pai da computação moderna, desenvolveu em 1950 um teste de conciência para saber se uma máquina é capaz de se comportar como um ser humano. -- Versões alternativas deste teste são utilizadas até hoje em websites para saber se o usuário é ou não um _bot_ (você já deve ter ouvido falar em [CAPTCHA](https://pt.wikipedia.org/wiki/CAPTCHA)).
+[Alan Turing](https://pt.wikipedia.org/wiki/Alan_Turing), conhecido com o pai da computação moderna, desenvolveu em 1950 um teste de consciência para saber se uma máquina é capaz de se comportar como um ser humano. -- Versões alternativas deste teste são utilizadas até hoje em websites para saber se o usuário é ou não um _bot_ (você já deve ter ouvido falar em [CAPTCHA](https://pt.wikipedia.org/wiki/CAPTCHA)).
 
 Vários filmes e séries de ficção científica já apresentaram máquinas capazes de passar no _Teste de Turing_. Alguns exemplos dignos de nota são [TRON (1982)](http://www.imdb.com/title/tt0084827), o anime [Ghost in the Shell (1995)](http://www.imdb.com/title/tt0113568) (que terá uma versão _Live Action_ este ano, interpretada por Scarlett Johansson), [The Matrix (1999)](http://www.imdb.com/title/tt0133093/), [The Thirteenth Floor (1999)](http://www.imdb.com/title/tt0139809) e mais recentemente [Ex Machina (2015)](http://www.imdb.com/title/tt0470752) e [Westworld 2016](http://www.imdb.com/title/tt0475784).
 
