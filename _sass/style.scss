@@ -103,6 +103,22 @@ blockquote {
     font-style: italic;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    tr {
+        line-height: 2.2em;
+        border-bottom: 1px solid $brand-color;
+
+        th, td {
+            padding: 0 6px;
+        }
+    }
+}
+
+
 aside {
     position: absolute;
     top: 2em;
