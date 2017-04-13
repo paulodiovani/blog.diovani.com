@@ -5,13 +5,13 @@ image: /media/2017/ava-header.png
 image_credits: ava.li
 ---
 
-There is a lot of test frameworks for Javascript/Node.js and I've been working with Mocha, Jasmine and Lab for a while. But I decided to give a try to [AVA][ava] in a [new project](https://github.com/societiesio/societies-api) to be able to write faster specs in ES2017.
+There are a lot of test frameworks for Javascript/Node.js and I've been working with Mocha, Jasmine and Lab for a while. But I decided to give a try to [AVA][ava] in a [new project](https://github.com/societiesio/societies-api) to be able to write faster specs in ES2017.
 
-Different from other test frameworks AVA runs tests in parallel by default. Not only by using Node asynchronous capabilities, but by running every test in a separate process. This gives each test an isolated environment.
+Different from other test frameworks AVA runs tests in parallel by default. Not only by using Node asynchronous capabilities but by running every test in a separate process. This gives each test an isolated environment.
 
 ## Main differences from other frameworks (I've used)
 
-The table bellow shows the most significant features.
+The table below shows the most significant features.
 
 &nbsp;          | Implicit Globals | Async | Parallel | Process Fork | BDD             | ES2017
 --              | :--:             | :--:  | :--:     | :--:         | :--:            | :--:
@@ -43,14 +43,14 @@ My initial configuration looks as.
 }
 ```
 
-- `require`: requires node modules prior to **every test** (I'm explaining the `bootstrap.js` bellow)
+- `require`: requires node modules prior to **every test** (I'm explaining the `bootstrap.js` below)
 - `files`: a glob pattern to tell which test files to run.
 
 ## ES2017 support
 
-It's possible to write tests using ES2017 syntax with any other frameworks too, since you can just require `babel/register` or use `node >= 7.0.0`. But AVA is the only one that comes with a babel compiler by default, so it's quite easier and you'll find more ES2017 examples for it.
+It's possible to write tests using ES2017 syntax with any other framework too, since you can just require `babel/register` or use `node >= 7.0.0`. But AVA is the only one that comes with a babel compiler by default, so it's quite easier and you'll find more ES2017 examples for it.
 
-The most advantage in using ES2017 is to use `async` and `await` to deal with promises.
+The biggest advantage in using ES2017 is to use `async` and `await` to deal with promises.
 
 So, instead of writing:
 
@@ -74,9 +74,9 @@ This makes tests much more clear and easier to read.
 
 ## Bootstrap / Initialize
 
-I usually add a `test/bootstrap.js` (or `test/initialize.js`) file with the common setup for the tests. These includes load env vars, initialize external services, set common globals (as `chai.expect`), clean databases, etc.
+I usually add a `test/bootstrap.js` (or `test/initialize.js`) file with the common setup for the tests. These include loading env vars, initializing external services, setting common globals (as `chai.expect`), cleaning up databases, etc.
 
-For AVA there is a _gotcha_ here, since this bootstrap file is required for every test it's not much _ok_ to add heavy tasks to it. Mine just load env vars.
+For AVA there is a _gotcha_ here, since this bootstrap file is required for every test it's not much _ok_ to add heavy tasks to it. Mine just loads env vars.
 
 ```javascript
 process.env.NODE_ENV = 'test'
@@ -121,7 +121,7 @@ const dbHooks = () => {
 module.exports = { cleanDb, dropDb, dbHooks }
 ```
 
-So, on every spec that a database connection is required I just run.
+So, on every spec that a database connection is required I just run:
 
 ```javascript
 const {dbHooks} = require('../support/helpers/database')
@@ -129,15 +129,15 @@ const {dbHooks} = require('../support/helpers/database')
 dbHooks()
 ```
 
-This will create a new `db` for each test using `test` and `process.pid` as suffix (e.g. `mongodb://localhost:27017/database-test-999`), so each test runs in a _sandboxed_ database.
+This will create a new `db` for each test using `test` and `process.pid` as a suffix (e.g. `mongodb://localhost:27017/database-test-999`), so that each test runs in a _sandboxed_ database.
 
 ## Caveats and Conclusions
 
 [AVA][ava] Is a full featured test framework for Javascript focused on speed. It achieves it's goal by running tests in parallel in separate processes, which can even use more cores/processors to increase speed even more and isolates environments.
 
-However, it's not as easy or intuitive to setup as other javascript test frameworks and may a little difficult for beginners, due to concurrency handling, mostly. Also, the lack of a BDD style DSL forces you (if you prefer bdd, of course) to rely on extra libs.
+However, it's not as easy or intuitive to setup as other Javascript test frameworks and may be a little difficult for beginners, due to concurrency handling, mostly. Also, the lack of a BDD style DSL forces you (if you prefer BDD, of course) to rely on extra libs.
 
-I would recommend for big projects, where test suites can take several minutes, once the tests does not depend on each other and can run in parallel.
+I would recommend it for big projects where test suites can take several minutes, due to tests running in parallel and not depending on each other.
 
 [ava]: https://github.com/avajs/ava
 [aes]: https://github.com/sheerun/ava-spec
