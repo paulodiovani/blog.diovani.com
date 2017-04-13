@@ -88,9 +88,9 @@ The goal of **NOT** adding heavy tasks to test/boostrap, like database cleanup, 
 
 ## DB cleanup and dealing with concurrency
 
-Since tests run in parallel, it's not safe to rely on stored data. A quick solution is to have one of:
+Since tests run in parallel, it's not safe to rely on (global) stored data. A quick solution is to have one of:
 
-1. several databases, once for each test
+1. several databases, one for each test
 2. table/collection prefixes for each test
 
 With Mongodb/Mongoose, it's easy to have several databases, as they're created on first write to a collection and the io is fast enough. So I've created a small helper to deal with connection and cleanup.
@@ -129,7 +129,7 @@ const {dbHooks} = require('../support/helpers/database')
 dbHooks()
 ```
 
-This will create a new `db` for each test using `test` and `process.pid` as suffix (e.g. `mogodb://localhost:27017/database-test-999`), so each test runs in a _sandboxed_ database.
+This will create a new `db` for each test using `test` and `process.pid` as suffix (e.g. `mongodb://localhost:27017/database-test-999`), so each test runs in a _sandboxed_ database.
 
 ## Caveats and Conclusions
 
