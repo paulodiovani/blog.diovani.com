@@ -42,25 +42,25 @@ This simple setup will improve system startup a lot, as well as any application 
 
 If you have a big SSH device (at least `64G`) you may use it as a cache device for a slower disk.
 
-There are two common options for that [Bcache](https://bcache.evilpiepirate.org/) and [Flashcache](https://github.com/facebookarchive/flashcache). You should decide of which one use as they are not compatible and will both significantly increase disk IO. But there are caveats.
+There are two common options for that [Bcache](https://bcache.evilpiepirate.org/) and [Flashcache](https://github.com/facebookarchive/flashcache). You should decide of which one to use as they are not compatible and will both significantly increase disk IO. But there are caveats.
 
 **Bcache** is quite easy to setup, but both disks (the backing device -- HDD, and the caching device -- SSD) must be erased before use. So it's probably an option for new installations, only.
 
 **Flashcache**, on the other hand, can work with already used disks, but has a much more complex installation and should only be tried by experienced users.
 
-Personally, I didn't test any (yet), since memory management has been good enough.
+Personally, I didn't test any (yet), since memory management has been good enough. See bellow.
 
 ### Swapping to SSD
 
-Swapping to SSH was pointed as a bad practice due to limited lifespan of SSDs in exchange of huge data writes necessary to swap. Modern SSDs, however, has random data writes that improves lifespan, so that may not be a problem anymore.
+Swapping to SSH was pointed as a bad practice due to limited lifespan of SSDs in exchange of huge data writes necessary to swap. Modern SSDs, however, have random data writes that improves lifespan, so that may not be a problem anymore.
 
-On the other hand, there are better options for Swap. See bellow.
+On the other hand, there are better options for Swap...
 
 ## Swap or not Swap?
 
-In early 2000 Swap was necessary, since memory was expensive and most computers rarely reach 1G. But we still hadn't much data, mostly text and some image, so it was _ok_ to send some of it to disk. Moreover, peoples didn't care too much about performance in that times.
+In early 2000 Swap was necessary, since memory was expensive and most computers rarely reach 1G. But we still hadn't much data, mostly text and some images only, so it was _ok_ to send some of it to disk. Moreover, peoples didn't care too much about performance in that times.
 
-Nowadays, most Linux installation instructions or _wizards_ still asks for a Swap Partition. But here is a thing: Swap is, probably, what makes your computer slower.
+Nowadays, most Linux installation instructions or _wizards_ still asks for a Swap Partition. But here is a thing: Swap is probably what makes your computer slower.
 
 So the solution is to `swapoff` everything? Well, you can do that, but there are even better options...
 
@@ -87,7 +87,7 @@ To set the swappiness value permanently, edit a sysctl configuration file:
 vm.swappiness=1
 ```
 
-### Set Swap Priority
+### Set Swap Devices Priority
 
 If you have more than one swap device or file, you can define different priorities using the `pri` parameter on `/etc/fastab` or via the `-p|--priority` option of `swapon`.
 
@@ -103,7 +103,7 @@ For example, to set a higher priority on a SSD device:
 
 [zram](https://www.kernel.org/doc/Documentation/blockdev/zram.txt) (formerly `compcache`) and [zswap](https://www.kernel.org/doc/Documentation/vm/zswap.txt) are both kernel modules used to compress memory prior to disk swap. They both use more CPU in exchange to store more information on the RAM.
 
-While `zram` creates a block device in memory, that can be used as a swap device, `zswap` compress memory pages when they are to be swapped out and store them in a memory pool inside system RAM.
+While `zram` creates a block device in memory that can be used as a swap device, `zswap` compress memory pages when they are to be swapped out and store them in a memory pool inside system RAM itself.
 
 You surely don't have to use both. I started to use `zswap` recently and it really reduces Swap usage allowing applications to have a faster access to available memory.
 
@@ -163,7 +163,7 @@ sudo systemctl start asd
 
 Prioritize some applications IO and CPU scheduling is a good way to have better performance on what really matters. This can be done per command with `nice` and `ionice` commands, but hopefully, there is a daemon to make this task easier.
 
-[Ananicy](https://github.com/Nefelim4ag/Ananicy) defines a set of rules for several applications privatizations over nice levels. It even comes bundled with many community rules for common apps.
+[Ananicy](https://github.com/Nefelim4ag/Ananicy) defines a set of rules for several applications prioritization over nice levels. It even comes bundled with many community rules for common apps.
 
 ```bash
 pacaur -Sy ananicy
@@ -177,7 +177,7 @@ You may want to edit app rules under `/etc/ananicy.d/`, or just keep the default
 
 Most these settings comes from [Arch Linux Wiki](https://wiki.archlinux.org) and it's strongly recommended to read the entire pages over _performance_ (see _references_ bellow) before trying anything.
 
-From my experience, the most performance increase comes from having plenty of memory and use it the best way possible (tmpfs, low swappiness, zswap...).
+From my experience, the best improvements comes from having plenty of memory and use it the best way possible (tmpfs, swappiness, zswap, etc.).
 
 Please, tell us of what improvements you've made on the comments section bellow.
 
