@@ -40,7 +40,7 @@ This simple setup will improve system startup a lot, as well as any application 
 
 ### Caching to SSD
 
-If you have a big SSH device (at least `64G`) you may use it as a cache device for a slower disk.
+If you have a big SSD device (at least `64G`) you may use it as a cache device for a slower disk.
 
 There are two common options for that [Bcache](https://bcache.evilpiepirate.org/) and [Flashcache](https://github.com/facebookarchive/flashcache). You should decide of which one to use as they are not compatible and will both significantly increase disk IO. But there are caveats.
 
@@ -52,7 +52,7 @@ Personally, I didn't test any (yet), since memory management has been good enoug
 
 ### Swapping to SSD
 
-Swapping to SSH was pointed as a bad practice due to limited lifespan of SSDs in exchange of huge data writes necessary to swap. Modern SSDs, however, have random data writes that improves lifespan, so that may not be a problem anymore.
+Swapping to SSD was pointed as a bad practice due to limited lifespan of SSDs in exchange of huge data writes necessary to swap. Modern SSDs, however, have random data writes that improves lifespan, so that may not be a problem anymore.
 
 On the other hand, there are better options for Swap...
 
@@ -186,5 +186,5 @@ References:
 - [Improving Performance on Arch Linux Wiki](https://wiki.archlinux.org/index.php/Improving_performance)
 - [Bcache on Arch Linux Wiki](https://wiki.archlinux.org/index.php/Bcache)
 - [Flashcache on Arch Linux Wiki](https://wiki.archlinux.org/index.php/flashcache)
-- [Why No Swap Partitions on SSH Drives? question on Stack Overflow](https://askubuntu.com/questions/652337/why-no-swap-partitions-on-ssd-drives)
+- [Why No Swap Partitions on SSD Drives? question on Stack Overflow](https://askubuntu.com/questions/652337/why-no-swap-partitions-on-ssd-drives)
 - [Optimizing Linux For Slow Computers on Akita On Rails Blog](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers)
