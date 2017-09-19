@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Chromium native desktop notifications
-<!-- image: /media/2017/npm-5.jpg -->
-<!-- image_credits: npm, inc. -->
 ---
 
 Chromium Browser has just introduced Native Desktop Notifications for Linux and Mac. That means that we don't have to see that ugly upper right notification box anymore, but just use our desktop default ones. :D
