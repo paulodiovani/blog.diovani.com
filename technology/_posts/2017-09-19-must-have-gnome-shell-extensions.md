@@ -1,8 +1,6 @@
 ---
 layout: post
 title: 7 Must Have Gnome Shell Extensions
-<!-- image: /media/2017/npm-5.jpg -->
-<!-- image_credits: npm, inc. -->
 ---
 
 Gnome 3 allow the user to install _Extensions_ for several thing, from adding some
