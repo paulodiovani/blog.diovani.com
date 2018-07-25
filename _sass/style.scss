@@ -120,6 +120,7 @@ table {
 
 
 aside {
+    max-width: 340px;
     position: absolute;
     top: 2em;
     left: calc(50% + #{$content-width} / 2);
