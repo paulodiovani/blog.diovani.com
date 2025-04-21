@@ -1,7 +1,31 @@
-### your site title here
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
 title: Paulo Diovani
+email: paulo@diovani.com
 description: A personal blog about romance, technology and tabletop games
+baseurl: "" # the subpath of your site, e.g. /blog
+url: http://blog.diovani.com
+twitter_username: paulodiovani
+github_username: paulodiovani
+
 repository: github.com/paulodiovani/blog.diovani.com
 
 # used by Atom Feed
@@ -11,47 +35,49 @@ author: Paulo Diovani <paulo AT diovani DOT com>
 # do not display future posts
 future: false
 
-social:
-  email: paulo AT diovani DOT com
-  linkedin: linkedin.com/in/paulodiovani
-  twitter: paulodiovani
-  github: github.com/paulodiovani
+# social:
+#   email: paulo AT diovani DOT com
+#   linkedin: linkedin.com/in/paulodiovani
+#   twitter: paulodiovani
+#   github: github.com/paulodiovani
 
-highlighter: rouge
-markdown: kramdown
+# highlighter: rouge
+# markdown: kramdown
 
 # Markdown Processors
-kramdown:
-  input: GFM
-  auto_ids: true
-  syntax_highlighter: rouge
+# kramdown:
+#   input: GFM
+#   auto_ids: true
+#   syntax_highlighter: rouge
 
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  # - jekyll-paginate
+  # - jekyll-seo-tag
+  # - jekyll-gist
 # Tracker
 analytics: UA-2336911-2
 
-# Comments
-disqus-shortname: paulo-diovani
-
-#optimization
-#compress.html
-compress_html:
-  clippings: [html, div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
-  comments: ["<!-- ", " -->"]
-  endings: [all]
-  ignore:
-    envs: [local]
-  blanklines: false
-  profile: false
-  startings: []
-
-sass:
- style: compressed
-
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
 exclude:
-- README.md
-
-gems:
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-gist
+  - README.md
