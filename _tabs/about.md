@@ -10,10 +10,10 @@ This blog belongs to Paulo Diovani.
 
 Check <a href="{{site.baseurl}}/contact">contact page</a> to get in touch.
 
-## Sources on <i class="fa fa-github"></i>
+## Sources on <i class="fa-brands fa-github"></i>
 
 All site content is published on GitHub at
-<a href="https://{{site.repository}}">{{site.repository}}</a>.
+<a href="{{site.repository}}">{{site.repository}}</a>.
 
 Feel free to fork or collaborate.
 
@@ -38,16 +38,6 @@ post.
 > [...]
 >
 > -- [en.wikipedia.org/wiki/Romance](https://en.wikipedia.org/wiki/Romance)
-
-In Brazilian Portuguese, we have the following definition.
-
-> O termo **romance** (do latim _romanice_: "em língua românica", através do
-provençal _romans_) pode referir-se a dois gêneros literários. O primeiro deles
-é uma composição poética popular, histórica ou lírica, transmitida pela
-tradição oral, sendo geralmente de autor anônimo; corresponde aproximadamente
-à balada medieval. Como forma literária moderna, o termo designa uma
-composição em prosa.
-> -- [pt.wikipedia.org/wiki/Romance](https://pt.wikipedia.org/wiki/Romance)
 
 In short, this category will present all posts related to literature or
 derived from it, including novels, movies, TV shows and even video games.
@@ -78,18 +68,11 @@ I hope to be able to add <abbr title="internationalization">i18n</abbr> to this
 blog and publish every content in both languages, but meanwhile, the post
 language will be chosen according to the target public.
 
-## Hagura Theme
-
-Jekyll theme [Hagura](https://github.com/sharu725/hagura).
-
-For more themes, visit [https://blog.webjeda.com](https://blog.webjeda.com)
-
 ## License
 
-Hagura theme and all code samples published on this blog
-are under MIT License.
+All the sourec code and samples published on this blog are under MIT License.
 
-Text content and images are under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/), unless specified differently.
+Text content and images are under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/), unless specified otherwise.
 
 [Romance]: /romance
 [Technology]: /technology

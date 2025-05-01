@@ -8,10 +8,10 @@ order: 3
 
 If you want to get in touch by
 
-<a href="mailto:{{site.social.email}}"><i class="fa fa-envelope"></i> {{site.social.email}}</a>
+<a href="{{site.social.mastodon}}"><i class="fa-brands fa-mastodon"></i> {{site.social.mastodon}}</a>
 
-<a href="https://{{site.social.linkedin}}"><i class="fa fa-linkedin"></i> {{site.social.linkedin}}</a>
+<a href="{{site.social.twitter}}"><i class="fa-brands fa-twitter"></i> {{site.social.twitter}}</a>
 
-<a href="https://twitter.com/{{site.social.twitter}}"><i class="fa fa-twitter"></i> @{{site.social.twitter}}</a>
+<a href="{{site.social.linkedin}}"><i class="fa-brands fa-linkedin"></i> {{site.social.linkedin}}</a>
 
-<a href="https://{{site.social.github}}"><i class="fa fa-github"></i> {{site.social.github}}</a>
+<a href="{{site.social.github}}"><i class="fa-brands fa-github"></i> {{site.social.github}}</a>

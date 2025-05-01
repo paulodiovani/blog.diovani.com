@@ -9,40 +9,46 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
+timezone: America/Sao_Paulo
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Paulo Diovani
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: A personal blog about romance, technology and tabletop games.
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  A personal blog about romance, technology and tabletop games.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
+url: http://blog.diovani.com
+
+repository: https://github.com/paulodiovani/blog.diovani.com
 
 github:
-  username: github_username # change to your GitHub username
+  username: paulodiovani
 
 twitter:
-  username: twitter_username # change to your Twitter username
+  username: paulodiovani
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: Paulo Diovani
+  github: https://github.com/paulodiovani
+  mastodon: https://mastodon.social/@paulodiovani
+  twitter: https://twitter.com/paulodiovani
+  linkedin: https://www.linkedin.com/in/paulodiovani
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
+    - https://github.com/paulodiovani
+    - https://mastodon.social/@paulodiovani
+    - https://twitter.com/paulodiovani
+    - https://www.linkedin.com/in/paulodiovani
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
 
 # Site Verification Settings
 webmaster_verifications:
@@ -59,7 +65,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: UA-2336911-2
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
@@ -98,11 +104,11 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://gravatar.com/avatar/df266efef37f3a26bd14a5657fdf2c8e19ff487468e760df0295220086a75196?size=256
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: https://gravatar.com/avatar/df266efef37f3a26bd14a5657fdf2c8e19ff487468e760df0295220086a75196?size=256
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -217,7 +223,7 @@ exclude:
   - "package*.json"
 
 jekyll-archives:
-  enabled: [categories, tags]
+  enabled: [categories]
   layouts:
     category: category
     tag: tag
