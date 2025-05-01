@@ -46,7 +46,7 @@ Armaduras funcionam da mesma forma. Anotadas como `Armor:VALUE`, elas reduzem as
 
 ## Como funciona a Magia no _Dresdenverse_
 
-_Explicações mais detalhadas sobre magia em DFRPG podem ser encontradas no blog do Rick Neal, nos artigos [Mystic Theory 101: Magic in DFRPG, Part One](http://www.rickneal.ca/?p=628), [Evocation, or How to Blow Stuff Up: Magic in DFRPG, Part Two](http://www.rickneal.ca/?p=629) e [Thaumaturgy, or How to Break the Rules: Magic in DFRPG, Part Three](http://www.rickneal.ca/?p=632)_
+_Explicações mais detalhadas sobre magia em DFRPG podem ser encontradas no blog do Rick Neal, nos artigos [Mystic Theory 101: Magic in DFRPG, Part One](https://www.rickneal.ca/?p=628), [Evocation, or How to Blow Stuff Up: Magic in DFRPG, Part Two](https://www.rickneal.ca/?p=629) e [Thaumaturgy, or How to Break the Rules: Magic in DFRPG, Part Three](https://www.rickneal.ca/?p=632)_
 
 Metaforicamente falando, qualquer magia em _Dresden Files_ é realizada seguindo os seguintes passos:
 

@@ -21,5 +21,5 @@ Now you can see chrome notifications just as native apps notifications.
 
 References:
 
-- [Chrome Adds Initial Support for Native Linux Desktop Notifications on OMG! Ubuntu](http://www.omgubuntu.co.uk/2017/04/first-code-chrome-native-linux-notifications)
+- [Chrome Adds Initial Support for Native Linux Desktop Notifications on OMG! Ubuntu](https://www.omgubuntu.co.uk/2017/04/first-code-chrome-native-linux-notifications)
 - [Native desktop notifications on Linux on bugs.chromium.com](https://bugs.chromium.org/p/chromium/issues/detail?id=676220)

@@ -72,7 +72,7 @@ language will be chosen according to the target public.
 
 All the sourec code and samples published on this blog are under MIT License.
 
-Text content and images are under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/), unless specified otherwise.
+Text content and images are under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/), unless specified otherwise.
 
 [Romance]: /romance
 [Technology]: /technology

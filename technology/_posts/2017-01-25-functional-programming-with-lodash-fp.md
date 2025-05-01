@@ -5,7 +5,7 @@ title: Functional programming with Lodash/FP
 
 We have been hearing a lot about [functional programming](https://en.wikipedia.org/wiki/Functional_programming) since the past couple of years and even how to use the paradigm in [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). For the ones are used to the [Lodash](https://lodash.com/) library, know that it exports a module to help with _functional programming_. We're about to see the main differences.
 
-First of all, I must say that Lodash should not be your first choice when writing functional programming with Javascript. A better choice would be, probably, [Ramda](http://ramdajs.com/). But if your team likes Lodash very much, or your project already uses it, Lodash/FP may be a good option...
+First of all, I must say that Lodash should not be your first choice when writing functional programming with Javascript. A better choice would be, probably, [Ramda](https://ramdajs.com/). But if your team likes Lodash very much, or your project already uses it, Lodash/FP may be a good option...
 
 It provides a [FP guide](https://github.com/lodash/lodash/wiki/FP-Guide) listing the main differences of the module. As described on the official page:
 
@@ -114,7 +114,7 @@ const request = require('request-promise-native');
 
 //read posts from REST API and
 //convert to a user;title CSV
-request('http://jsonplaceholder.typicode.com/posts')
+request('https://jsonplaceholder.typicode.com/posts')
 .then(JSON.parse)
 .then(_.map(_.at(['userId', 'title'])))
 .then(_.concat([['userId', 'title']]))

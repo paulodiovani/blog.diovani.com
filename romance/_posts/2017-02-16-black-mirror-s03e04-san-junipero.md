@@ -61,7 +61,7 @@ Considerando isso é difícil imaginar que Yorkie e Kelly consigam ser _felizes 
 
 [Alan Turing](https://pt.wikipedia.org/wiki/Alan_Turing), conhecido com o pai da computação moderna, desenvolveu em 1950 um teste de consciência para saber se uma máquina é capaz de se comportar como um ser humano. -- Versões alternativas deste teste são utilizadas até hoje em websites para saber se o usuário é ou não um _bot_ (você já deve ter ouvido falar em [CAPTCHA](https://pt.wikipedia.org/wiki/CAPTCHA)).
 
-Vários filmes e séries de ficção científica já apresentaram máquinas capazes de passar no _Teste de Turing_. Alguns exemplos dignos de nota são [TRON (1982)](http://www.imdb.com/title/tt0084827), o anime [Ghost in the Shell (1995)](http://www.imdb.com/title/tt0113568) (que terá uma versão _Live Action_ este ano, interpretada por Scarlett Johansson), [The Matrix (1999)](http://www.imdb.com/title/tt0133093/), [The Thirteenth Floor (1999)](http://www.imdb.com/title/tt0139809) e mais recentemente [Ex Machina (2015)](http://www.imdb.com/title/tt0470752) e [Westworld 2016](http://www.imdb.com/title/tt0475784).
+Vários filmes e séries de ficção científica já apresentaram máquinas capazes de passar no _Teste de Turing_. Alguns exemplos dignos de nota são [TRON (1982)](https://www.imdb.com/title/tt0084827), o anime [Ghost in the Shell (1995)](https://www.imdb.com/title/tt0113568) (que terá uma versão _Live Action_ este ano, interpretada por Scarlett Johansson), [The Matrix (1999)](https://www.imdb.com/title/tt0133093/), [The Thirteenth Floor (1999)](https://www.imdb.com/title/tt0139809) e mais recentemente [Ex Machina (2015)](https://www.imdb.com/title/tt0470752) e [Westworld 2016](https://www.imdb.com/title/tt0475784).
 
 A questão que quero levantar aqui é que os _usuários em tempo integral_ de San Junipero podem não passar de construtos de consciência baseados nos seus usuários originais. Em termos vulgares, _apenas programas_.
 
@@ -91,14 +91,14 @@ Elas deixaram de ser clientes para se tornarem produtos.
 
 Para reforçar, existe uma teoria de que todos os episódios de Black Mirror se passam num mesmo cenário e vários episódios anteriores já mostram tecnologias similares.
 
-- [S02E01: Be right back](http://www.imdb.com/title/tt2290780) -- mostra um sistema capaz de imitar o comportamento de um indivídio.
-- [S02E04: White Cristmas](http://www.imdb.com/title/tt3973198) --  já mostra construtos de personalidade criados a partir de consciências humanas.
+- [S02E01: Be right back](https://www.imdb.com/title/tt2290780) -- mostra um sistema capaz de imitar o comportamento de um indivídio.
+- [S02E04: White Cristmas](https://www.imdb.com/title/tt3973198) --  já mostra construtos de personalidade criados a partir de consciências humanas.
 
 Assim podemos considerar que a tecnologia é suficiente para <del>imitar</del> copiar perfeitamente uma pessoa.
 
 ## Final feliz ou não... Só depende de seu ponto de vista
 
-San Junipero me lembrou muito a série [Caprica (2009)](http://www.imdb.com/title/tt0799862), um _spin-off_ de Battlestart Galactica (2004).
+San Junipero me lembrou muito a série [Caprica (2009)](https://www.imdb.com/title/tt0799862), um _spin-off_ de Battlestart Galactica (2004).
 
 Caprica traz uma mensagem de que...
 

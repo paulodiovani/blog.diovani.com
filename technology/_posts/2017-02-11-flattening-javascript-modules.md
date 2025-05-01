@@ -12,7 +12,7 @@ We'll be using some concepts of _Functional Programming_. If you're not familiar
 The whole idea is to turn a _fat_ code like this:
 
 ```javascript
-request.get('http://example.com', (err, res, body) => {
+request.get('https://example.com', (err, res, body) => {
     if (!error && res.statusCode == 200) {
         const content = body.replace(/(<([^>]+)>)/ig, '')
 
@@ -26,7 +26,7 @@ request.get('http://example.com', (err, res, body) => {
 To something more _flat_, like this:
 
 ```javascript
-request.get('http://example.com')
+request.get('https://example.com')
 .then(stripTags)
 .then(writeToFile)
 .then(console.log)
@@ -133,7 +133,7 @@ But the code is awfull. So how can we make it better?
 
 ## 1st -- Using promises
 
-A first step is to exchange all callbacks for promises. In this example we'll use [bluebird](http://bluebirdjs.com/) to _promisify_ standard modules (which doesn't return a promise yet) and our stream, but you can use another promise library or even native ES6 promises.
+A first step is to exchange all callbacks for promises. In this example we'll use [bluebird](https://bluebirdjs.com/) to _promisify_ standard modules (which doesn't return a promise yet) and our stream, but you can use another promise library or even native ES6 promises.
 
 The main differences are shown bellow.
 
@@ -183,7 +183,7 @@ Request.get('https://unsplash.it/list')
 Much better, right? But we still have some problems...
 
 1. There is a `forEach` inside a promise. This doesn't add results to the promises and the outer one cannot know when the processing ended.
-2. We still have a lot of indentation (promises inside promises), not much different from a _[callback hell](http://callbackhell.com/)_.
+2. We still have a lot of indentation (promises inside promises), not much different from a _[callback hell](https://callbackhell.com/)_.
 
 ## 2nd -- Use Map or FlatMap instead of forEach
 
@@ -374,5 +374,5 @@ requestImageList('https://unsplash.it/list')
 Hope it helps.
 
 [fp-js-carol]: https://blog.codeminer42.com/introduction-to-functional-programming-with-javascript-c06a2540a7c3#.pkoufdsq3 "Introduction to Functional Programming with Javascript"
-[fp-jargon]: http://git.io/fp-jargons "Functional Programming Jargon"
-[ramda]: http://ramdajs.com/ "Ramda"
+[fp-jargon]: https://git.io/fp-jargons "Functional Programming Jargon"
+[ramda]: https://ramdajs.com/ "Ramda"
