@@ -1,9 +1,9 @@
 ---
 title: Contact
-layout: post
+layout: page
 permalink: /contact/
-image: /media/2017/message_in_a_bottle_by_jrivadulla-d53o80v.jpg
-image_credits: jrivadulla.deviantart.com
+icon: fas fa-address-card
+order: 3
 ---
 
 If you want to get in touch by
