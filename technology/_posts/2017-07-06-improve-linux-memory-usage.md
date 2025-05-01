@@ -5,7 +5,7 @@ image: /media/2017/atemyram.jpg
 image_credits: linuxatemyram.com
 ---
 
-This article reunites some practices I've been using for a while to improve performance on [Arch Linux](http://archlinux.org) but will work for other distros too. Most of them related to (better) memory usage and caching.
+This article reunites some practices I've been using for a while to improve performance on [Arch Linux](https://archlinux.org) but will work for other distros too. Most of them related to (better) memory usage and caching.
 
 So, here we go.
 
@@ -187,4 +187,4 @@ References:
 - [Bcache on Arch Linux Wiki](https://wiki.archlinux.org/index.php/Bcache)
 - [Flashcache on Arch Linux Wiki](https://wiki.archlinux.org/index.php/flashcache)
 - [Why No Swap Partitions on SSD Drives? question on Stack Overflow](https://askubuntu.com/questions/652337/why-no-swap-partitions-on-ssd-drives)
-- [Optimizing Linux For Slow Computers on Akita On Rails Blog](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers)
+- [Optimizing Linux For Slow Computers on Akita On Rails Blog](https://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers)

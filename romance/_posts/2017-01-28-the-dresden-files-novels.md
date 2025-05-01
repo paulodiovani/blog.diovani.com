@@ -7,7 +7,7 @@ image_credits: Cover art from Storm Front by Chris McGrath
 
 Já faz algum tempo que venho lendo uma série de romances chamada _The Dresden Files_, do autor norte americano Jim Butcher. Resolvi escrever um pouco sobre eles, compartilhando minhas impressões.
 
-Comecei a ler estes livros por dois motivos. Primeiro, há algum tempo eu estava interessado no RPG [The Dresden Files Roleplaying Game](http://www.evilhat.com/home/dresden-files-rpg/) e sentia que precisava conhecer melhor o cenário. Segundo, como um fã de fantasia comtemporânea, estou sempre querendo conhecer novos autores e, claro, ter algo do gênero em mãos para ler. Continuo lendo -- os três primeiros volumes até agora -- por causa do segundo motivo.
+Comecei a ler estes livros por dois motivos. Primeiro, há algum tempo eu estava interessado no RPG [The Dresden Files Roleplaying Game](https://www.evilhat.com/home/dresden-files-rpg/) e sentia que precisava conhecer melhor o cenário. Segundo, como um fã de fantasia comtemporânea, estou sempre querendo conhecer novos autores e, claro, ter algo do gênero em mãos para ler. Continuo lendo -- os três primeiros volumes até agora -- por causa do segundo motivo.
 
 Para informação, o primeiro livro da sério, _Frente de Tempestade_, foi lançado no Brasil pela [Editora Underworld](https://editoraunderworld.wordpress.com/).
 

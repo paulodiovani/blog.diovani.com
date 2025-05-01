@@ -41,4 +41,4 @@ The full SCSS  and HTML code are bellow.
 </div>
 ```
 
-[so1]: http://stackoverflow.com/questions/14142378/css-filling-a-div-with-an-image-while-staying-in-proportion "CSS: filling a div with an image while staying in proportion"
+[so1]: https://stackoverflow.com/questions/14142378/css-filling-a-div-with-an-image-while-staying-in-proportion "CSS: filling a div with an image while staying in proportion"

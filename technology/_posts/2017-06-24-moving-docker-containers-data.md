@@ -3,7 +3,7 @@ layout: post
 title: Moving Docker container data around
 ---
 
-There are several methods to deal with data in [Docker](http://docker.com/) containers, since it's flexible enough to backup, move or share volumes. So, here's is a tip on how to move data around in a fast and secure way based on an experience I had.
+There are several methods to deal with data in [Docker](https://docker.com/) containers, since it's flexible enough to backup, move or share volumes. So, here's is a tip on how to move data around in a fast and secure way based on an experience I had.
 
 I've recently restored a 15G MySQL backup to a container without noticing that my docker installation (`/var/lib/docker`) was on a small disk that ended filled it up to more than 80% of it's capacity. Since the database will probably increase even more in a few months, I had to move the data elsewhere.
 
@@ -21,7 +21,7 @@ This could be achieved using `cp` from inside a container or even `docker cp`, b
 - It's more reliable to copy large files or directories and it allows _stop and resume_ if needed.
 - It provides proper progress information (with `--info=progress2`)
 
-First I will need an `rsync` container. There are some options on [Docker Hub](http://hub.docker.com) but I prefer to create my own, so here are the steps:
+First I will need an `rsync` container. There are some options on [Docker Hub](https://hub.docker.com) but I prefer to create my own, so here are the steps:
 
 ```bash
 # Create an Alpine Linux based container

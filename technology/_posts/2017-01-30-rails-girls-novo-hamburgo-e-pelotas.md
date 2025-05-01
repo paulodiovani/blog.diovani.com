@@ -13,12 +13,12 @@ Para participar basta ser mulher (cisgênera ou não) e ter curiosidade, imagina
 
 Quer saber mais? Confira os links abaixo e curta nossa página do Facebook.
 
-- Eventos no mundo: [railsgirls.com](http://railsgirls.com/)
+- Eventos no mundo: [railsgirls.com](https://railsgirls.com/)
 - Página do Rails Girls NH: [railsgirls.com/novohamburgo][rgnh]
 - Página no Facebook (curta <i class="fa fa-thumbs-up"></i>): [facebook.com/railsgirlsnh][rgfb]
-- [<i class="fa fa-photo"></i> Veja as fotos da edição 2106](http://bit.ly/RailsGirlsNH)
+- [<i class="fa fa-photo"></i> Veja as fotos da edição 2106](https://bit.ly/RailsGirlsNH)
 
-[rgnh]: http://www.railsgirls.com/novohamburgo
+[rgnh]: https://www.railsgirls.com/novohamburgo
 [rgfb]: https://www.facebook.com/railsgirlsnh
 
 ---
@@ -29,6 +29,6 @@ Ainda antes do Rails Girls NH acontece o [RG Pelotas][rgpe], nos dias **10 e 11 
 
 Confiram o [site oficial][rgpe] do evento e sua [página do facebook](https://www.facebook.com/railsgirlspelotas/).
 
-![rg-pelotas](http://www.railsgirls.com/images/pelotas/rails-girls-pelotas.jpg)
+![rg-pelotas](https://www.railsgirls.com/images/pelotas/rails-girls-pelotas.jpg)
 
-[rgpe]: http://www.railsgirls.com/pelotas.html
+[rgpe]: https://www.railsgirls.com/pelotas.html
