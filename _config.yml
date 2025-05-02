@@ -109,7 +109,7 @@ avatar: https://gravatar.com/avatar/df266efef37f3a26bd14a5657fdf2c8e19ff487468e7
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: https://gravatar.com/avatar/df266efef37f3a26bd14a5657fdf2c8e19ff487468e760df0295220086a75196?size=256
+social_preview_image: /media/blog-image.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true
