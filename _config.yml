@@ -44,10 +44,10 @@ social:
   linkedin: https://www.linkedin.com/in/paulodiovani
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/paulodiovani
     - https://mastodon.social/@paulodiovani
-    - https://twitter.com/paulodiovani
     - https://www.linkedin.com/in/paulodiovani
+    - https://twitter.com/paulodiovani
+    - https://github.com/paulodiovani
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
 
