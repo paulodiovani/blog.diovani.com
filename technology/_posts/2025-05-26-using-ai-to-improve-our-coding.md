@@ -34,7 +34,7 @@ As I mentioned, there are already plenty of tools to use AI and I don't have tim
 My entire AI toolset at the time of writing this post is composed by:
 
 - [Copilot.lua]
-- [Code Companion]
+- [CodeCompanion.nvim]
 - [Copilot CLI]
 - [Aider]
 
@@ -42,7 +42,23 @@ BTW, GitHub Copilot is a great option for those who want to start using AI devel
 
 ### Understand how AI and LLM works
 
+Although not necessary, learning the technology behind AI and LLMs helps to understand how it produces the responses we get, and how to improve the context provided during questions. For example, LLMs are created to be generalists and able to produce satisfying responses even when it doesn't have the sources for the _correct_ answer, as a result, its response is _the closest to correct_ as it can be, which may be pretty far in some cases -- we call these incorrect responses _hallucination_.
+
+The blog post [Intro to Artificial Intelligence by Beatriz Amante @ The Miners] is a good start, showing the concepts behind AI in general.
+
+Another good introduction source is the [Neural Networks playlist from 3Blue1Brown @ Youtube].
+
 ### Try different models
+
+There are several different AI models today, created from different companies or groups, and each one has its own particularities.
+
+Whenever youŕe not satisfied with an AI response or suggestion, it is a good idea to use a different model and try again. This can be easily done with GitHub Copilot Chat.
+
+When using [CodeCompanion.nvim], on the chat window type `ga` to show a selection of adapters (vendor) and models to choose from. The selected adapter and model will be used by the next chat questions.
+
+IMAGE_PLACEHOLDER
+
+In the example above I'm using Copilot Adapter, which allows to select between several models.
 
 ### Avoid unwanted suggestions
 
@@ -51,6 +67,8 @@ BTW, GitHub Copilot is a great option for those who want to start using AI devel
 ### Use AI to build small pieces that are easier to review
 
 ### Create samples for AI to follow
+
+### Use specialized non-AI tools when possible
 
 ### Don't neglect conventional sources or information
 
@@ -63,12 +81,13 @@ BTW, GitHub Copilot is a great option for those who want to start using AI devel
 - [Timeline of artificial intelligence @ Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
 - [Vibe Coding @ Wikipedia]
 - [Vibe Coding by Andrej Karpathy @ X]
+- [Changing the AI model for Copilot Chat]
 
 [A Comprehensive Guide to Vibe Coding Tools]: https://madhukarkumar.medium.com/a-comprehensive-guide-to-vibe-coding-tools-2bd35e2d7b4f
 [Aider]: https://github.com/paul-gauthier/aider
 [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]: https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age
 [Claude Code]: https://docs.anthropic.com/en/docs/claude-code/overview
-[Code Companion]: https://github.com/olimorris/codecompanion.nvim
+[CodeCompanion.nvim]: https://github.com/olimorris/codecompanion.nvim
 [Coding with GitHub Copilot by Lycas Silve @ The Miners]: https://blog.codeminer42.com/coding-with-github-copilot/
 [Copilot CLI]: https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line
 [Copilot Chat]: https://github.com/CopilotC-Nvim/CopilotChat.nvim
@@ -76,3 +95,4 @@ BTW, GitHub Copilot is a great option for those who want to start using AI devel
 [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]: https://blog.codeminer42.com/intro-to-artificial-intelligence/
 [Vibe Coding @ Wikipedia]: https://en.wikipedia.org/wiki/Vibe_coding
 [Vibe Coding by Andrej Karpathy @ X]: https://x.com/karpathy/status/1886192184808149383
+[Changing the AI model for Copilot Chat]: https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat
