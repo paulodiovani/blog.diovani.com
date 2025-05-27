@@ -23,20 +23,20 @@ It does, however, bring up new concerns, as mentioned above, and even more, like
 
 ## Using AI for software development
 
-Getting back on track, let me show you some tips and tricks on how to improve your AI tools, and how to use them as part of your existing workflow, not replacing it.
+Getting back on track, let me show you some tips and tricks on how to improve your coding with the use of AI, without letting it get in the way of thinking and logical planning that you are used to. The goal is to allow adding these tools to your existing workflow while not replacing it.
+
+The following tips are a mix of practices and configurations that, and despite the examples, should be applicable to whatever your choice of AI tools is.
 
 ### My toolset
 
-As I mentioned, there are already plenty of tools to use AI and I don't have time or resources to try all of them. So I'm limiting the examples to the ones I use for Neovim or Terminal, and include some parallel examples for VS Code when possible.
+As I mentioned, there are already plenty of tools to use AI and I don't have time or resources to try all of them. So I'm limiting the examples to the ones I use for Neovim or Terminal, and include some parallel examples for VS Code when possible. This should be enough to adapt the same ideas to other tools.
 
 My entire AI toolset at the time of writing this post is composed by:
 
 - [Copilot.lua]
-- ~~[Copilot Chat]~~
-- [Code Companion] (replacing Copilot Chat)
+- [Code Companion]
 - [Copilot CLI]
-- ~~[Claude Code]~~
-- [Aider] (replacing Claude Code)
+- [Aider]
 
 BTW, GitHub Copilot is a great option for those who want to start using AI developer tools and don't want to dig into all the options or spend money in several licenses. Copilot is especially good because it allows you to select other models without extra costs -- We will see how to do that later in this post.
 
