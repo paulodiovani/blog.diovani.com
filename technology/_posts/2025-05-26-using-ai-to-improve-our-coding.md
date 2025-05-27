@@ -19,20 +19,24 @@ As I mentioned, there are already plenty of tools to use AI and I don't have tim
 
 My entire AI toolset when writing this post is composed by:
 
-- Copilot.lua
-- ~~Copilot Chat~~
-- Code Companion (replacing Copilot Chat)
-- Copilot CLI
-- ~~Claude Code~~
-- Aider (replacing Claude Code)
+- [Copilot.lua]
+- ~~[Copilot Chat]~~
+- [Code Companion] (replacing Copilot Chat)
+- [Copilot CLI]
+- ~~[Claude Code]~~
+- [Aider] (replacing Claude Code)
 
 BTW, the GitHub Copilot is a great option for those who want to start using AI developer tools and don't want to dig into all the options or spend money in several licenses. Copilot is especially good because it allows you to select other models without extra costs -- We will see how to do that later in this post.
 
-## Sources
+## References
 
 - [Timeline of artificial intelligence @ Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
 - [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]
 
+[Aider]: https://github.com/paul-gauthier/aider
 [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]: https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age
-
-
+[Claude Code]: https://docs.anthropic.com/en/docs/claude-code/overview
+[Code Companion]: https://github.com/olimorris/codecompanion.nvim
+[Copilot CLI]: https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line
+[Copilot Chat]: https://github.com/CopilotC-Nvim/CopilotChat.nvim
+[Copilot.lua]: https://github.com/zbirenbaum/copilot.lua
