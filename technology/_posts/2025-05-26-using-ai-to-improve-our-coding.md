@@ -9,7 +9,9 @@ We are living in a transforming era for software development. Since the advent o
 
 While on one side of the coin these new tools help us be more productive, on the other, the term _Vibe Coding_ started gaining some attention and preoccupying developers and managers that our skills might not be improving or even be diminishing since the adoption of such tools.
 
-So the big question is how to leverage productivity using AI while not becoming prisoners of these tools. -- And we already have excellent articles about this topic, like [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]. -- I intend here to extend that conversation a little further, by sharing my experience and providing some practical examples on how to use AI tools on a daily basis while not being overwhelmed, distracted, or dependent on it.
+So the big question is how to leverage productivity using AI (Artificial Intelligence) while not becoming prisoners of these tools. 
+
+We already have excellent articles about this topic, like [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]. -- I intend here to extend that conversation a little further, by sharing my experience and providing some practical examples on how to use AI tools on a daily basis while not being overwhelmed, distracted, or dependent on it.
 
 ## But what is "Vibe Coding"?
 
@@ -25,7 +27,7 @@ It does, however, bring up new concerns, as mentioned above, and even more, like
 
 Getting back on track, let me show you some tips and tricks on how to improve your coding with the use of AI, without letting it get in the way of thinking and logical planning that you are used to. The goal is to allow adding these tools to your existing workflow while not replacing it.
 
-The following tips are a mix of practices and configurations that, and despite the examples, should be applicable to whatever your choice of AI tools is.
+The following tips are a mix of practices and configurations that, despite the examples, should be applicable to whatever your choice of AI tools is.
 
 ### My toolset
 
@@ -40,7 +42,7 @@ My entire AI toolset at the time of writing this post is composed by:
 
 BTW, GitHub Copilot is a great option for those who want to start using AI developer tools and don't want to dig into all the options or spend money in several licenses. Copilot is especially good because it allows you to select other models without extra costs -- We will see how to do that later in this post.
 
-### Understand how AI and LLM works
+### Learn how AI and LLM work
 
 Although not necessary, learning the technology behind AI and LLMs helps to understand how they produce their responses, and how to make better use of contexts and prompts to reach the best results.
 
@@ -63,9 +65,9 @@ When using [CodeCompanion.nvim], on the chat window type `ga` to show a selectio
 
 ![code-companion-nvim-select-model-02](/media/2025/code-companion-nvim-select-model-02.png)
 
-In the example above I'm using Copilot Adapter, which allows to select between several models.
+In the example above I'm using Copilot Adapter, which allows to select between the models GitHub Copilot has available.
 
-In VS Code, click on the model name on the Chat window to select a new one.
+In VS Code, click on the model name on the Chat window to select a different one.
 
 ![vs-code-select-model](/media/2025/vs-code-select-model.png)
 
@@ -76,12 +78,14 @@ The default Copilot usage while editing code is to suggest the next pieces of co
 
 ![copilot-ghost-text](../../media/2025/copilot-ghost-text.png)
 
-I personally feel this feature is extremely distracting, especially when pair programming with someone. So what I do is:
+This speeds up writing code at the cost of leaving fewer decisions for the developer, and maybe requiring extra effort to review, understand, and test the generated code.
+
+I personally feel this feature extremely distracting, especially when pair programming with someone. So what I do is:
 
 - Disable the auto suggestion in Copilot.lua
 - Add copilot as a completion source using [copilot-cmp]
 
-With this setting, Copilot never suggest code unless requested (typing `Ctrl+Space` in my case). The result is less distracting or intrusive, allowing me to focus on the code I'm typing, and use Copilot when I want to.
+With this setting, Copilot never suggest code unless requested (typing `Ctrl+Space` in my case). The result is less distracting or intrusive, allowing me to focus on the code I'm typing, and use Copilot only when I really want to.
 
 One great advantage of this configuration is that is places copilot suggestions side-by-side with other completion options, such as LSP or Snippets, which in most cases are just what I need -- like finding a correct method name, and not a full line or block of implementation.
 
@@ -161,13 +165,74 @@ Now Copilot Suggestions will only show when typing `Alt+\`.
 
 ### Customize and improve the System Prompt
 
-### Use AI to build small pieces that are easier to review
+Every AI Chat tool have ways to change or add to the System Prompt being used, which is usually a text or markdown file with a role and a set of instructions.
+
+By changing or improving the system prompt we can customize the responses being generated, provide extra context, and define specific rules for the AI to follow.
+
+CodeCompanion.nvim [System Prompt][Configuring the System Prompt @ CodeCompanion.nvim docs] is primarily based on the GitHub Copilot Chat's prompt but with some modifications. If can be replaced by using the following settings.
+
+```lua
+{
+  opts = {
+    system_prompt = function(opts)
+      return "My new system prompt"
+    end,
+  },
+}
+```
+
+I have been using the original one, with a few additions:
+
+```txt
+You must:
+- Always provide links to official source documentation when explaining something. Ensure the links are accurate and relevant.
+
+When suggesting next steps:
+- suggest the use of the following to follow up with changes or requests, according to the needs
+- `#lsp` to include language server information and code in the context
+- `#buffer` to include the current buffer in the context
+- `/buffer` to include other open buffers in the context
+- `@editor` to follow with changes in the current buffer
+- `@full_stack_dev` to follow with changes on the filesystem
+```
+
+VS Code doesn't allow to change system prompt directly, but you can use [instructions files][Customize chat responses in VS Code], which are placed under `.github/copilot-instructions.md` or `.github/instructions` to include additional rules.
+
+Improving the system prompt is always a work in progress. I recommend you revisit yours from time to time to add, update, or remove some instructions.
 
 ### Create samples for AI to follow
 
-### Use specialized non-AI tools when possible
+Everything is about _context_ with AI. If you provide too few context the responses will unlikely be satisfactory, but if provide too much it may take a long time to complete a task and/or easily reach your token limit. It might not be very effect creating large chinks of code either, since those might take an enormous amount of time to review and, probably, fix.
+
+For those reasons I found that it is much helpful to provide samples for AI to follow.
+
+If you're writing tests for a new function. Write the first one and let the AI create its variations.
+
+If you're creating several pure objects to represent a domain, create one or two and ask the AI to complete the collection.
+
+If you're writing long lists or enums or constants, ask the AI to fill the missing ones.
+
+By creating examples you make sure the code being written will follow your style and standards, you keep precticing and learning, while letting the AI do the repetitive work.
+
+### Prefer to use specialized non-AI tools whenever possible
+
+AI tools can excel in many things, but they are still worse than most specialized tools for certain tasks. Some strong examples are LSP (Language Server Protocol) for code completion or inspection, and linters for formatting or finding errors.
+
+When bootstrapping a new project, start with the standard generators for the framework or language to use. Rails have an entire generator tooling to make easier creating new classes. Node `npx` can initialize virtually any project with its `create-*` packages.
+
+When you see an error in your code, read the stack trace, inspect it line by line using breakpoints, debug the contents of variables. Every programming language have specialized tools to help with these tasks, such as Ruby `pry`, Javascript `debugger`, Rust `dbg!` macro, `gdb`, or `lldb`, just to mention some.
+
+When in need or a simple http server, json parser, or search utility, use `python -m http.server`, `jq`, `ripgrep`, or any other tool you are used too.
+
+All these tools are stable, tested, well maintained, reliable, and precitable. There is no need to use AI to solve problems that have already been solved in other ways.
 
 ### Don't neglect conventional sources or information
+
+And finally, don't replace conventional sources of information or study by AI responses. You will still learn more by reading documentation or even asking in [StackOverflow] (yes, it is still a thing!) or GitHub Issues.
+
+Remember, the official documentation of whatever language/framework/service/api you are using is always the source of truth and should be primary place to look. Searching the internet, especially in community sites, are a good second choice. Asking AI should be at least a third option.
+
+That is not only about learning and improving your skills, but about finding the best answer or solution to write stable and reliable code.
 
 ## References
 
@@ -181,6 +246,8 @@ Now Copilot Suggestions will only show when typing `Alt+\`.
 - [Timeline of artificial intelligence @ Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
 - [Vibe Coding @ Wikipedia](https://en.wikipedia.org/wiki/Vibe_coding)
 - [Vibe Coding by Andrej Karpathy @ X](https://x.com/karpathy/status/1886192184808149383)
+- [Configuring the System Prompt @ CodeCompanion.nvim docs]
+- [Customize chat responses in VS Code]
 
 [Aider]: https://github.com/paul-gauthier/aider
 [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]: https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age
@@ -192,3 +259,6 @@ Now Copilot Suggestions will only show when typing `Alt+\`.
 [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]: https://blog.codeminer42.com/intro-to-artificial-intelligence/
 [Lazy.nvim]: https://lazy.folke.io/
 [copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
+[Configuring the System Prompt @ CodeCompanion.nvim docs]: https://codecompanion.olimorris.dev/configuration/system-prompt.html#configuring-the-system-prompt
+[Customize chat responses in VS Code]: https://code.visualstudio.com/docs/copilot/copilot-customization#_instruction-files
+[StackOverflow]: https://stackoverflow.com/
