@@ -50,6 +50,7 @@ The blog post [Intro to Artificial Intelligence by Beatriz Amante @ The Miners] 
 
 Another good introduction source is the [Neural Networks playlist from 3Blue1Brown @ Youtube].
 
+
 ### Try different models
 
 There are several different AI models today, created from different companies or groups, and each one has its own particularities.
@@ -68,7 +69,95 @@ In VS Code, click on the model name on the Chat window to select a new one.
 
 ![vs-code-select-model](/media/2025/vs-code-select-model.png)
 
+
 ### Avoid unwanted suggestions
+
+The default Copilot usage while editing code is to suggest the next pieces of code during type as _ghost text_, allowing to accept with a keybinding (usually `Tab`) or ignore by continue typing.
+
+![copilot-ghost-text](../../media/2025/copilot-ghost-text.png)
+
+I personally feel this feature is extremely distracting, especially when pair programming with someone. So what I do is:
+
+- Disable the auto suggestion in Copilot.lua
+- Add copilot as a completion source using [copilot-cmp]
+
+With this setting, Copilot never suggest code unless requested (typing `Ctrl+Space` in my case). The result is less distracting or intrusive, allowing me to focus on the code I'm typing, and use Copilot when I want to.
+
+One great advantage of this configuration is that is places copilot suggestions side-by-side with other completion options, such as LSP or Snippets, which in most cases are just what I need -- like finding a correct method name, and not a full line or block of implementation.
+
+Here is my config (using [Lazy.nvim]) and the result.
+
+```lua
+-- Copilot configuration
+{
+  "zbirenbaum/copilot.lua",
+  dependencies = {
+    "zbirenbaum/copilot-cmp",
+  },
+
+  opts = {
+    suggestion = {
+      enabled = true,       -- set to false to completely disable suggestions
+      auto_trigger = false, -- or simply disable the auto trigger
+    },
+  },
+
+  event = {
+    'InsertEnter',
+  },
+
+  config = function(_, opts)
+    require('copilot').setup(opts)
+
+    -- Use Copilot as a cmp source
+    require('copilot_cmp').setup()
+  end,
+}
+```
+
+```lua
+-- Cmp / Completion configuration
+{
+  'hrsh7th/nvim-cmp',
+  lazy = false,
+  dependencies = {
+    'zbirenbaum/copilot-cmp',
+    -- ...other dependencies
+  },
+
+  config = function()
+    -- Set up nvim-cmp.
+    local cmp = require('cmp')
+
+    cmp.setup({
+      completion = {
+        autocomplete = false, -- show completion options only when requested
+      },
+
+      sources = cmp.config.sources({
+        -- ...other sources, lsp, snippets, etc
+        { name = 'copilot' }, -- set copilot source
+      }, {
+        -- fallback sources
+        { name = 'copilot' }, -- set copilot source
+        { name = 'buffer' },
+      }),
+    })
+  end,
+}
+```
+
+![copilot-cmp-suggestions](../../media/2025/copilot-cmp-suggestions.png)
+
+To disable auto suggestions in VS Code, edit your `settings.json` and include the following.
+
+```json
+{
+    "editor.inlineSuggest.enabled": false
+}
+```
+
+Now Copilot Suggestions will only show when typing `Alt+\`.
 
 ### Customize and improve the System Prompt
 
@@ -90,6 +179,7 @@ In VS Code, click on the model name on the Chat window to select a new one.
 - [Vibe Coding @ Wikipedia]
 - [Vibe Coding by Andrej Karpathy @ X]
 - [Changing the AI model for Copilot Chat]
+- [Changing the AI model for Copilot code completion]
 
 [A Comprehensive Guide to Vibe Coding Tools]: https://madhukarkumar.medium.com/a-comprehensive-guide-to-vibe-coding-tools-2bd35e2d7b4f
 [Aider]: https://github.com/paul-gauthier/aider
@@ -104,3 +194,6 @@ In VS Code, click on the model name on the Chat window to select a new one.
 [Vibe Coding @ Wikipedia]: https://en.wikipedia.org/wiki/Vibe_coding
 [Vibe Coding by Andrej Karpathy @ X]: https://x.com/karpathy/status/1886192184808149383
 [Changing the AI model for Copilot Chat]: https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat
+[copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
+[Lazy.nvim]: https://lazy.folke.io/
+[Changing the AI model for Copilot code completion]: https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-code-completion?tool=vscode
