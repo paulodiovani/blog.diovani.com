@@ -42,7 +42,9 @@ BTW, GitHub Copilot is a great option for those who want to start using AI devel
 
 ### Understand how AI and LLM works
 
-Although not necessary, learning the technology behind AI and LLMs helps to understand how it produces the responses we get, and how to improve the context provided during questions. For example, LLMs are created to be generalists and able to produce satisfying responses even when it doesn't have the sources for the _correct_ answer, as a result, its response is _the closest to correct_ as it can be, which may be pretty far in some cases -- we call these incorrect responses _hallucination_.
+Although not necessary, learning the technology behind AI and LLMs helps to understand how they produce their responses, and how to make better use of contexts and prompts to reach the best results.
+
+Remember that LLMs can't reason about the best way to solve a task, they just output text responses based on statistics and probabilities. They are built to be generalists, producing responses that are closest to correct as possible, which can be pretty far if the LLM haven't had he proper training for that task -- we call these incorrect responses _hallucinations_.
 
 The blog post [Intro to Artificial Intelligence by Beatriz Amante @ The Miners] is a good start, showing the concepts behind AI in general.
 
@@ -52,13 +54,19 @@ Another good introduction source is the [Neural Networks playlist from 3Blue1Bro
 
 There are several different AI models today, created from different companies or groups, and each one has its own particularities.
 
-Whenever youŕe not satisfied with an AI response or suggestion, it is a good idea to use a different model and try again. This can be easily done with GitHub Copilot Chat.
+Whenever you're not satisfied with an AI response or suggestion, it is a good idea to use a different model and try again. This can be easily done with GitHub Copilot Chat.
 
-When using [CodeCompanion.nvim], on the chat window type `ga` to show a selection of adapters (vendor) and models to choose from. The selected adapter and model will be used by the next chat questions.
+When using [CodeCompanion.nvim], on the chat window type `ga` to show a selection of adapters (the connection config to an LLM) and models to choose from. The selected adapter and model will be used by the next chat questions.
 
-IMAGE_PLACEHOLDER
+![code-companion-nvim-select-model](/media/2025/codecompanion-nvim-select-model.png)
+
+![code-companion-nvim-select-model-02](/media/2025/code-companion-nvim-select-model-02.png)
 
 In the example above I'm using Copilot Adapter, which allows to select between several models.
+
+In VS Code, click on the model name on the Chat window to select a new one.
+
+![vs-code-select-model](/media/2025/vs-code-select-model.png)
 
 ### Avoid unwanted suggestions
 
