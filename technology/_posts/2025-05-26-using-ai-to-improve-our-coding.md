@@ -171,29 +171,24 @@ Now Copilot Suggestions will only show when typing `Alt+\`.
 
 ## References
 
-- [A Comprehensive Guide to Vibe Coding Tools]
+- [A Comprehensive Guide to Vibe Coding Tools](https://madhukarkumar.medium.com/a-comprehensive-guide-to-vibe-coding-tools-2bd35e2d7b4f)
 - [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]
-- [Coding with GitHub Copilot by Lycas Silve @ The Miners]
+- [Changing the AI model for Copilot Chat](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat)
+- [Changing the AI model for Copilot code completion](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-code-completion?tool=vscode)
+- [Coding with GitHub Copilot by Lycas Silve @ The Miners](https://blog.codeminer42.com/coding-with-github-copilot/)
 - [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]
+- [My dotfiles](https://github.com/paulodiovani/dotfiles)
 - [Timeline of artificial intelligence @ Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
-- [Vibe Coding @ Wikipedia]
-- [Vibe Coding by Andrej Karpathy @ X]
-- [Changing the AI model for Copilot Chat]
-- [Changing the AI model for Copilot code completion]
+- [Vibe Coding @ Wikipedia](https://en.wikipedia.org/wiki/Vibe_coding)
+- [Vibe Coding by Andrej Karpathy @ X](https://x.com/karpathy/status/1886192184808149383)
 
-[A Comprehensive Guide to Vibe Coding Tools]: https://madhukarkumar.medium.com/a-comprehensive-guide-to-vibe-coding-tools-2bd35e2d7b4f
 [Aider]: https://github.com/paul-gauthier/aider
 [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]: https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age
 [Claude Code]: https://docs.anthropic.com/en/docs/claude-code/overview
 [CodeCompanion.nvim]: https://github.com/olimorris/codecompanion.nvim
-[Coding with GitHub Copilot by Lycas Silve @ The Miners]: https://blog.codeminer42.com/coding-with-github-copilot/
 [Copilot CLI]: https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line
 [Copilot Chat]: https://github.com/CopilotC-Nvim/CopilotChat.nvim
 [Copilot.lua]: https://github.com/zbirenbaum/copilot.lua
 [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]: https://blog.codeminer42.com/intro-to-artificial-intelligence/
-[Vibe Coding @ Wikipedia]: https://en.wikipedia.org/wiki/Vibe_coding
-[Vibe Coding by Andrej Karpathy @ X]: https://x.com/karpathy/status/1886192184808149383
-[Changing the AI model for Copilot Chat]: https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat
-[copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
 [Lazy.nvim]: https://lazy.folke.io/
-[Changing the AI model for Copilot code completion]: https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-code-completion?tool=vscode
+[copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
