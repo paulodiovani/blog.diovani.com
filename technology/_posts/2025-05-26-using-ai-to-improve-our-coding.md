@@ -5,13 +5,13 @@ image: media/2025/sean-andrews-50-i-m-scared-dave-dec-17-2017-master.jpg
 image_credits: https://www.artstation.com/artwork/n5oe6
 ---
 
-We are living in a transforming era for software development. Since the advent of LLMs (Large Language Models) being used as developer tools, starting around 2022 with OpenAI and GitHub Copilot, we have been presented with a growing number of alternatives that are both incredibly useful and disturbingly invasive for our daily workflows.
+We are living in a transforming era for software development. Since the advent of LLMs (Large Language Models) used as developer tools, starting around 2022 with OpenAI and GitHub Copilot, we have been presented with a growing number of alternatives that are both incredibly useful and disturbingly invasive for our daily workflows.
 
 While on one side of the coin these new tools help us be more productive, on the other, the term _Vibe Coding_ started gaining some attention and preoccupying developers and managers that our skills might not be improving or even be diminishing since the adoption of such tools.
 
 So the big question is how to leverage productivity using AI (Artificial Intelligence) while not becoming prisoners of these tools. 
 
-We already have excellent articles about this topic, like [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]. -- I intend here to extend that conversation a little further, by sharing my experience and providing some practical examples on how to use AI tools on a daily basis while not being overwhelmed, distracted, or dependent on it.
+We already have excellent articles about this topic, like [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]. -- What I intend here is to extend that conversation a little further, by sharing my experience and providing some practical examples on how to use AI tools on a daily basis while not being overwhelmed, distracted, or dependent on them.
 
 ## But what is "Vibe Coding"?
 
@@ -21,11 +21,11 @@ We already have excellent articles about this topic, like [Avoiding Skill Atroph
 
 The term was first introduced by [Andrej Karpathy in his tweet][Vibe Coding by Andrej Karpathy @ X] and refers to the possibility, thanks to LLMs and recent AI tools, to create computer programs without actually typing any code. For this reason, _Vibe Coding_ allows even for non-developers to write software.
 
-It does, however, bring up new concerns, as mentioned above, and even more, like distanciating the gap between a beginner and an experienced developer.
+It does, however, bring up new concerns, as mentioned above, and even more, like widening the gap between a beginner and an experienced developer.
 
 ## Using AI for software development
 
-Getting back on track, let me show you some tips and tricks on how to improve your coding with the use of AI, without letting it get in the way of thinking and logical planning that you are used to. The goal is to allow adding these tools to your existing workflow while not replacing it.
+Getting back on track, let me show you some tips and tricks to improve your coding with AI, without letting it get in the way of thinking and logical planning that you are used to. The goal is to allow adding these tools to your existing workflow while not replacing it.
 
 The following tips are a mix of practices and configurations that, despite the examples, should be applicable to whatever your choice of AI tools is.
 
@@ -46,7 +46,7 @@ BTW, GitHub Copilot is a great option for those who want to start using AI devel
 
 Although not necessary, learning the technology behind AI and LLMs helps to understand how they produce their responses, and how to make better use of contexts and prompts to reach the best results.
 
-Remember that LLMs can't reason about the best way to solve a task, they just output text responses based on statistics and probabilities. They are built to be generalists, producing responses that are closest to correct as possible, which can be pretty far if the LLM haven't had he proper training for that task -- we call these incorrect responses _hallucinations_.
+Remember that LLMs can't reason about the best way to solve a task, they just output text responses based on statistics and probabilities. They are built to be generalists, producing responses that are closest to correct as possible, which can be pretty far if the LLM hasn't had the proper training for that task -- we call these incorrect responses _hallucinations_.
 
 The blog post [Intro to Artificial Intelligence by Beatriz Amante @ The Miners] is a good start, showing the concepts behind AI in general.
 
@@ -222,7 +222,7 @@ When bootstrapping a new project, start with the standard generators for the fra
 
 When you see an error in your code, read the stack trace, inspect it line by line using breakpoints, debug the contents of variables. Every programming language have specialized tools to help with these tasks, such as Ruby `pry`, Javascript `debugger`, Rust `dbg!` macro, `gdb`, or `lldb`, just to mention some.
 
-When in need or a simple http server, json parser, or search utility, use `python -m http.server`, `jq`, `ripgrep`, or any other tool you are used too.
+When in need of a simple http server, json parser, or search utility, use `python -m http.server`, `jq`, `ripgrep`, or any other tool you are used to.
 
 All these tools are stable, tested, well maintained, reliable, and precitable. There is no need to use AI to solve problems that have already been solved in other ways.
 
@@ -248,6 +248,8 @@ That is not only about learning and improving your skills, but about finding the
 - [Timeline of artificial intelligence @ Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
 - [Vibe Coding @ Wikipedia](https://en.wikipedia.org/wiki/Vibe_coding)
 - [Vibe Coding by Andrej Karpathy @ X](https://x.com/karpathy/status/1886192184808149383)
+
+- [Header image by Sean Andrews](https://www.artstation.com/artwork/n5oe6)
 
 [Aider]: https://github.com/paul-gauthier/aider
 [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]: https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age
