@@ -241,24 +241,24 @@ That is not only about learning and improving your skills, but about finding the
 - [Changing the AI model for Copilot Chat](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-chat)
 - [Changing the AI model for Copilot code completion](https://docs.github.com/en/copilot/using-github-copilot/ai-models/changing-the-ai-model-for-copilot-code-completion?tool=vscode)
 - [Coding with GitHub Copilot by Lycas Silve @ The Miners](https://blog.codeminer42.com/coding-with-github-copilot/)
+- [Configuring the System Prompt @ CodeCompanion.nvim docs]
+- [Customize chat responses in VS Code]
 - [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]
 - [My dotfiles](https://github.com/paulodiovani/dotfiles)
 - [Timeline of artificial intelligence @ Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
 - [Vibe Coding @ Wikipedia](https://en.wikipedia.org/wiki/Vibe_coding)
 - [Vibe Coding by Andrej Karpathy @ X](https://x.com/karpathy/status/1886192184808149383)
-- [Configuring the System Prompt @ CodeCompanion.nvim docs]
-- [Customize chat responses in VS Code]
 
 [Aider]: https://github.com/paul-gauthier/aider
 [Avoiding Skill Atrophy in the Age of AI by Addy Osmani]: https://addyo.substack.com/p/avoiding-skill-atrophy-in-the-age
 [Claude Code]: https://docs.anthropic.com/en/docs/claude-code/overview
 [CodeCompanion.nvim]: https://github.com/olimorris/codecompanion.nvim
+[Configuring the System Prompt @ CodeCompanion.nvim docs]: https://codecompanion.olimorris.dev/configuration/system-prompt.html#configuring-the-system-prompt
 [Copilot CLI]: https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line
 [Copilot Chat]: https://github.com/CopilotC-Nvim/CopilotChat.nvim
 [Copilot.lua]: https://github.com/zbirenbaum/copilot.lua
+[Customize chat responses in VS Code]: https://code.visualstudio.com/docs/copilot/copilot-customization#_instruction-files
 [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]: https://blog.codeminer42.com/intro-to-artificial-intelligence/
 [Lazy.nvim]: https://lazy.folke.io/
-[copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
-[Configuring the System Prompt @ CodeCompanion.nvim docs]: https://codecompanion.olimorris.dev/configuration/system-prompt.html#configuring-the-system-prompt
-[Customize chat responses in VS Code]: https://code.visualstudio.com/docs/copilot/copilot-customization#_instruction-files
 [StackOverflow]: https://stackoverflow.com/
+[copilot-cmp]: https://github.com/zbirenbaum/copilot-cmp
