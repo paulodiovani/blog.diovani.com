@@ -37,10 +37,10 @@ As I mentioned, there are already plenty of tools to use AI and I don't have tim
 
 My entire AI toolset at the time of writing this post is composed of:
 
-- [Copilot.lua] (with [copilot-cmp])
-- [CodeCompanion.nvim]
-- [Copilot CLI]
-- [Aider]
+- [Copilot.lua] (with [copilot-cmp]) for code suggestions
+- [CodeCompanion.nvim] for chat window
+- [Copilot CLI] for terminal commands help
+- [Aider] for chat in terminal
 
 BTW, GitHub Copilot is a great option for those who want to start using AI developer tools and don't want to dig into all the options or spend money in several licenses. Copilot is especially good because it allows you to select other models without additional cost -- We will see how to do that later in this post.
 
