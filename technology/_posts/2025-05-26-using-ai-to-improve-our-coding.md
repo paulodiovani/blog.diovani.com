@@ -210,6 +210,16 @@ If you're writing long lists or enums or constants, ask the AI to fill the missi
 
 By creating examples you make sure the code being written will follow your style and standards, you keep precticing and learning, while letting the AI do the repetitive work.
 
+### Use AI chat outside of your editor
+
+Having an AI chat window as part of your editor is very suitable, but can also condition us to use for almost everything.
+
+By using an AI chat outside of the editor, such as [Copilot CLI] or [Aider] in the terminal, or even a browser interface, you can force yourself to step out of your conforting zone and dissociate the AI usage from other programming tasks.
+
+![copilot-cli-example](../../media/2025/copilot-cli-example.png)
+
+With this, you will be training your brain to not rely too much on AI while programming by introducing a minor obstacle. As a result you might find out that searching the internet or reading a `man` page can be faster or more productive than using the AI.
+
 ### Prefer to use specialized non-AI tools whenever possible
 
 AI tools can excel in many things, but they are still worse than most specialized tools for certain tasks. Some strong examples are LSP (Language Server Protocol) for code completion or inspection, and linters for formatting or finding errors.
@@ -229,6 +239,12 @@ And finally, don't replace conventional sources of information or study by AI re
 Remember, the official documentation of whatever language/framework/service/api you are using is always the source of truth and should be primary place to look. Searching the internet, especially in community sites, are a good second choice. Asking AI should be at least a third option.
 
 That is not only about learning and improving your skills, but about finding the best answer or solution to write stable and reliable code.
+
+## Conclusion
+
+I have seen a lot of people advocating to use _vibe coding_, from non-technical people who just want some small projects done, to experienced developers who are changing their work to _ai first_. There is no problem with that, but we must be mindful that AI produced code is not better than any code created by humans.
+
+I hope this post can make that more clear and help developers who are feeling overwhelmed by all these AI options to adopt and use them in a more subtle way, while keeping their confidence.
 
 ## References
 
