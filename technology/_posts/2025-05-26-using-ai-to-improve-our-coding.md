@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using AI to become a better developer
+title: How to use AI to become a better software developer without feeling overwhelmed
 image: media/2025/sean-andrews-50-i-m-scared-dave-dec-17-2017-master.jpg
 image_credits: https://www.artstation.com/artwork/n5oe6
 ---
@@ -230,11 +230,17 @@ When you see an error in your code, read the stack trace, inspect it line by lin
 
 When in need of a simple http server, json parser, or search utility, use `python -m http.server`, `jq`, `ripgrep`, or any other tool you are used to.
 
+Here is a sample of error output from `cargo check`, which not only shows the error but how to fix it.
+
+![cargo-check-example](../../media/2025/cargo-check-example.png)
+
 All these tools are stable, tested, well maintained, reliable, and precitable. There is no need to use AI to solve problems that have already been solved in other ways.
 
 ### Don't neglect conventional sources or information
 
 And finally, don't replace conventional sources of information or study by AI responses. You will still learn more by reading documentation or even asking in [StackOverflow] (yes, it is still a thing!) or GitHub Issues.
+
+![stack-overflow-screenshot](../../media/2025/stack-overflow-screenshot.png)
 
 Remember, the official documentation of whatever language/framework/service/api you are using is always the source of truth and should be primary place to look. Searching the internet, especially in community sites, are a good second choice. Asking AI should be at least a third option.
 
