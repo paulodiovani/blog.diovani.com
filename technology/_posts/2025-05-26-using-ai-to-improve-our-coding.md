@@ -264,6 +264,7 @@ I hope this post can make that clearer and help developers who are feeling overw
 - [Customize chat responses in VS Code]
 - [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]
 - [My dotfiles](https://github.com/paulodiovani/dotfiles)
+- [Neural Networks playlist from 3Blue1Brown @ Youtube]
 - [Timeline of artificial intelligence @ Wikipedia](https://en.wikipedia.org/wiki/Timeline_of_artificial_intelligence)
 - [Vibe Coding @ Wikipedia]
 - [Vibe Coding by Andrej Karpathy @ X]
@@ -282,6 +283,7 @@ I hope this post can make that clearer and help developers who are feeling overw
 [Customize chat responses in VS Code]: https://code.visualstudio.com/docs/copilot/copilot-customization#_instruction-files
 [Intro to Artificial Intelligence by Beatriz Amante @ The Miners]: https://blog.codeminer42.com/intro-to-artificial-intelligence/
 [Lazy.nvim]: https://lazy.folke.io/
+[Neural Networks playlist from 3Blue1Brown @ Youtube]: https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=8xHcovTfrDMSj0cX
 [StackOverflow]: https://stackoverflow.com/
 [Vibe Coding @ Wikipedia]: https://en.wikipedia.org/wiki/Vibe_coding
 [Vibe Coding by Andrej Karpathy @ X]: https://x.com/karpathy/status/1886192184808149383
