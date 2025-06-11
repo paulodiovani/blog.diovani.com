@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Black Mirror S03E04 &ndash; San Junipero
-image: /media/2017/black-mirror-s03e04.jpg
+image: /assets/media/2017/black-mirror-s03e04.jpg
 image_credits: Netflix
 ---
 

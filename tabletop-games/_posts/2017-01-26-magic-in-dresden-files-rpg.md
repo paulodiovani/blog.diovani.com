@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Magia em Dresden Files RPG
-image: /media/2017/dresden_and_the_denarian_by_dsillustration-d6t3lvm.jpg
+image: /assets/media/2017/dresden_and_the_denarian_by_dsillustration-d6t3lvm.jpg
 image_credits: dsillustration.deviantart.com
 ---
 

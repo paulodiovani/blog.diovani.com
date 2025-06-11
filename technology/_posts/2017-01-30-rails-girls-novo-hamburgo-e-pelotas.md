@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rails Girls Novo Hamburgo
-image: /media/2017/rails-girls-header.jpg
+image: /assets/media/2017/rails-girls-header.jpg
 image_credits: railsgirls.com
 ---
 

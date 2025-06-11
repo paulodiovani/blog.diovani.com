@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Contained header images
-image: /media/2017/yuffie-eye.jpg
+image: /assets/media/2017/yuffie-eye.jpg
 image_credits: diovani.com
 ---
 

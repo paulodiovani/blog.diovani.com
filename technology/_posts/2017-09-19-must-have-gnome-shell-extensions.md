@@ -62,7 +62,7 @@ I still haven't find, however, a good _latest news_ and _Medium_ extension so I'
 considering to create one myself. Tell me if you have any recommendations.
 
 [tweak]: https://wiki.gnome.org/action/show/Apps/GnomeTweakTool
-[tweak-screenshot]: /media/2017/gnome-tweak-tool.jpg
+[tweak-screenshot]: /assets/media/2017/gnome-tweak-tool.jpg
 [extensions]: https://extensions.gnome.org
 [extensions-wiki]: https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation
 [extensions-aur]: https://aur.archlinux.org/packages/?O=0&K=gnome-shell-extension

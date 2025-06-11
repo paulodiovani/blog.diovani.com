@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to Improve Linux performance and memory usage?
-image: /media/2017/atemyram.jpg
+image: /assets/media/2017/atemyram.jpg
 image_credits: linuxatemyram.com
 ---
 
