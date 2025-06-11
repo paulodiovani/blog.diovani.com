@@ -1,7 +1,7 @@
 ---
 layout: post
 title: About new Apple container and alternatives
-image: ../../assets/media/2025-06-11-apple-container-and-colima/2025-06-11-14-52-20.png
+image: /assets/media/2025-06-11-apple-container-and-colima/2025-06-11-14-52-20.png
 image_credits: https://itoldya420.getarchive.net/amp/media/farm-apples-orchard-nature-landscapes-a34f35
 ---
 
