@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Should I migrate to Yarn?
-image: /media/2017/yarn-logo.png
+image: /assets/media/2017/yarn-logo.png
 image_credits: yarnpkg.com
 ---
 

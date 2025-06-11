@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Os arquivos de Dresden
-image: /media/2017/jim-butcher-storm-front.jpg
+image: /assets/media/2017/jim-butcher-storm-front.jpg
 image_credits: Cover art from Storm Front by Chris McGrath
 ---
 

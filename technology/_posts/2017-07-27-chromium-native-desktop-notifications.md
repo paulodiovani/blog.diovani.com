@@ -17,7 +17,7 @@ Here's how:
 
 Now you can see chrome notifications just as native apps notifications.
 
-![native-notification](/media/2017/chromium-native-notifications.jpg)
+![native-notification](/assets/media/2017/chromium-native-notifications.jpg)
 
 References:
 

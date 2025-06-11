@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Parallel tests with AVA
-image: /media/2017/ava-header.png
+image: /assets/media/2017/ava-header.png
 image_credits: ava.li
 ---
 

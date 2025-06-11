@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Flattening JS Modules
-image: /media/2017/flat-belly-secrets.jpg
+image: /assets/media/2017/flat-belly-secrets.jpg
 image_credits: timesnowindia.com
 ---
 
@@ -127,7 +127,7 @@ In short, the script download random images and add the author/photographer and 
 
 The result is something like this.
 
-![annotated image](/media/2017/sparkler-light-darkness.jpg)
+![annotated image](/assets/media/2017/sparkler-light-darkness.jpg)
 
 But the code is awfull. So how can we make it better?
 
