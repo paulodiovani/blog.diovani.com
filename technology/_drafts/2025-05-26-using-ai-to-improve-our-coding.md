@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to use AI to become a better software developer without feeling overwhelmed
-image: media/2025/sean-andrews-50-i-m-scared-dave-dec-17-2017-master.jpg
+image: /assets/media/2025-05-26-using-ai-to-improve-our-coding/sean-andrews-50-i-m-scared-dave-dec-17-2017-master.jpg
 image_credits: https://www.artstation.com/artwork/n5oe6
 ---
 
@@ -63,22 +63,22 @@ Whenever you're not satisfied with an AI response or suggestion, it is a good id
 
 When using [CodeCompanion.nvim], on the chat window type `ga` to show a selection of adapters (the connection config to an LLM) and models to choose from. The selected adapter and model will be used for the next chat questions.
 
-![code-companion-nvim-select-model](/media/2025/codecompanion-nvim-select-model.png)
+![code-companion-nvim-select-model](/assets/media/2025-05-26-using-ai-to-improve-our-coding/codecompanion-nvim-select-model.png)
 
-![code-companion-nvim-select-model-02](/media/2025/code-companion-nvim-select-model-02.png)
+![code-companion-nvim-select-model-02](/assets/media/2025-05-26-using-ai-to-improve-our-coding/code-companion-nvim-select-model-02.png)
 
 In the example above I'm using Copilot Adapter, which allows to select between the models GitHub Copilot has available.
 
 In VS Code, click on the model name on the Chat window to select a different one.
 
-![vs-code-select-model](/media/2025/vs-code-select-model.png)
+![vs-code-select-model](/assets/media/2025-05-26-using-ai-to-improve-our-coding/vs-code-select-model.png)
 
 
 ### Avoid unwanted suggestions
 
 The default Copilot usage while editing code is to suggest the next pieces of code while typing as _ghost text_, allowing to accept with a keybinding (usually `Tab`) or ignore by continue typing.
 
-![copilot-ghost-text](../../media/2025/copilot-ghost-text.png)
+![copilot-ghost-text](/assets/media/2025-05-26-using-ai-to-improve-our-coding/copilot-ghost-text.png)
 
 This speeds up writing code at the cost of leaving fewer decisions to the developer, and maybe requiring extra effort to review, understand, and test the generated code.
 
@@ -120,7 +120,7 @@ Here is my config.
 
 ...and the result.
 
-![copilot-cmp-suggestions](../../media/2025/copilot-cmp-suggestions.png)
+![copilot-cmp-suggestions](../../assets/media/2025-05-26-using-ai-to-improve-our-coding/copilot-cmp-suggestions.png)
 
 To disable auto suggestions in VS Code, edit your `settings.json` and include the following.
 
@@ -200,7 +200,7 @@ mod test {
 
 Once I have written an example, we can ask the AI to continue.
 
-![ai-coding-by-example](../../media/2025/ai-coding-by-example.png)
+![ai-coding-by-example](../../assets/media/2025-05-26-using-ai-to-improve-our-coding/ai-coding-by-example.png)
 
 If you're writing tests for a new function, write the first one and let the AI create its variations.
 
@@ -216,7 +216,7 @@ Having an AI chat window as part of your editor is very convenient, but can also
 
 By using an AI chat outside of the editor, such as [Copilot CLI] or [Aider] in the terminal, or even a browser interface, you can force yourself to step out of your comfort zone and dissociate the AI use from other programming tasks.
 
-![copilot-cli-example](../../media/2025/copilot-cli-example.png)
+![copilot-cli-example](../../assets/media/2025-05-26-using-ai-to-improve-our-coding/copilot-cli-example.png)
 
 With this, you will be training your brain to not rely too much on AI while programming by introducing a minor obstacle. As a result, you might find that searching the internet or reading a `man` page can be faster or more productive than using the AI.
 
@@ -232,7 +232,7 @@ When in need of a simple http server, json parser, or search utility, use `pytho
 
 Here is a sample of error output from `cargo check`, which not only shows the error but how to fix it.
 
-![cargo-check-example](../../media/2025/cargo-check-example.png)
+![cargo-check-example](../../assets/media/2025-05-26-using-ai-to-improve-our-coding/cargo-check-example.png)
 
 All these tools are stable, tested, well-maintained, reliable, and predictable. There is no need to use AI to solve problems that have already been solved in other ways.
 
@@ -240,7 +240,7 @@ And finally, don't neglect conventional sources of information
 
 And finally, don't replace conventional sources of information or study with AI responses. You will still learn more by reading documentation or even asking in [StackOverflow] (yes, it is still a thing!) or GitHub Issues.
 
-![stack-overflow-screenshot](../../media/2025/stack-overflow-screenshot.png)
+![stack-overflow-screenshot](../../assets/media/2025-05-26-using-ai-to-improve-our-coding/stack-overflow-screenshot.png)
 
 Remember, the official documentation of whatever language/framework/service/api you are using is always the source of truth and should be the primary place to look. Searching the internet, especially on community sites, is a good second choice. Asking AI should be at least a third option.
 
