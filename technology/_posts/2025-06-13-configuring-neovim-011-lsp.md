@@ -130,7 +130,7 @@ To view other configuration options, check `:help lsp-config`.
 
 Restart your Neovim and run `:checkhealth vim.lsp` to confirm it is active.
 
-![neovim-lsp-active](../../assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-lsp-active.png)
+![neovim-lsp-active](/assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-lsp-active.png)
 
 #### 5. Usage
 
@@ -142,7 +142,7 @@ Neovim LSP includes some mappings by default.
 
 Check other default mappings with `:help lsp-defaults`.
 
-![neovim-lsp-autocomplete](../../assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-lsp-autocomplete.png)
+![neovim-lsp-autocomplete](/assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-lsp-autocomplete.png)
 
 You might want to create some extra mappings of your own, I have these, for example:
 
