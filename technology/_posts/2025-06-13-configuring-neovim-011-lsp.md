@@ -39,7 +39,7 @@ More details on how LSP works can be found in the [LSP overview page].
 
 ### A brief history
 
-Before LSP features were introduced in Neovim 0.5, users would have to rely on plugins for that. Two excellent options were [Conquer of Completion] and [ALE] (which also supports `Vim`). These plugins had their own completion/diagnostics implementation and also included LSP features when they became popular. Both still work today, still being used by a lot of people.
+Before LSP features were introduced in Neovim 0.5, users would have to rely on plugins for that. Two excellent options were [Conquer of Completion] and [ALE] (which also supports `Vim`). These plugins had their own completion/diagnostics implementation and also included LSP features when they became popular. Both still work today, being used by a lot of people.
 
 When Neovim introduced basic [LSP features in 0.5.0], integration with Language Servers became much easier, requiring just configuration to be used. These configurations were usually managed by the [nvim-lspconfig] plugin, which until its version 2.0.0 was the standard way to configure LSP Clients on Neovim. -- I myself have migrated from ALE, which I used to have in `Vim`, to the built-in LSP using `nvim-lspconfig` some years ago.
 
@@ -51,9 +51,9 @@ The built-in LSP evolved over time, adding more features and fixing issues, unti
 
 To configure Neovim LSP from scratch, we will be using a clean installation.
 
-> To allow experimenting without affecting existing configurations you can use a different config file (`neovim -U ~/.config/nvim-alternative.lua`) or run from a docker container (`docker run --rm -it archlinux bash`).
+> To allow experimenting without affecting existing configurations you can use a different config file (`nvim -u ~/.config/nvim-alternative.lua`) or run from a docker container (`docker run --rm -it archlinux bash`).
 
-#### 1. Install Neovim and any wanted language servers
+#### 1. Install Neovim and any desired language servers
 
 First we need to install `neovim` (if you haven't yet) and the desired language servers. I'll use `typescript-language-server` for the following examples.
 
@@ -91,10 +91,6 @@ nvim
 Although not necessary, you might want to select a different color scheme for a better look. Neovim includes some by default, you can use one of them or install a different one.
 
 Create a file at `~/.config/nvim/init.lua` and include these lines.
-
-```bash
-nvim ~/.config/nvim/init.lua
-```
 
 ```lua
 -- Neovim config
@@ -148,7 +144,7 @@ Check other default mappings with `:help lsp-defaults`.
 You might want to create some extra mappings of your own, I have these, for example:
 
 ```vim
-" code completion with omni function
+" use ctrl+space for code completion with omni function
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
 ```
