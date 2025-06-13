@@ -165,7 +165,7 @@ This is all that you really need to start using LSP with Neovim 0.11, without an
 However, some plugins might be really useful to help set up or configure LSP clients. Here are some of them, with a brief explanation.
 
 - [nvim-lspconfig] is still a good choice, as it provides default configuration for several LSP Clients.
-- [mason.nvim] and [mason-lspconfig] allows installing and configuring Language Server from within Neovim.
+- [mason.nvim] and [mason-lspconfig.nvim] allows installing and configuring Language Server from within Neovim.
 - [nvim-cmp] and [nvim-cmp-lsp] provides extra completion features with a better UI.
 - [fzf-lua] or [telescope.nvim] can use custom pickers for code actions or other selectable options.
 
