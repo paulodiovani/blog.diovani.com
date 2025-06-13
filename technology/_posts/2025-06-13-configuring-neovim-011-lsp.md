@@ -38,7 +38,17 @@ More details on how LSP works can be read in the [LSP overview page].
 
 ### A brief history
 
-### Step by step config using Neovim 0.11
+Before LSP features have been introduced in Neovim 0.5, users would have to rely on plugins for that. Two excellent options at where [Conquer of Completion] and [ALE] (which also supports `Vim`). These plugins had their own completion/diagnostics implementation and also included LSP features when they became popular. Both still works by today, still being used by a lot of people.
+
+When Neovim introduced basic [LSP features in 0.5.0], integration with Language Servers became much easier, requiring just configurations to be used. These configurations were usually held by the [nvim-lspconfig] plugin, which until its version 2.0.0 was the standard way to configure LSP Clients on Neovim. -- I myself have migrated from ALE, which I used to have in `Vim`, to the built-in LSP using `nvim-lspconfig` some years ago.
+
+The build LSP evolved over time, adding more features and fixing issues, until finally in version `0.11` it is fully supported, not requiring any extra plugin. Although `nvim-lspconfig` can still be used to provide standard configurations for various language servers, as we can read in their README:
+
+> nvim-lspconfig is a "data only" repo, providing basic, default Nvim LSP client configurations for various LSP servers.
+
+### Step-by-step configuration using Neovim 0.11
+
+### Extra plugins and configurations
 
 ## Conclusion
 
@@ -53,7 +63,10 @@ More details on how LSP works can be read in the [LSP overview page].
 - [What's New in Neovim 0.11]
 - [feat(lsp): add vim.lsp.config and vim.lsp.enable neovim#31031]
 
+[ALE]: https://github.com/dense-analysis/ale
+[Conquer of Completion]: https://github.com/neoclide/coc.nvim
 [LSP & Neovim; A Retrospective!]: https://www.vikasraj.dev/blog/lsp-neovim-retrospective
+[LSP features in 0.5.0]: https://github.com/neovim/neovim/commit/a5ac2f45ff84a688a09479f357a9909d5b914294
 [LSP overview page]: https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/
 [Language Server Protocol @ Wikipedia]: https://en.wikipedia.org/wiki/Language_Server_Protocol
 [Migrate to vim.lsp.config (non-breaking) nvim-lspconfig#3483]: https://github.com/neovim/nvim-lspconfig/issues/3494
@@ -62,3 +75,4 @@ More details on how LSP works can be read in the [LSP overview page].
 [Official page for Language Server Protocol]: https://microsoft.github.io/language-server-protocol/
 [What's New in Neovim 0.11]: https://gpanders.com/blog/whats-new-in-neovim-0-11/
 [feat(lsp): add vim.lsp.config and vim.lsp.enable neovim#31031]:  https://github.com/neovim/neovim/pull/31031
+[nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
