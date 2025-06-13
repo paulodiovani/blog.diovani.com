@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Configuring Neovim 0.11 LSP from scratch
+image: /assets/media/2025-06-13-configuring-neovim-011-lsp/cover-image.png
 ---
 
 With the release of [Neovim 0.11] in March 2025, it now includes full LSP support, requiring only that:
