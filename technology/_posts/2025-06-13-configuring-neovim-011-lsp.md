@@ -53,7 +53,7 @@ To configure Neovim LSP from scratch, we will be using a clean installation.
 
 > To allow experimenting without affecting existing configurations you can use a different config file (`nvim -u ~/.config/nvim-alternative.lua`) or run from a docker container (`docker run --rm -it archlinux bash`).
 
-#### 1. Install Neovim and any wanted language servers
+#### 1. Install Neovim and any desired language servers
 
 First we need to install `neovim` (if you haven't yet) and the desired language servers. I'll use `typescript-language-server` for the following examples.
 
@@ -91,10 +91,6 @@ nvim
 Although not necessary, you might want to select a different color scheme for a better look. Neovim includes some by default, you can use one of them or install a different one.
 
 Create a file at `~/.config/nvim/init.lua` and include these lines.
-
-```bash
-nvim ~/.config/nvim/init.lua
-```
 
 ```lua
 -- Neovim config
@@ -148,7 +144,7 @@ Check other default mappings with `:help lsp-defaults`.
 You might want to create some extra mappings of your own, I have these, for example:
 
 ```vim
-" code completion with omni function
+" use ctrl+space for code completion with omni function
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
 ```
