@@ -5,7 +5,7 @@ title: Configuring Neovim 0.11 LSP from scratch
 
 With the release of [Neovim 0.11] in March 2025, it now includes full LSP support, requiring only that:
 
-1. A Language Server is available and running
+1. A Language Server is available on the host
 2. The respective LSP client is enabled (and optionally configured)
 
 This makes much easier to configure LSP clients, without the need of any extra plugins -- Although some might still be useful.
@@ -30,7 +30,7 @@ Below is an example for how a tool and a language server communicate during a ro
 
 ![lsp-json-rpc](/assets/media/2025-06-13-configuring-neovim-011-lsp/lsp-json-rpc.png)
 
-Of course, the language server must have been installed first, but this can be handled automatically by editor plugins. Some popular Language Servers are `typescript-language-server` (Typescript/JavaScript), `solargraph` (Ruby), `rust-analyzer` (Rust), and `pyright`(Python), just to mention some.
+Of course, the language server must have been installed first, but this can be handled automatically by editor plugins. Some popular Language Servers are `typescript-language-server` (Typescript/JavaScript), `solargraph` (Ruby), `rust-analyzer` (Rust), and `pyright`(Python), just to mention some. Once installed, the editor or plugin will start the server on demand.
 
 More details on how LSP works can be read in the [LSP overview page].
 
@@ -48,9 +48,131 @@ The build LSP evolved over time, adding more features and fixing issues, until f
 
 ### Step-by-step configuration using Neovim 0.11
 
+To configure Neovim LSP from scratch, we will be using a clean installation.
+
+> To allow experimenting without affecting existing configurations you can use a different config file (`neovim -U ~/.config/nvim-alternative.lua`) or run from a docker container (`docker run --rm -it archlinux bash`).
+
+#### 1. Install Neovim and any wanted language servers
+
+First we need to install `neovim` (if you haven't yet) and the wanted language servers. I'll use `typescript-language-server` for the following examples.
+
+```bash
+# install on Arch Linux
+# check the command for your distribution
+pacman -Sy git neovim nodejs npm typescript-language-server
+
+# Check if we have Neovim v0.11 or newer
+nvim --version
+```
+
+#### 2. Get a Node.js/Typescript project for testing
+
+To be able to test, we need a typescript project. Any project would do, so if you don't have a project at hand, fetch some open source one, such as the old [microsoft/TypeScript-Node-Starter].
+
+```bash
+git clone https://github.com/microsoft/TypeScript-Node-Starter.git typescript-project
+cd typescript-project
+npm install
+```
+
+Feel free to check the project.
+
+```bash
+nvim
+# in Neovim, open Netrw
+:30 Lexplore
+```
+
+![neovim-ts-project](/assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-ts-project.png)
+
+#### 3. Use a different color scheme
+
+Although not necessary, you might want to select a different color scheme for better look. Neovim include some by default, you can use one of them or install a different one.
+
+Create a file at `~/.config/nvim/init.lua` and include these lines.
+
+```bash
+nvim ~/.config/nvim/init.lua
+```
+
+```lua
+-- Neovim config
+
+-- Set colorscheme
+vim.cmd [[colorscheme unokai]]
+```
+
+![neovim-unokai-colorscheme](/assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-unokai-colorscheme.png)
+
+#### 4. Configure and initialize the LSP Client
+
+Now, include these lines in the `~/.config/nvim/init.lua`.
+
+```lua
+-- Configure LSP clients
+
+-- Set default root market for all clients
+vim.lsp.config('*', {
+  root_markets = { '.git' },
+})
+
+-- Set configuration for typescript language server
+vim.lsp.config('ts_ls', {
+  cmd = { 'typescript-language-server', '--stdio' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+})
+
+-- Enable Typscript Language Server
+vim.lsp.enable('ts_ls')
+```
+
+To view other configuration options, check `:help lsp-config`.
+
+Restart your Neovim and run `:checkhealth vim.lsp` to confirm it is active.
+
+![neovim-lsp-active](../../assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-lsp-active.png)
+
+#### 5. Usage
+
+Neovim LSP includes some mappings by default.
+
+- Hover `K`
+- Autocomplete (omnifunc) `ctrl+x ctrl+o`
+- Code actions `gra`
+
+Check other default mappings with `:help lsp-defaults`.
+
+![neovim-lsp-autocomplete](../../assets/media/2025-06-13-configuring-neovim-011-lsp/neovim-lsp-autocomplete.png)
+
+You might want to create some extra mappings for your own, I have these, for example:
+
+```vim
+" code completion with omni function
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-x><C-o>
+```
+
+```lua
+vim.keymap.set("n", "gD", vim.lsp.buf.definition, { desc = "LSP: Go to definition" })
+vim.keymap.set("n", "grt", vim.lsp.buf.type_definition, { desc = "LSP: Type Definition" })
+```
+
 ### Extra plugins and configurations
 
+This is all that you really need to start using LSP with Neovim 0.11, without any extra plugins.
+
+However, some plugins might be really useful to help set up or configure LSP clients. Here are some of them with a brief explanation.
+
+- [nvim-lspconfig] is still a good choice, as it provides default configuration for several LSP Clients.
+- [mason.nvim] and [mason-lspconfig] allows installing and configure Language Server from within Neovim.
+- [nvim-cmp] and [nvim-cmp-lsp] provides extra completion features with a better UI.
+- [fzf-lua] or [telescope.nvim] can use custom pickers for code actions or other selectable options.
+
 ## Conclusion
+
+The intention of this article is to both show how Neovim 0.11 can use Language Server without any extra config, and to provide a concise way to set up LSP clients, allowing users to either start from scratch or migrate their old setups without digging into specific migration guides.
+
+But if you have an old setup that still works, think twice before migrating. Built-in Neovim LSP might have a simpler setup or even be faster, but it is not a required upgrade while alternative plugins are not deprecated.
 
 ## Sources and references
 
@@ -75,4 +197,11 @@ The build LSP evolved over time, adding more features and fixing issues, until f
 [Official page for Language Server Protocol]: https://microsoft.github.io/language-server-protocol/
 [What's New in Neovim 0.11]: https://gpanders.com/blog/whats-new-in-neovim-0-11/
 [feat(lsp): add vim.lsp.config and vim.lsp.enable neovim#31031]:  https://github.com/neovim/neovim/pull/31031
+[fzf-lua]: https://github.com/ibhagwan/fzf-lua
+[mason-lspconfig.nvim]: https://github.com/mason-org/mason-lspconfig.nvim
+[mason.nvim]: https://github.com/mason-org/mason.nvim
+[microsoft/TypeScript-Node-Starter]: https://github.com/microsoft/TypeScript-Node-Starter
+[nvim-cmp-lsp]: https://github.com/hrsh7th/cmp-nvim-lsp
+[nvim-cmp]: https://github.com/hrsh7th/nvim-cmp
 [nvim-lspconfig]: https://github.com/neovim/nvim-lspconfig
+[telescope.nvim]: https://github.com/nvim-telescope/telescope.nvim
