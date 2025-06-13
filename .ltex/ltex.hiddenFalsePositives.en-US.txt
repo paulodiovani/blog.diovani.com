@@ -1,0 +1,10 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QLanguage Server Protocol @ Wikipedia\nMigrate to vim.lsp.config (non-breaking) nvim-lspconfig#3483\nNeovim 0.11 features\nNeovim 0.11\nOfficial page for Language Server Protocol\nWhat's New in Neovim 0.11\nfeat(lsp): add vim.lsp.config and vim.lsp.enable neovim#31031\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qlsp-json-rpc\\E$"}
+{"rule":"WHEN_WHERE","sentence":"^\\QTwo excellent plugins at the time where Conquer of Completion and ALE (which also supports \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Q).\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAnyone would do, so if you don't have a project at hand, fetch some open source one, such as the old microsoft/TypeScript-Node-Starter\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAnyone would do, so if you don't have a project at hand, fetch some open source one, such as the old microsoft/TypeScript-Node-Starter.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qneovim-ts-project\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qneovim-lsp-autocomplete\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qmason.nvim and mason-lspconfig allows installing and configure Language Server from within Neovim.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qneovim-unokai-colorscheme\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAny project would do, so if you don't have a project at hand, fetch some open source one, such as the old microsoft/TypeScript-Node-Starter.\\E$"}

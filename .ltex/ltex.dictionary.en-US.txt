@@ -1,0 +1,10 @@
+Codenvy
+nvim-lspconfig
+Nvim
+neovim-lsp-active
+omnifunc
+nvim-cmp
+nvim-cmp-lsp
+nvim
+mason-lspconfig
+fzf-lua
