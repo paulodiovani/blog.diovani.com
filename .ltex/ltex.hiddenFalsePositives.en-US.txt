@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QLanguage Server Protocol @ Wikipedia\nMigrate to vim.lsp.config (non-breaking) nvim-lspconfig#3483\nNeovim 0.11 features\nNeovim 0.11\nOfficial page for Language Server Protocol\nWhat's New in Neovim 0.11\nfeat(lsp): add vim.lsp.config and vim.lsp.enable neovim#31031\\E$"}
