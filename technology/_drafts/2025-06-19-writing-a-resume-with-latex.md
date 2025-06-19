@@ -67,6 +67,10 @@ Now editor you version to
   \begin{center}
     \huge \textbf{Tony Stark}
   \end{center}
+
+  New York, NY • tony@starkindustries.com • (212) 555-IRON \\
+  www.starkindustries.com \\
+  LinkedIn: /tonystark • GitHub: /ironmantech
 \end{document}
 ```
 
@@ -95,6 +99,10 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
   \begin{center}
     \huge \textbf{Tony Stark}
   \end{center}
+
+  New York, NY • tony@starkindustries.com • (212) 555-IRON \\
+  www.starkindustries.com \\
+  LinkedIn: /tonystark • GitHub: /ironmantech
 
   \section*{Summary}
   Visionary technologist, entrepreneur, and inventor with decades of experience in advanced robotics, artificial intelligence, energy systems, and defense technologies. Proven leader with a history of building billion-dollar enterprises, launching transformative technologies, and directing global-level initiatives. Equally adept in executive leadership, R\&D, and direct field application.
