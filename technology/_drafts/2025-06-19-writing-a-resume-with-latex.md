@@ -78,7 +78,7 @@ New paragraphs are started with double blank lines. Intentional line breaks can 
 
 We will update the preamble when we need to update the document format or include features for other packages.
 
-### Writing sections
+#### Writing sections
 
 The `\section`, `\subsection` and `\subsubection` are commands used to split the content of the document into different sections and, if wanted, produce a table of contents for them.
 
@@ -147,7 +147,7 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
 \end{document}
 ```
 
-## Generating a PDF
+#### Generating a PDF
 
 Now editor you version with your info. Notice that special characters like `&` must be escaped with a `\`.
 
