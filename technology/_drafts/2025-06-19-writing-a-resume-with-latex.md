@@ -178,6 +178,131 @@ Here is the PDF version for a quick view.
 
 <object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v1/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
 
+#### Changing font and styles
+
+Now our resume is complete, but it is kind of ugly. To change styles and make it look better we can use a different set of packages.
+
+- `enumitem` is used to redefine spacing in lists
+- `fancyhdr` allows customizing headers and footers
+- `fontawesome` allows using [Font Awesome] icons
+- `geometry` is used to set page size and margins.
+- `hyperref` allows adding hyperlinks to the document
+- `lastpage` creates a reference for the last page
+- `titlesec` allows customizing section titles styles
+- `xcolor` allows using different colors in the document
+- LaTeX includes some font packages, for example, `FiraSans`
+
+These are all included with TeX Live, so there is no need to install anything new. If you want, however, some extra packages that are not included, follow their installation instructions. Note that for some packages to work it is necessary to use an alternative command, usually `xelatex` or `lualatex`.
+
+Some commands can be used to customize text as well.
+
+- `\textsc` small caps
+- `\textit` italic
+- `\textbf` bold
+- `\huge` big text
+- `\small` small text
+
+Here is the updated version, after changing font, margins, title styles, and links.
+
+```tex
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage[left = 25.4mm, right = 25.4mm, top = 25.4mm, bottom = 25.4mm]{geometry}
+\usepackage[colorlinks = true, urlcolor = black, linkcolor = black]{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm, label = $\diamond$}
+
+\setlength\parindent{0mm}
+
+\usepackage{FiraSans}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+\titleformat{\section}{\Large\color{cvblue}}{\thesection}{1em}{\textsc}[\vspace*{-1.5ex}\hrulefill]
+\titleformat{\subsection}{\large}{\thesubsection}{1em}{\textbf}
+
+\pagestyle{fancy}
+\fancyhf{} % clear existing header/footer entries
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+\begin{document}
+  \begin{center}
+    \Large Tony \textbf{\textsc{Stark}}\normalsize
+  \end{center}
+
+  \textsc{New York, NY} • 
+  \faEnvelope\ \href{mailto:tony@starkindustries.com}{tony@starkindustries.com} •
+  \faPhone\ (212) 555-IRON \\
+  \faGlobe\ \href{https://www.starkindustries.com}{www.starkindustries.com} •
+  \faLinkedin\ \href{http://www.linkedin.com/tonystark}{/tonystark} •
+  \faGithub\ \href{http://github.com/ironmantech}{/ironmantech}
+
+  \section*{Summary}
+  Visionary technologist, entrepreneur, and inventor with decades of experience in advanced robotics, artificial intelligence, energy systems, and defense technologies. Proven leader with a history of building billion-dollar enterprises, launching transformative technologies, and directing global-level initiatives. Equally adept in executive leadership, R\&D, and direct field application.
+
+  \section*{Core Competences}
+  \begin{itemize}
+    \item Artificial Intelligence \& Robotics
+    \item Advanced Weapon Systems
+    \item Sustainable Clean Energy
+    \item Aerospace Engineering
+    \item Crisis Management \& Tactical Leadership
+    \item Public Speaking \& Government Liaison
+    \item Cybersecurity \& Defense Infrastructure
+    \item Strategic Innovation \& IP Development
+  \end{itemize}
+
+  \section*{Experience}
+    \subsection*{
+      \textsc{CEO \& Founder} \\
+      Stark Industries, New York, NY \\
+      1998 – Present}
+    \begin{itemize}
+      \item Transformed a traditional weapons manufacturer into a global leader in clean energy, AI, and cutting-edge consumer technologies.
+      \item Developed the Iron Man Armor Series, featuring proprietary arc reactor technology, smart targeting, autonomous flight, and life support systems.
+      \item Led R\&D teams in the creation of J.A.R.V.I.S., F.R.I.D.A.Y., and multiple other AI platforms.
+      \item Oversaw the transition of Stark Industries from military contracts to sustainable technology leadership after initiating the company’s ethical pivot.
+      \item Negotiated strategic partnerships with S.H.I.E.L.D., Wakandan Design Group, and the U.S. Government.
+    \end{itemize}
+
+    \subsection*{Co-Founder \& Founding Member \\
+      Avengers Initiative, Global \\
+      2008 – Present}
+    \begin{itemize}
+      \item Coordinated high-level operations as a founding Avenger, addressing planetary and interdimensional threats.
+      \item Engineered team support technologies, including the Avengers Tower Command Center, Hulkbuster armor, and global threat-monitoring networks.
+      \item Led crisis response during the Battle of New York, Ultron Uprising, and Infinity Conflict.
+    \end{itemize}
+
+  \section*{Education}
+    \subsection*{Massachusetts Institute of Technology (MIT) \\
+      Bachelor of Science in Electrical Engineering and Physics}
+    Graduated at age 17
+
+  \section*{Additional Information}
+  \begin{itemize}
+    \item Security Clearance: Level 10 (former) – S.H.I.E.L.D.
+    \item Languages: English (native), fluent in machine code, some Wakandan dialect
+    \item Hobbies: Vintage car restoration, cocktail crafting, extreme sports
+    \item Known Aliases: Iron Man
+  \end{itemize}
+\end{document}
+```
+
+<object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v2/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
+
 ## Source and References
 
 - Tony Stark Resume contents created by [ChatGPT]
@@ -188,6 +313,7 @@ Here is the PDF version for a quick view.
 
 [A Beginner's Guide to LaTeX for ATS-friendly resumes]: https://medium.com/@subhanusroy/a-beginners-guide-to-latex-for-ats-friendly-resumes-ab0919930a30
 [ChatGPT]: https://chatgpt.com
+[Font Awesome]: https://fontawesome.com/
 [LaTex]: https://www.latex-project.org/
 [Language Server Protocol]: https://microsoft.github.io/language-server-protocol
 [LinkedIn]: https://www.linkedin.com/
