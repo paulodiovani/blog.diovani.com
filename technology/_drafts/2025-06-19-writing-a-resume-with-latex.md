@@ -71,8 +71,8 @@ Now editor you version to
     \huge \textbf{Tony Stark}
   \end{center}
 
-  New York, NY • tony@starkindustries.com • (212) 555-IRON \\
-  www.starkindustries.com \\
+  New York, NY • tony@tonystarkindustries.com • (212) 555-IRON \\
+  www.tonystarkindustries.com \\
   LinkedIn: /tonystark • GitHub: /ironmantech
 \end{document}
 ```
@@ -106,8 +106,8 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
     \huge \textbf{Tony Stark}
   \end{center}
 
-  New York, NY • tony@starkindustries.com • (212) 555-IRON \\
-  www.starkindustries.com \\
+  New York, NY • tony@tonystarkindustries.com • (212) 555-IRON \\
+  www.tonystarkindustries.com \\
   LinkedIn: /tonystark • GitHub: /ironmantech
 
   \section*{Summary}
@@ -243,9 +243,9 @@ Here is the updated version, after changing font, margins, title styles, and lin
   \end{center}
 
   \textsc{New York, NY} • 
-  \faEnvelope\ \href{mailto:tony@starkindustries.com}{tony@starkindustries.com} •
+  \faEnvelope\ \href{mailto:tony@tonystarkindustries.com}{tony@tonystarkindustries.com} •
   \faPhone\ (212) 555-IRON \\
-  \faGlobe\ \href{https://www.starkindustries.com}{www.starkindustries.com} •
+  \faGlobe\ \href{https://www.tonystarkindustries.com}{www.tonystarkindustries.com} •
   \faLinkedin\ \href{http://www.linkedin.com/tonystark}{/tonystark} •
   \faGithub\ \href{http://github.com/ironmantech}{/ironmantech}
 
