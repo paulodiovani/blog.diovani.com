@@ -59,9 +59,12 @@ Now editor you version to
 ```tex
 \documentclass[11pt, a4paper]{article} 
 
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+
+\setlength\parindent{0mm}
 
 \begin{document}
   \begin{center}
@@ -91,9 +94,12 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
 ```tex
 \documentclass[11pt, a4paper]{article} 
 
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+
+\setlength\parindent{0mm}
 
 \begin{document}
   \begin{center}
@@ -159,7 +165,7 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
 
 Now editor you version with your info. Notice that special characters like `&` must be escaped with a `\`.
 
-Once you have done editing, use the `pdflatex` command to generate a PDF file. This commands creates some meta files on first run that are used later, so the recommendation is to run it twice.
+Once you have done editing, use the `pdflatex` command to generate a PDF file. This command creates some meta files on first run that are used later, so the recommendation is to run it twice.
 
 ```bash
 pdflatex Tony_Stark_Resume.tex
