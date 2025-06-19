@@ -303,6 +303,31 @@ Here is the updated version, after changing font, margins, title styles, and lin
 
 <object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v2/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
 
+#### Creating custom commands
+
+It is already much better, but our `\subsection` headers are not looking great, and since they have several elements (role, company, dates) would be better to have different styles for each.
+
+One of doing that is to create a custom command with the `\newcommand` command. This allows to encapsulate formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows to change existing commands.
+
+Let's create a `\subsectionelements` command to allow display elements with different styles for a subsection.
+
+```tex
+\newcommand\subsectionelements[4]{
+  \textsc{#1} at \textit{#2} \\
+  #3 \hfill\mbox{\textbf{#4}}
+}
+```
+
+And update our subsections like this:
+
+```tex
+\subsection*{
+  \subsectionelements{CEO \& Founder}{Stark Industries}{New York, NY}{1998 – Present}
+}
+```
+
+<object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v3/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
+
 ## Source and References
 
 - Tony Stark Resume contents created by [ChatGPT]
