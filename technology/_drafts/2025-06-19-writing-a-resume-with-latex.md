@@ -332,11 +332,13 @@ And update our subsections like this:
 
 - Tony Stark Resume contents created by [ChatGPT]
 - [A Beginner's Guide to LaTeX for ATS-friendly resumes]
+- [CTAN Comprehensive TeX Archive Network][CTAN] 
 - [Overleaf Documentation]
 - [TeX User Group]
 - [The LaTeX Project][LaTeX]
 
 [A Beginner's Guide to LaTeX for ATS-friendly resumes]: https://medium.com/@subhanusroy/a-beginners-guide-to-latex-for-ats-friendly-resumes-ab0919930a30
+[CTAN]: https://ctan.org/
 [ChatGPT]: https://chatgpt.com
 [Font Awesome]: https://fontawesome.com/
 [LaTex]: https://www.latex-project.org/
