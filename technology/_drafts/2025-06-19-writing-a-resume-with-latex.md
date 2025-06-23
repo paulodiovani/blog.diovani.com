@@ -202,15 +202,9 @@ Some commands can be used to customize text as well.
 - `\huge` big text
 - `\small` small text
 
-Here is the updated version, after changing font, margins, title styles, and links.
+Here is the included lines in the preamble, changing font, margins, title styles, and links.
 
 ```tex
-\documentclass[11pt, a4paper]{article} 
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
 \usepackage[left = 25.4mm, right = 25.4mm, top = 25.4mm, bottom = 25.4mm]{geometry}
 \usepackage[colorlinks = true, urlcolor = black, linkcolor = black]{hyperref}
 \usepackage{enumitem}
@@ -236,69 +230,21 @@ Here is the updated version, after changing font, margins, title styles, and lin
 \fancyhf{} % clear existing header/footer entries
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[R]{page \thepage \hspace{1pt} of \pageref{LastPage}}
+```
 
-\begin{document}
+And for the name and contact information.
+
+```tex
   \begin{center}
     \Large Tony \textbf{\textsc{Stark}}\normalsize
   \end{center}
-
-  \textsc{New York, NY} • 
-  \faEnvelope\ \href{mailto:tony@tonystarkindustries.com}{tony@tonystarkindustries.com} •
+ 
+  \textsc{New York, NY} •
+  \faEnvelope\ \href{mailto:tony@starkindustries.com}{tony@starkindustries.com} •
   \faPhone\ (212) 555-IRON \\
-  \faGlobe\ \href{https://www.tonystarkindustries.com}{www.tonystarkindustries.com} •
+  \faGlobe\ \href{https://www.starkindustries.com}{www.starkindustries.com} •
   \faLinkedin\ \href{http://www.linkedin.com/tonystark}{/tonystark} •
   \faGithub\ \href{http://github.com/ironmantech}{/ironmantech}
-
-  \section*{Summary}
-  Visionary technologist, entrepreneur, and inventor with decades of experience in advanced robotics, artificial intelligence, energy systems, and defense technologies. Proven leader with a history of building billion-dollar enterprises, launching transformative technologies, and directing global-level initiatives. Equally adept in executive leadership, R\&D, and direct field application.
-
-  \section*{Core Competences}
-  \begin{itemize}
-    \item Artificial Intelligence \& Robotics
-    \item Advanced Weapon Systems
-    \item Sustainable Clean Energy
-    \item Aerospace Engineering
-    \item Crisis Management \& Tactical Leadership
-    \item Public Speaking \& Government Liaison
-    \item Cybersecurity \& Defense Infrastructure
-    \item Strategic Innovation \& IP Development
-  \end{itemize}
-
-  \section*{Experience}
-    \subsection*{
-      \textsc{CEO \& Founder} \\
-      Stark Industries, New York, NY \\
-      1998 – Present}
-    \begin{itemize}
-      \item Transformed a traditional weapons manufacturer into a global leader in clean energy, AI, and cutting-edge consumer technologies.
-      \item Developed the Iron Man Armor Series, featuring proprietary arc reactor technology, smart targeting, autonomous flight, and life support systems.
-      \item Led R\&D teams in the creation of J.A.R.V.I.S., F.R.I.D.A.Y., and multiple other AI platforms.
-      \item Oversaw the transition of Stark Industries from military contracts to sustainable technology leadership after initiating the company’s ethical pivot.
-      \item Negotiated strategic partnerships with S.H.I.E.L.D., Wakandan Design Group, and the U.S. Government.
-    \end{itemize}
-
-    \subsection*{Co-Founder \& Founding Member \\
-      Avengers Initiative, Global \\
-      2008 – Present}
-    \begin{itemize}
-      \item Coordinated high-level operations as a founding Avenger, addressing planetary and interdimensional threats.
-      \item Engineered team support technologies, including the Avengers Tower Command Center, Hulkbuster armor, and global threat-monitoring networks.
-      \item Led crisis response during the Battle of New York, Ultron Uprising, and Infinity Conflict.
-    \end{itemize}
-
-  \section*{Education}
-    \subsection*{Massachusetts Institute of Technology (MIT) \\
-      Bachelor of Science in Electrical Engineering and Physics}
-    Graduated at age 17
-
-  \section*{Additional Information}
-  \begin{itemize}
-    \item Security Clearance: Level 10 (former) – S.H.I.E.L.D.
-    \item Languages: English (native), fluent in machine code, some Wakandan dialect
-    \item Hobbies: Vintage car restoration, cocktail crafting, extreme sports
-    \item Known Aliases: Iron Man
-  \end{itemize}
-\end{document}
 ```
 
 <object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v2/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
@@ -309,10 +255,10 @@ It is already much better, but our `\subsection` headers are not looking great, 
 
 One of doing that is to create a custom command with the `\newcommand` command. This allows to encapsulate formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows to change existing commands.
 
-Let's create a `\subsectionelements` command to allow display elements with different styles for a subsection.
+Let's create a `\titleelements` command to allow display elements with different styles for a subsection.
 
 ```tex
-\newcommand\subsectionelements[4]{
+\newcommand\titleelements[4]{
   \textsc{#1} at \textit{#2} \\
   #3 \hfill\mbox{\textbf{#4}}
 }
@@ -322,7 +268,7 @@ And update our subsections like this:
 
 ```tex
 \subsection*{
-  \subsectionelements{CEO \& Founder}{Stark Industries}{New York, NY}{1998 – Present}
+  \titleelements{CEO \& Founder}{Stark Industries}{New York, NY}{1998 – Present}
 }
 ```
 
@@ -330,12 +276,15 @@ And update our subsections like this:
 
 ## Source and References
 
-- Tony Stark Resume contents created by [ChatGPT]
 - [A Beginner's Guide to LaTeX for ATS-friendly resumes]
 - [CTAN Comprehensive TeX Archive Network][CTAN] 
 - [Overleaf Documentation]
 - [TeX User Group]
 - [The LaTeX Project][LaTeX]
+
+- Tony Stark Resume contents created by [ChatGPT]. Here is the prompt used:
+
+    > Write a resume for Tony Stark, based on the Marvel Comics Character.
 
 [A Beginner's Guide to LaTeX for ATS-friendly resumes]: https://medium.com/@subhanusroy/a-beginners-guide-to-latex-for-ats-friendly-resumes-ab0919930a30
 [CTAN]: https://ctan.org/
