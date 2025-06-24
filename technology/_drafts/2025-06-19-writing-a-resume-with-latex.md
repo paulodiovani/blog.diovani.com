@@ -55,12 +55,12 @@ The **preamble** is the part of the document that comes before the `\begin{docum
 The minimum to start writing is as follows.
 
 ```tex
-\documentclass[11pt, a4paper]{article} 
+\documentclass[11pt, a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}
 
 \setlength\parindent{0mm}
 
@@ -90,12 +90,12 @@ The `\section`, `\subsection`, and `\subsubection` are commands used to split th
 We will be using the `*` version of these commands (`\section*`, `\subsection*`, ...), which omits the numbering. Let's also use the `itemize` environment to creater some lists.
 
 ```tex
-\documentclass[11pt, a4paper]{article} 
+\documentclass[11pt, a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}
 
 \setlength\parindent{0mm}
 
@@ -236,7 +236,7 @@ And for the name and contact information, including font awesome icons.
   \begin{center}
     \Large Tony \textbf{\textsc{Stark}}\normalsize
   \end{center}
- 
+
   \textsc{New York, NY} •
   \faEnvelope\ \href{mailto:tony@starkindustries.com}{tony@starkindustries.com} •
   \faPhone\ (212) 555-IRON \\
@@ -272,17 +272,209 @@ And update our subsections like this:
 
 <object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v3/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
 
+#### Adding a sidebar
+
+It already looks great. It is legible and well organized. But we can do better.
+
+So let's include a sidebar -- LinkedIn style -- to grab attention for out personal info and skills, while leaving the main area for the rest.
+
+There are several ways if doing this, like using the `minipage` or `wrapfigure` packages, but they struggle to work with page breaks. The `tcolorbox` package works fine with page breaks, but only if all columns have enough content. What worked best for me was using the `paracol` package along with `tikz` to draw a background.
+
+First, update or add the following to the preamble. Notice we also reduced the margins to better fit the columns in the page.
+
+```tex
+\usepackage[left = 6mm, right = 12mm, top = 6mm, bottom = 12mm]{geometry}
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+\usepackage[explicit]{titlesec}
+\usepackage{paracol}
+\usepackage{tikz}
+
+\setlength{\footskip}{6mm}
+\fancyfoot[R]{page \thepage \hspace{1pt} of \pageref*{LastPage}}
+
+% Add a sidebar background to every page
+\AddToHook {shipout/background}{
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[cvblue]
+      (current page.north west) rectangle
+      ([xshift=0.3\textwidth + 12mm]current page.south west);
+  \end{tikzpicture}
+}
+```
+
+Then, wrap the left and write contents with the `paracol` environment, then with the `leftcolumn` and `rightcolumn` environments.
+
+We are using different title formats for the left and right columns, so we are defining them inside the environments.
+
+```tex
+\begin{document}
+  \setcolumnwidth{0.3\textwidth}
+  \setlength\columnsep{18mm}
+
+  \begin{paracol}{2}
+    \begin{leftcolumn}
+      \color{white}
+      \titleformat{\section}{\color{white}}{\thesection}{1em}{\textbf{\textsc{#1}}}[\vspace*{-1.5ex}\hrulefill\vspace*{-1ex}]
+
+      % left content
+    \end{leftcolumn}
+
+    \begin{rightcolumn}
+      \titleformat{\section}{\Large\color{cvblue}}{\thesection}{1em}{\textsc{#1}}[\vspace*{-1.5ex}\hrulefill]
+      \titleformat{\subsection}{}{\thesubsection}{1em}{#1}
+
+      % right content
+    \end{rightcolumn}
+  \end{paracol}
+\end{document}
+```
+
+Here is the final TeX document.
+
+```tex
+% !TeX spellcheck = en_US
+% !TeX program = pdflatex
+%
+% Author: Paulo Diovani (paulodiovani, blog.diovani.com)
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}
+\usepackage[left = 6mm, right = 12mm, top = 6mm, bottom = 12mm]{geometry}
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{lastpage}
+\usepackage{paracol}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm, label = $\diamond$}
+
+\setlength\parindent{0mm}
+
+\usepackage{FiraSans}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+\newcommand\titleelements[4]{
+  \textsc{#1} at \textit{#2} \\
+  #3 \hfill\mbox{\textbf{#4}}
+}
+
+\pagestyle{fancy}
+\fancyhf{} % clear existing header/footer entries
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\footskip}{6mm}
+\fancyfoot[R]{page \thepage \hspace{1pt} of \pageref*{LastPage}}
+
+% Add a sidebar to every page
+\AddToHook {shipout/background}{
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[cvblue]
+      (current page.north west) rectangle
+      ([xshift=0.3\textwidth + 12mm]current page.south west);
+  \end{tikzpicture}
+}
+
+\begin{document}
+  \setcolumnwidth{0.3\textwidth}
+  \setlength\columnsep{18mm}
+
+  \begin{paracol}{2}
+    \begin{leftcolumn}
+      \color{white}
+      \titleformat{\section}{\color{white}}{\thesection}{1em}{\textbf{\textsc{#1}}}[\vspace*{-1.5ex}\hrulefill\vspace*{-1ex}]
+
+      \Large Tony \textbf{\textsc{Stark}}\normalsize
+
+      \section*{Contact Info}
+      \faMapPin\ \textsc{New York, NY} \\
+      \faEnvelope\ \href{mailto:tony@tonystarkindustries.com}{tony@tonystarkindustries.com} \\
+      \faPhone\ (212) 555-IRON \\
+      \faGlobe\ \href{https://www.tonystarkindustries.com}{www.tonystarkindustries.com} \\
+      \faLinkedin\ \href{http://www.linkedin.com/tonystark}{/tonystark} \\
+      \faGithub\ \href{http://github.com/ironmantech}{/ironmantech}
+
+      \section*{Core Competences}
+      \begin{itemize}
+        \item Artificial Intelligence \& Robotics
+        \item Advanced Weapon Systems
+        \item Sustainable Clean Energy
+        \item Aerospace Engineering
+        \item Crisis Management \& Tactical Leadership
+        \item Public Speaking \& Government Liaison
+        \item Cybersecurity \& Defense Infrastructure
+        \item Strategic Innovation \& IP Development
+      \end{itemize}
+    \end{leftcolumn}
+
+    \begin{rightcolumn}
+      \titleformat{\section}{\Large\color{cvblue}}{\thesection}{1em}{\textsc{#1}}[\vspace*{-1.5ex}\hrulefill]
+      \titleformat{\subsection}{}{\thesubsection}{1em}{#1}
+
+      \section*{Summary}
+      Visionary technologist, entrepreneur, and inventor with decades of experience in advanced robotics, artificial intelligence, energy systems, and defense technologies. Proven leader with a history of building billion-dollar enterprises, launching transformative technologies, and directing global-level initiatives. Equally adept in executive leadership, R\&D, and direct field application.
+
+      \section*{Experience}
+        \subsection*{
+          \titleelements{CEO \& Founder}{Stark Industries}{New York, NY}{1998 – Present}
+        }
+        \begin{itemize}
+          \item Transformed a traditional weapons manufacturer into a global leader in clean energy, AI, and cutting-edge consumer technologies.
+          \item Developed the Iron Man Armor Series, featuring proprietary arc reactor technology, smart targeting, autonomous flight, and life support systems.
+          \item Led R\&D teams in the creation of J.A.R.V.I.S., F.R.I.D.A.Y., and multiple other AI platforms.
+          \item Oversaw the transition of Stark Industries from military contracts to sustainable technology leadership after initiating the company’s ethical pivot.
+          \item Negotiated strategic partnerships with S.H.I.E.L.D., Wakandan Design Group, and the U.S. Government.
+        \end{itemize}
+
+        \subsection*{
+          \titleelements{Founder \& Founding Member}{Avengers Initiative}{\phantom{}}{2008 – Present}
+        }
+        \begin{itemize}
+          \item Coordinated high-level operations as a founding Avenger, addressing planetary and interdimensional threats.
+          \item Engineered team support technologies, including the Avengers Tower Command Center, Hulkbuster armor, and global threat-monitoring networks.
+          \item Led crisis response during the Battle of New York, Ultron Uprising, and Infinity Conflict.
+        \end{itemize}
+
+      \section*{Education}
+        \subsection*{
+          \titleelements{Bachelor of Science in Electrical Engineering and Physics}{Massachusetts Institute of Technology (MIT)}{\phantom{}}{Graduated at age 17}
+        }
+
+      \section*{Additional Information}
+      \begin{itemize}
+        \item Security Clearance: Level 10 (former) – S.H.I.E.L.D.
+        \item Languages: English (native), fluent in machine code, some Wakandan dialect
+        \item Hobbies: Vintage car restoration, cocktail crafting, extreme sports
+        \item Known Aliases: Iron Man
+      \end{itemize}
+    \end{rightcolumn}
+  \end{paracol}
+\end{document}
+```
+
+And the generated PDF.
+
+<object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v4/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
+
 ## Source and References
 
 - [A Beginner's Guide to LaTeX for ATS-friendly resumes]
-- [CTAN Comprehensive TeX Archive Network][CTAN] 
+- [CTAN Comprehensive TeX Archive Network][CTAN]
 - [Overleaf Documentation]
 - [TeX User Group]
 - [The LaTeX Project][LaTeX]
 
 - Tony Stark Resume contents created by [ChatGPT]. Here is the prompt used:
 
-    > Write a resume for Tony Stark, based on the Marvel Comics Character.
+  > Write a resume for Tony Stark, based on the Marvel Comics Character.
 
 [A Beginner's Guide to LaTeX for ATS-friendly resumes]: https://medium.com/@subhanusroy/a-beginners-guide-to-latex-for-ats-friendly-resumes-ab0919930a30
 [CTAN]: https://ctan.org/
