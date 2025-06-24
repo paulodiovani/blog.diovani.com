@@ -38,24 +38,22 @@ Alternative, if you prefer to use web-based tools or just want to write a few do
 
 If you're in a hurry or just don't want to dig too much into the [TeX] language specifics, just pick up one of the [resume templates from Overleaf].
 
-Either download/copy its contents or edit in Overleaf itself. Edit its contents, and render the PDF with `pdflatex Your_Name_Resume.tex`.
+Either download/copy its contents or open in Overleaf itself. Edit its contents, and render the PDF with `pdflatex Your_Name_Resume.tex`.
 
 ### The do-it-yourself way
 
-If you, OTOH, prefer to write your resume from top down, create a file with named `Your_Name_Resume.tex` extensions (e.g. `Tony_Stark_Resume.tex`) and start writing.
+If you, OTOH, prefer to write your resume from top down, create a file with named `Your_Name_Resume.tex` (e.g. `Tony_Stark_Resume.tex`) and start writing.
 
-Of couse, this post would not complete without a step-by-step tutorial, so we'll be creating a simple resume as example below, using a fantasy character, and explaining some of the concepts behind Tex and LaTeX.
+Of course, this post would not be complete without a step-by-step tutorial, so we'll be creating a simple example resume below, using a fantasy character, and explaining some of the concepts behind Tex and LaTeX.
 
-I'm not going deep about each syntax or command. Please, check the LaTeX documentation at [The LaTeX Project][LaTeX] or the [Overleaf Documentation] for details.
+I'm not going into deep about each syntax or command. For more details, check the LaTeX documentation at [The LaTeX Project][LaTeX], the [Overleaf Documentation], or package-specific documentation on [CTAN].
 
 #### The document preamble
 
-The **preamble** is the part of the document that comes before the `\begin{document}` command. It's where you define the document's structure, style, and any packages or macros you want to use.
+The **preamble** is the part of the document that comes before the `\begin{document}` environment. It's where you define the document's structure, style, and any packages or macros you want to use.
 
 The minimum to start writing is as follows.
 
-
-Now editor you version to
 ```tex
 \documentclass[11pt, a4paper]{article} 
 
@@ -87,7 +85,7 @@ We will update the preamble when we need to update the document format or includ
 
 #### Writing sections
 
-The `\section`, `\subsection` and `\subsubection` are commands used to split the content of the document into different sections and, if wanted, produce a table of contents for them.
+The `\section`, `\subsection`, and `\subsubection` are commands used to split the content of the document into different sections, define the section title and, if wanted, produce a table of contents for them.
 
 We will be using the `*` version of these commands (`\section*`, `\subsection*`, ...), which omits the numbering. Let's also use the `itemize` environment to creater some lists.
 
@@ -163,9 +161,9 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
 
 #### Generating a PDF
 
-Now editor you version with your info. Notice that special characters like `&` must be escaped with a `\`.
+Now editor you version with your own info. Notice that special characters like `&` must be escaped with a `\`.
 
-Once you have done editing, use the `pdflatex` command to generate a PDF file. This command creates some meta files on first run that are used later, so the recommendation is to run it twice.
+Once you have done editing, use the `pdflatex` command to generate a PDF file. This command creates some references on first run that are used later, so the recommendation is to run it twice.
 
 ```bash
 pdflatex Tony_Stark_Resume.tex
@@ -199,7 +197,7 @@ Some commands can be used to customize text as well.
 - `\textsc` small caps
 - `\textit` italic
 - `\textbf` bold
-- `\huge` big text
+- `\huge`, `Large`, `large` big text
 - `\small` small text
 
 Here is the included lines in the preamble, changing font, margins, title styles, and links.
@@ -232,7 +230,7 @@ Here is the included lines in the preamble, changing font, margins, title styles
 \fancyfoot[R]{page \thepage \hspace{1pt} of \pageref{LastPage}}
 ```
 
-And for the name and contact information.
+And for the name and contact information, including font awesome icons.
 
 ```tex
   \begin{center}
@@ -251,9 +249,9 @@ And for the name and contact information.
 
 #### Creating custom commands
 
-It is already much better, but our `\subsection` headers are not looking great, and since they have several elements (role, company, dates) would be better to have different styles for each.
+It is already much better, but our `\subsection` headers are not looking great, and since they have several elements (role, company, dates) we could use different styles for each.
 
-One of doing that is to create a custom command with the `\newcommand` command. This allows to encapsulate formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows to change existing commands.
+One way of doing that is to create a custom command with the `\newcommand` command. This allows to encapsulate formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows to change existing commands.
 
 Let's create a `\titleelements` command to allow display elements with different styles for a subsection.
 
