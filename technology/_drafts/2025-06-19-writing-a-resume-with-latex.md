@@ -464,6 +464,14 @@ And the generated PDF.
 
 <object data="/assets/media/2025-06-19-writing-a-resume-with-latex/v4/Tony_Stark_Resume.pdf" width="100%" height="400" type='application/pdf'></object>
 
+#### Further steps
+
+If your resume is too big to write everything on a single file, split the sections into smaller files and include them with the `\input{path/to/file}` command. If you want to add a picture, use the `graphicx` package.
+
+There are plenty other options or formatting to explore. You can even keep two or more layouts for different occasions, and swap them without touching the content.
+
+I hope this blog post works both as an introduction to LaTeX, and as ideas to create a good-looking yet clear and readable resume for your needs.
+
 ## Source and References
 
 - [A Beginner's Guide to LaTeX for ATS-friendly resumes]
