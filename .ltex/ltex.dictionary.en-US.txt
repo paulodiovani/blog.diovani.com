@@ -8,3 +8,5 @@ nvim-cmp-lsp
 nvim
 mason-lspconfig
 fzf-lua
+TexLab
+bwtween
