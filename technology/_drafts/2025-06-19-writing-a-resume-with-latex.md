@@ -1,34 +1,34 @@
 ---
 layout: post
-title: Writing a Resume with LaTeX
+title: Using LaTeX to Write a Beautiful, Clean, and Professional Resume
 image: /assets/media/2025-06-19-writing-a-resume-with-latex/latex-project-logo.svg
 ---
 
 I've come from a generation that used to print their resumes to be delivered personally to a company's office. Of course, that was before the COVID-19 Pandemic, when most of us, developers, used to work on-site.
 
-Today we just send the PDF version of our resume by e-mail, and even have tools that can help create one, such as exporting the PDF versions of your [LinkedIn] profile, or using an AI tool to create one based on a detailed description or another source.
+Today we just send the PDF version of our resume by email, and even have tools that can help create one, such as exporting the PDF versions of your [LinkedIn] profile, or using an AI tool to create one based on a detailed description or another source.
 
-But writing your own resume have its benefits. You have more control over the content, formatting, and styles; you will naturally review the content whenever you update it and can improve the text; and you can more easily adjust it for the role you seek.
+But writing your own resume has its benefits. You have more control over the content, formatting, and styles; you will naturally review the content whenever you update it and can improve the text; and you can more easily adjust it for the role you seek.
 
-To write your own resume you can use whatever text editor you want, and the most obvious choice is to use a WYSIWYG editor, like MS Word, LibreOffice, or Google Docs. But there is another great option, which I recently started using, which makes a developer (or a scientist) feel much more at home when writing: [LaTeX].
+To write your own resume you can use whatever text editor you want, and the most obvious choice is to use a WYSIWYG editor, like MS Word, LibreOffice, or Google Docs. But there is another great option, which I recently started using, and makes a developer (or a scientist) feel much more at home when writing: [LaTeX].
 
 ## Why LaTeX?
 
 [LaTeX] (read _Lay-tech_) is a typesetting system originally designed for production of technical or scientific documentation, and it is widely used to write articles, papers, books, or slides, usually exported as PDF.
 
-Different from formats like _Open Document_ or _Office Open XML_, LaTeX is intended to be written using a plain text editor, and have tools to help with its syntax and packages, such as [TexLab] -- A [Language Server Protocol] implementations for LaTeX. For these reasons, writing LaTeX is very similar to write a computer program using a programming language.
+Different from formats like _Open Document_ or _Office Open XML_, LaTeX is intended to be written using a plain text editor, and have tools to help with its syntax and packages, such as [TexLab] -- A [Language Server Protocol] implementations for LaTeX. For these reasons, writing LaTeX is very similar to writing a computer program using a programming language.
 
 Besides that, it is very easy to separate content from presentation, so you can change the design of your resume without having to copy-paste its content if needed.
 
 ### Setup and required tools
 
-To starting writing with LaTeX in your own computer, you just need:
+To starting writing with LaTeX on your own computer, you just need:
 
 1. A text editor. It can be any text editor of your choice, like Neovim or VS Code.
 2. A [TeX Live] distribution.
 3. (Optional) [TexLab] or some editor plugin.
 
-Alternative, if you prefer to use web-based tools or just want to write a few documents:
+Alternatively, if you prefer to use web-based tools or just want to write a few documents:
 
 1. Create an account and use [Overleaf].
 
@@ -42,11 +42,11 @@ Either download/copy its contents or open in Overleaf itself. Edit its contents,
 
 ### The do-it-yourself way
 
-If you, OTOH, prefer to write your resume from top down, create a file with named `Your_Name_Resume.tex` (e.g. `Tony_Stark_Resume.tex`) and start writing.
+If you, on the other hand, prefer to write your resume from the top down, create a file with named `Your_Name_Resume.tex` (e.g. `Tony_Stark_Resume.tex`) and start writing.
 
 Of course, this post would not be complete without a step-by-step tutorial, so we'll be creating a simple example resume below, using a fantasy character, and explaining some of the concepts behind Tex and LaTeX.
 
-I'm not going into deep about each syntax or command. For more details, check the LaTeX documentation at [The LaTeX Project][LaTeX], the [Overleaf Documentation], or package-specific documentation on [CTAN].
+I'm not going into detail about each syntax or command. For more details, check the LaTeX documentation at [The LaTeX Project][LaTeX], the [Overleaf Documentation], or package-specific documentation on [CTAN].
 
 #### The document preamble
 
@@ -77,7 +77,7 @@ The minimum to start writing is as follows.
 
 Anything that starts with `\` is a command. Commands can receive options between `[]` or arguments, either by following the command or inside `{}`.
 
-Environments are sections with typesetting effects to be applied, and are written between the `\begin{name}` and `\end{name}` commands, where `name` is the environment name. There are some predefined environments, being `document` the most important, which holds most of the document content.
+Environments are sections with typesetting effects to be applied, and are written between the `\begin{name}` and `\end{name}` commands, where `name` is the environment name. There are some predefined environments, with `document` being the most important, as it holds most of the document content.
 
 New paragraphs are started with double blank lines. Intentional line breaks can be included with `\\`, while `\break` is a page break.
 
@@ -87,7 +87,7 @@ We will update the preamble when we need to update the document format or includ
 
 The `\section`, `\subsection`, and `\subsubection` are commands used to split the content of the document into different sections, define the section title and, if wanted, produce a table of contents for them.
 
-We will be using the `*` version of these commands (`\section*`, `\subsection*`, ...), which omits the numbering. Let's also use the `itemize` environment to creater some lists.
+We will be using the `*` version of these commands (`\section*`, `\subsection*`, ...), which omits the numbering. Let's also use the `itemize` environment to create some lists.
 
 ```tex
 \documentclass[11pt, a4paper]{article}
@@ -161,7 +161,7 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
 
 #### Generating a PDF
 
-Now editor you version with your own info. Notice that special characters like `&` must be escaped with a `\`.
+Now edit you version with your own info. Notice that special characters like `&` must be escaped with a `\`.
 
 Once you have done editing, use the `pdflatex` command to generate a PDF file. This command creates some references on first run that are used later, so the recommendation is to run it twice.
 
@@ -178,7 +178,7 @@ Here is the PDF version for a quick view.
 
 #### Changing font and styles
 
-Now our resume is complete, but it is kind of ugly. To change styles and make it look better we can use a different set of packages.
+Now our resume is complete, but it is rather plain. To change styles and make it look better we can use a different set of packages.
 
 - `enumitem` is used to redefine spacing in lists
 - `fancyhdr` allows customizing headers and footers
@@ -200,7 +200,7 @@ Some commands can be used to customize text as well.
 - `\huge`, `Large`, `large` big text
 - `\small` small text
 
-Here is the included lines in the preamble, changing font, margins, title styles, and links.
+Here are the included lines in the preamble, changing font, margins, title styles, and links.
 
 ```tex
 \usepackage[left = 25.4mm, right = 25.4mm, top = 25.4mm, bottom = 25.4mm]{geometry}
@@ -249,11 +249,11 @@ And for the name and contact information, including font awesome icons.
 
 #### Creating custom commands
 
-It is already much better, but our `\subsection` headers are not looking great, and since they have several elements (role, company, dates) we could use different styles for each.
+It is already much better, but our `\subsection` headers do not look great, and since they have several elements (role, company, dates) we could use different styles for each.
 
-One way of doing that is to create a custom command with the `\newcommand` command. This allows to encapsulate formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows to change existing commands.
+One way of doing that is to create a custom command with the `\newcommand` command. This allows to encapsulate formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows changing existing commands.
 
-Let's create a `\titleelements` command to allow display elements with different styles for a subsection.
+Let's create a `\titleelements` command to allow displaying elements with different styles for a subsection.
 
 ```tex
 \newcommand\titleelements[4]{
@@ -276,9 +276,9 @@ And update our subsections like this:
 
 It already looks great. It is legible and well organized. But we can do better.
 
-So let's include a sidebar -- LinkedIn style -- to grab attention for out personal info and skills, while leaving the main area for the rest.
+So let's include a sidebar -- LinkedIn style -- to grab attention for our personal info and skills, while leaving the main area for the rest.
 
-There are several ways if doing this, like using the `minipage` or `wrapfigure` packages, but they struggle to work with page breaks. The `tcolorbox` package works fine with page breaks, but only if all columns have enough content. What worked best for me was using the `paracol` package along with `tikz` to draw a background.
+There are several ways of doing this, like using the `minipage` or `wrapfigure` packages, but they struggle to work with page breaks. The `tcolorbox` package works fine with page breaks, but only if all columns have enough content. What worked best for me was using the `paracol` package along with `tikz` to draw a background.
 
 First, update or add the following to the preamble. Notice we also reduced the margins to better fit the columns in the page.
 
@@ -302,7 +302,7 @@ First, update or add the following to the preamble. Notice we also reduced the m
 }
 ```
 
-Then, wrap the left and write contents with the `paracol` environment, then with the `leftcolumn` and `rightcolumn` environments.
+Then, wrap the left and right contents with the `paracol` environment, then with the `leftcolumn` and `rightcolumn` environments.
 
 We are using different title formats for the left and right columns, so we are defining them inside the environments.
 
@@ -466,11 +466,11 @@ And the generated PDF.
 
 #### Further steps
 
-If your resume is too big to write everything on a single file, split the sections into smaller files and include them with the `\input{path/to/file}` command. If you want to add a picture, use the `graphicx` package.
+If your resume is too big to write everything in a single file, split the sections into smaller files and include them with the `\input{path/to/file}` command. If you want to add a picture, use the `graphicx` package.
 
 There are plenty other options or formatting to explore. You can even keep two or more layouts for different occasions, and swap them without touching the content.
 
-I hope this blog post works both as an introduction to LaTeX, and as ideas to create a good-looking yet clear and readable resume for your needs.
+I hope this blog post serves as both an introduction to LaTeX and a source of ideas for creating a good-looking, clear, and readable resume for your needs.
 
 ## Source and References
 
