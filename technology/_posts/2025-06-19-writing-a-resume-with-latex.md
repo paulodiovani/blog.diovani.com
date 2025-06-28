@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using LaTeX to Write a Beautiful, Clean, and Professional Resume
+title: Using LaTeX to write a Beautiful, Clean, and Professional Resume
 image: /assets/media/2025-06-19-writing-a-resume-with-latex/latex-project-logo.svg
 date: 2025-06-28
 ---
