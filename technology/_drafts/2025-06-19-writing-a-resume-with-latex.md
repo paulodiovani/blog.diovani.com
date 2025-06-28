@@ -2,6 +2,7 @@
 layout: post
 title: Using LaTeX to Write a Beautiful, Clean, and Professional Resume
 image: /assets/media/2025-06-19-writing-a-resume-with-latex/latex-project-logo.svg
+date: 2025-06-28
 ---
 
 I've come from a generation that used to print their resumes to be delivered personally to a company's office. Of course, that was before the COVID-19 Pandemic, when most of us, developers, used to work on-site.
