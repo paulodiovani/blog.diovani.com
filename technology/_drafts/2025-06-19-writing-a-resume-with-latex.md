@@ -6,7 +6,7 @@ image: /assets/media/2025-06-19-writing-a-resume-with-latex/latex-project-logo.s
 
 I've come from a generation that used to print their resumes to be delivered personally to a company's office. Of course, that was before the COVID-19 Pandemic, when most of us, developers, used to work on-site.
 
-Today we just send the PDF version of our resume by email, and even have tools that can help create one, such as exporting the PDF versions of your [LinkedIn] profile, or using an AI tool to create one based on a detailed description or another source.
+Today we just send the PDF version of our resumes by email, and even have tools that can help us create one, such as exporting the PDF versions of our [LinkedIn] profiles, or using an AI to create one based on a detailed description or another source.
 
 But writing your own resume has its benefits. You have more control over the content, formatting, and styles; you will naturally review the content whenever you update it and can improve the text; and you can more easily adjust it for the role you seek.
 
@@ -22,7 +22,7 @@ Besides that, it is very easy to separate content from presentation, so you can 
 
 ### Setup and required tools
 
-To starting writing with LaTeX on your own computer, you just need:
+To start writing with LaTeX on your own computer, you just need:
 
 1. A text editor. It can be any text editor of your choice, like Neovim or VS Code.
 2. A [TeX Live] distribution.
@@ -85,7 +85,7 @@ We will update the preamble when we need to update the document format or includ
 
 #### Writing sections
 
-The `\section`, `\subsection`, and `\subsubection` are commands used to split the content of the document into different sections, define the section title and, if wanted, produce a table of contents for them.
+The `\section`, `\subsection`, and `\subsubsection` are commands used to split the content of the document into different sections, define the section title and, if wanted, produce a table of contents for them.
 
 We will be using the `*` version of these commands (`\section*`, `\subsection*`, ...), which omits the numbering. Let's also use the `itemize` environment to create some lists.
 
@@ -161,7 +161,7 @@ We will be using the `*` version of these commands (`\section*`, `\subsection*`,
 
 #### Generating a PDF
 
-Now edit you version with your own info. Notice that special characters like `&` must be escaped with a `\`.
+Now edit your version with your own info. Notice that special characters like `&` must be escaped with a `\`.
 
 Once you have done editing, use the `pdflatex` command to generate a PDF file. This command creates some references on first run that are used later, so the recommendation is to run it twice.
 
@@ -251,7 +251,7 @@ And for the name and contact information, including font awesome icons.
 
 It is already much better, but our `\subsection` headers do not look great, and since they have several elements (role, company, dates) we could use different styles for each.
 
-One way of doing that is to create a custom command with the `\newcommand` command. This allows to encapsulate formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows changing existing commands.
+One way of doing that is to create a custom command with the `\newcommand` command. This allows encapsulating formatting for reuse with minimal repetition. Another option is using the `\renewcommand`, which acts the same, but allows changing existing commands.
 
 Let's create a `\titleelements` command to allow displaying elements with different styles for a subsection.
 
@@ -466,7 +466,7 @@ And the generated PDF.
 
 #### Further steps
 
-If your resume is too big to write everything in a single file, split the sections into smaller files and include them with the `\input{path/to/file}` command. If you want to add a picture, use the `graphicx` package.
+If your resume is too large to write everything in a single file, split the sections into smaller files and include them with the `\input{path/to/file}` command. If you want to add a picture, use the `graphicx` package.
 
 There are plenty other options or formatting to explore. You can even keep two or more layouts for different occasions, and swap them without touching the content.
 
