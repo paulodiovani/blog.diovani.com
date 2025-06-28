@@ -43,9 +43,9 @@ Either download/copy its contents or open in Overleaf itself. Edit its contents,
 
 ### The do-it-yourself way
 
-If you, on the other hand, prefer to write your resume from the top down, create a file with named `Your_Name_Resume.tex` (e.g. `Tony_Stark_Resume.tex`) and start writing.
+If you, on the other hand, prefer to write your resume from the top down, create a file named `Your_Name_Resume.tex` (e.g. `Tony_Stark_Resume.tex`) and start writing.
 
-Of course, this post would not be complete without a step-by-step tutorial, so we'll be creating a simple example resume below, using a fantasy character, and explaining some of the concepts behind Tex and LaTeX.
+Of course, this post would not be complete without a step-by-step tutorial, so we'll be creating a simple example resume below, using a fictional character, and explaining some of the concepts behind Tex and LaTeX.
 
 I'm not going into detail about each syntax or command. For more details, check the LaTeX documentation at [The LaTeX Project][LaTeX], the [Overleaf Documentation], or package-specific documentation on [CTAN].
 
@@ -82,7 +82,7 @@ Environments are sections with typesetting effects to be applied, and are writte
 
 New paragraphs are started with double blank lines. Intentional line breaks can be included with `\\`, while `\break` is a page break.
 
-We will update the preamble when we need to update the document format or include features for other packages.
+We will update the preamble when we need to update the document format or include features from other packages.
 
 #### Writing sections
 
@@ -191,14 +191,14 @@ Now our resume is complete, but it is rather plain. To change styles and make it
 - `xcolor` allows using different colors in the document
 - LaTeX includes some font packages, for example, `FiraSans`
 
-These are all included with TeX Live, so there is no need to install anything new. If you want, however, some extra packages that are not included, follow their installation instructions. Note that for some packages to work it is necessary to use an alternative command, usually `xelatex` or `lualatex`.
+These are all included with TeX Live, so there is no need to install anything new. If you want, however, some extra packages that are not included, follow their installation instructions. Note that for some packages to work it is necessary to use an alternative application, usually `xelatex` or `lualatex`.
 
 Some commands can be used to customize text as well.
 
 - `\textsc` small caps
 - `\textit` italic
 - `\textbf` bold
-- `\huge`, `Large`, `large` big text
+- `\huge`, `\Large`, `\large` big text
 - `\small` small text
 
 Here are the included lines in the preamble, changing font, margins, title styles, and links.
@@ -279,7 +279,7 @@ It already looks great. It is legible and well organized. But we can do better.
 
 So let's include a sidebar -- LinkedIn style -- to grab attention for our personal info and skills, while leaving the main area for the rest.
 
-There are several ways of doing this, like using the `minipage` or `wrapfigure` packages, but they struggle to work with page breaks. The `tcolorbox` package works fine with page breaks, but only if all columns have enough content. What worked best for me was using the `paracol` package along with `tikz` to draw a background.
+There are several ways of doing this, like using the `minipage` or `wrapfigure` packages, but they struggle to work with page breaks. The `tcolorbox` package works fine with page breaks, but only if all columns have more content than fits on a single page. What worked best for me was using the `paracol` package along with `tikz` to draw a background.
 
 First, update or add the following to the preamble. Notice we also reduced the margins to better fit the columns in the page.
 
