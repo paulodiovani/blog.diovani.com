@@ -6,7 +6,7 @@ image: /assets/media/2025-08-01-linux-like-config-for-osx/penguin_tux_eating_an_
 
 In 2024, I wrote a blog post of [How to turn your macOS into a Linux-like Desktop] in [The Miners Blog].
 
-A little more than one year later, my OSX interface and usability remains the same -- using a Tiling Window Manager and PC-like keyboard config -- but with some tools replacement or improvements.
+A little more than one year later, my OSX interface and usability remains the same -- using a Tiling Window Manager and PC-like key bindings -- but with some tools replacement or improvements.
 
 In this article, I'm present what have changed, using the original blog post as a reference.
 
@@ -30,6 +30,11 @@ On the other hand, the following tools and configurations remain the same:
 - [Homebrew]
 - [Scroll Reverser]
 
+## Sources and References
+
+- [How to turn your macOS into a Linux-like Desktop]
+- Image Credits: `thekrzysiekart`([deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341])
+
 [Aerospace DDTerm]: https://github.com/nikitabobko/AeroSpace/discussions/1556
 [Aerospace]: https://github.com/nikitabobko/AeroSpace
 [Alacritty]: https://alacritty.org/
@@ -39,3 +44,4 @@ On the other hand, the following tools and configurations remain the same:
 [Karabiner Elements]: https://karabiner-elements.pqrs.org/
 [Scroll Reverser]: https://pilotmoon.com/scrollreverser/
 [The Miners Blog]: https://blog.codeminer42.com
+[deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341]: https://www.deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341
