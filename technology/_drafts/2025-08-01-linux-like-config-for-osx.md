@@ -6,7 +6,7 @@ image: /assets/media/2025-08-01-linux-like-config-for-osx/penguin_tux_eating_an_
 
 In 2024, I wrote a blog post of [How to turn your macOS into a Linux-like Desktop] in [The Miners Blog].
 
-A little more than one year later, my OSX interface and usability remains the same -- using a Tiling Window Manager and PC-like key bindings -- but with some tools replacement or improvements.
+A little more than one year later, my macOS interface and usability remains the same -- using a Tiling Window Manager and PC-like key bindings -- but with some tools replacement or improvements.
 
 In this article, I'm present what have changed, using the original blog post as a reference.
 
@@ -43,6 +43,14 @@ Karabiner monitors low-level input events and can make [lots of customizations][
 Another great addition, is that there are [predefined rules by the community][Karabiner community rules] that can be imported and used.
 
 I use a [PC-Style Shortcuts][Karabiner PC-Style Shortcuts] configuration to be able to use `Ctrl+` key bindings for common tasks like saving, opening new tabs, etc. This is why I don't need to edit `~/Library/KeyBindings/DefaultKeyBinding.dict` anymore or use `skhd`.
+
+### Aerospace
+
+When I first tried it, [Aerospace] was a very new Window Manager with few people using it or reviews. But over the time, it has evolved to become a very stable and fast option, especially comparing with the alternatives I presented before.
+
+Aerospace implements its own workspaces, so there are no conflicts with macOS Spaces. Additionally, it allows defining key bindings on its own config, very much like `i3` or `Sway`, so there is no more need for `skhd` either.
+
+There are a few minor downsides, however: Aerospace still doesn't have a good scriptable way to query and manage windows, especially floating windows, and no support for _focus follow mouse_ behavior.
 
 ## Sources and References
 
