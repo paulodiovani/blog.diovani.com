@@ -79,7 +79,70 @@ Aerospace is installed through Homebrew.
 brew install --cask nikitabobko/tap/aerospace
 ```
 
+On the first run, Aerospace will require some system permissions to work property, as well as being started at login.
+
 Its configuration file is located at `~/.config/aerospace/aerospace.toml`. For reference or samples, check the [Aerospace configuration documentation].
+
+### Dropdown terminal (WIP)
+
+Having a working Dropdown terminal is not fully possible with only Aerospace yet, due to the lack of commands for querying and managing floating windows.
+
+I have a working in progress solution using a mix of Alacritty window position arguments + Aerospace config. The configuration sample is below, and you can ready more about its limitations and issues, or collaborate on the [Aerospace DDTerm] discussion on GitHub.
+
+```toml
+[mode.main.binding]
+
+# Dropdown terminal
+ctrl-esc = '''exec-and-forget pgrep -x alacritty > /dev/null && \
+  alacritty msg create-window \
+    --title='Dropdown terminal' \
+    -o window.position.y=0 -o window.position.x=0 \
+    -o window.dimensions.lines=35 -o window.dimensions.columns=240 || \
+  open -na /Applications/Alacritty.app --args \
+    --title='Dropdown terminal' \
+    -o window.position.y=0 -o window.position.x=0 \
+    -o window.dimensions.lines=35 -o window.dimensions.columns=240
+'''
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'Dropdown terminal'
+run = ['layout floating']
+```
+
+A similar configuration can be done with other terminal emulators too.
+
+#### How to install Alacritty
+
+To install [Alacritty] you can download from its website or use Homebrew.
+
+Due to the lack of [notarization], Alacritty app is held on quarantine by default, not allowing to start the application. To avoid this issue you can explicitly remove the quarantine as below.
+
+```bash
+brew install --cask alacritty --no-quarantine
+
+# or
+
+brew install --cask alacritty
+xattr -d com.apple.quarantine /Applications/Alacritty.app
+```
+
+#### Alternatives
+
+If you really need a fully functional Dropdown Terminal, you can use another option, like iTerm2. Just remember to add a rule to Aerospace to make its window float.
+
+```toml
+[[on-window-detected]]
+if.window-title-regex-substring = 'Dropdown terminal' # replace with the window title or id
+run = ['layout floating']
+```
+
+## Unchanged solutions
+
+As I mentioned, I'm still using [Homebrew] as package manager, [Colima] to manager containers, [Scroll Reverser] to remove mouse/touchpad natural scroll, and Alacritty _middle click paste_ configuration, so you can refer to the original post _[How to turn your macOS into a Linux-like Desktop]_ for those configurations.
+
+If any of my settings change in the future, I'll update this blog post or write a new one.
+
+Stay tuned.
 
 ## Sources and References
 
@@ -105,4 +168,5 @@ Its configuration file is located at `~/.config/aerospace/aerospace.toml`. For r
 [Tiling Window Manager]: https://en.wikipedia.org/wiki/Tiling_window_manager
 [deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341]: https://www.deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341
 [i3]: https://i3wm.org/
+[notarization]: https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution
 [virtual workspaces]: https://nikitabobko.github.io/AeroSpace/guide#emulation-of-virtual-workspaces
