@@ -12,7 +12,7 @@ In this article, I'll present what has changed, using the original blog post as 
 
 ## TLDR -- What changed?
 
-Here is a short list of what changed, in case you prefer a short version and check the tools' documentation by yourself.
+Here is a short list of what changed, in case you prefer a brief overview and want to check the tools' documentation yourself.
 
 | Previously used                                | Replaced by                       |
 | ---------------------------------------------- | --------------------------------- |
@@ -65,7 +65,7 @@ If you want to import community rules, just find them in the [Karabiner communit
 - Allows fast workspace switching, without animations
 - Have plain-text configuration
 - Doesn't require disabling SIP (System Integrity Protection)
-- Defines its own key bindings, using the configuration file, avoiding the need for `shkd` or another tool
+- Defines its own key bindings, using the configuration file, avoiding the need for `skhd` or another tool
 
 When I first tried Aerospace, it was very new and with a small user base or reviews. But over time, it has evolved to become more stable and reliable, especially comparing with the alternatives I presented before.
 
@@ -87,7 +87,7 @@ Its configuration file is located at `~/.config/aerospace/aerospace.toml`. For r
 
 Having a working Dropdown terminal is not fully possible with only Aerospace yet, due to the lack of commands for querying and managing floating windows.
 
-I have a working in progress solution using a mix of Alacritty window position arguments + Aerospace config. The configuration sample is below, and you can read more about its limitations and issues, or collaborate on the [Aerospace DDTerm] discussion on GitHub.
+I have a work in progress solution using a mix of Alacritty window position arguments + Aerospace config. The configuration sample is below, and you can read more about its limitations and issues, or collaborate on the [Aerospace DDTerm] discussion on GitHub.
 
 ```toml
 [mode.main.binding]
