@@ -87,7 +87,7 @@ Its configuration file is located at `~/.config/aerospace/aerospace.toml`. For r
 
 Having a working Dropdown terminal is not fully possible with only Aerospace yet, due to the lack of commands for querying and managing floating windows.
 
-I have a work in progress solution using a mix of Alacritty window position arguments + Aerospace config. The configuration sample is below, and you can read more about its limitations and issues, or collaborate on the [Aerospace DDTerm] discussion on GitHub.
+I have a work-in-progress solution using a mix of Alacritty window position arguments + Aerospace config. The configuration sample is below, and you can read more about its limitations and issues, or collaborate on the [Aerospace DDTerm] discussion on GitHub.
 
 ```toml
 [mode.main.binding]

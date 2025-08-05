@@ -12,3 +12,4 @@ TexLab
 bwtween
 dotfiles
 Yabai
+Alacritty
