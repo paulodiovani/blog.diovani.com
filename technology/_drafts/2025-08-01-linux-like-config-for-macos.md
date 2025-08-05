@@ -55,7 +55,7 @@ Then follow the remaining instructions on the [Karabiner Elements installation g
 
 Its configuration file is located at `~/.config/karabiner/karabiner.json`. It is not a user-friendly file, and it is much easier to configure using the GUI, but you can backup the configuration on your dotfiles.
 
-TODO: Add import rules instructions.
+If you want to import community rules, just find them in the [Karabiner community rules] page and click the `Import` button.
 
 ### Aerospace
 
