@@ -44,13 +44,27 @@ Another great addition, is that there are [predefined rules by the community][Ka
 
 I use a [PC-Style Shortcuts][Karabiner PC-Style Shortcuts] configuration to be able to use `Ctrl+` key bindings for common tasks like saving, opening new tabs, etc. This is why I don't need to edit `~/Library/KeyBindings/DefaultKeyBinding.dict` anymore or use `skhd`.
 
+#### How to install Karabiner Elements
+
+TODO: install and configure instructions
+
 ### Aerospace
 
-When I first tried it, [Aerospace] was a very new Window Manager with few people using it or reviews. But over the time, it has evolved to become a very stable and fast option, especially comparing with the alternatives I presented before.
+[Aerospace] is a [Tiling Window Manager] for macOS, inspired by [i3] and, although still in _beta_, it is stable enough to be used daily. Its key features are:
 
-Aerospace implements its own workspaces, so there are no conflicts with macOS Spaces. Additionally, it allows defining key bindings on its own config, very much like `i3` or `Sway`, so there is no more need for `skhd` either.
+- Employs its own emulation of [virtual workspaces], which doesn't have the downsides or conflicts with macOS native Spaces.
+- Allows fast workspace switching, without animations
+- Have plain-text configuration
+- Doesn't require disabling SIP (System Integrity Protection)
+- Define its own key bindings, using the configuration file, avoiding the need of `shkd` or another tool
 
-There are a few minor downsides, however: Aerospace still doesn't have a good scriptable way to query and manage windows, especially floating windows, and no support for _focus follow mouse_ behavior.
+When I first tried Aerospace, it was very new and with a small user base or reviews. But over the time, it has evolved to become more stable and reliable, especially comparing with the alternatives I presented before.
+
+There are a few minor downsides, however: Aerospace still doesn't have a good scriptable way to query and manage windows, especially floating windows, and no support for _focus follow mouse_ behavior. But those features are expected to be implemented at some time.
+
+#### How to install Aerospace
+
+TODO: install and configure instructions
 
 ## Sources and References
 
@@ -63,10 +77,13 @@ There are a few minor downsides, however: Aerospace still doesn't have a good sc
 [Colima]: https://github.com/abiosoft/colima
 [Homebrew]: https://brew.sh/
 [How to turn your macOS into a Linux-like Desktop]: https://blog.codeminer42.com/how-to-turn-your-macos-into-a-linux-like-desktop/
+[Karabiner Elements features]: https://karabiner-elements.pqrs.org/docs/getting-started/features/
 [Karabiner Elements]: https://karabiner-elements.pqrs.org/
+[Karabiner PC-Style Shortcuts]: https://ke-complex-modifications.pqrs.org/?q=PC-Style%20Shortcuts
+[Karabiner community rules]: https://ke-complex-modifications.pqrs.org/
 [Scroll Reverser]: https://pilotmoon.com/scrollreverser/
 [The Miners Blog]: https://blog.codeminer42.com
+[Tiling Window Manager]: https://en.wikipedia.org/wiki/Tiling_window_manager
 [deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341]: https://www.deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341
-[Karabiner Elements features]: https://karabiner-elements.pqrs.org/docs/getting-started/features/
-[Karabiner community rules]: https://ke-complex-modifications.pqrs.org/
-[Karabiner PC-Style Shortcuts]: https://ke-complex-modifications.pqrs.org/?q=PC-Style%20Shortcuts
+[i3]: https://i3wm.org/
+[virtual workspaces]: https://nikitabobko.github.io/AeroSpace/guide#emulation-of-virtual-workspaces
