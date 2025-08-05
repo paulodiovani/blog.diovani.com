@@ -4,15 +4,15 @@ title: Improving your macOS to behave like a Linux Desktop (2025)
 image: /assets/media/2025-08-01-linux-like-config-for-macos/penguin_tux_eating_an_apple_by_thekrzysiekart_d5v1yhx-1400x800.webp
 ---
 
-In 2024, I wrote a blog post of [How to turn your macOS into a Linux-like Desktop] in [The Miners Blog].
+In 2024, I wrote a blog post about [How to turn your macOS into a Linux-like Desktop] in [The Miners Blog].
 
-A little more than one year later, my macOS interface and usability remains the same -- using a Tiling Window Manager and PC-like key bindings -- but with some tools replacement or improvements.
+A little more than one year later, my macOS interface and usability remain the same -- using a Tiling Window Manager and PC-like key bindings -- but with some tools replacement or improvements.
 
-In this article, I'm present what have changed, using the original blog post as a reference.
+In this article, I'll present what has changed, using the original blog post as a reference.
 
 ## TLDR -- What changed?
 
-Here is a short list if what changed, in case you prefer a short version and check the tools' documentation by yourself.
+Here is a short list of what changed, in case you prefer a short version and check the tools' documentation by yourself.
 
 | Previously used                                | Replaced by                       |
 | ---------------------------------------------- | --------------------------------- |
@@ -31,11 +31,11 @@ On the other hand, the following tools and configurations remain the same:
 
 ## New tools and configurations
 
-Now, let's explore a little more the features of these tools.
+Now, let's explore the features of these tools in more detail.
 
 ### Karabiner Elements
 
-[Karabiner Elements] is a powerful keyboard customizer for macOS. And although it has GUI, its settings are stored in a JSON file and can be saved to your `dotfiles`.
+[Karabiner Elements] is a powerful keyboard customizer for macOS. And although it has a GUI, its settings are stored in a JSON file and can be saved to your `dotfiles`.
 
 Karabiner monitors low-level input events and can make [lots of customizations][Karabiner Elements features], from replacing a key with another, or with a combination of keys, or even mouse events.
 
@@ -65,9 +65,9 @@ If you want to import community rules, just find them in the [Karabiner communit
 - Allows fast workspace switching, without animations
 - Have plain-text configuration
 - Doesn't require disabling SIP (System Integrity Protection)
-- Define its own key bindings, using the configuration file, avoiding the need of `shkd` or another tool
+- Defines its own key bindings, using the configuration file, avoiding the need for `shkd` or another tool
 
-When I first tried Aerospace, it was very new and with a small user base or reviews. But over the time, it has evolved to become more stable and reliable, especially comparing with the alternatives I presented before.
+When I first tried Aerospace, it was very new and with a small user base or reviews. But over time, it has evolved to become more stable and reliable, especially comparing with the alternatives I presented before.
 
 There are a few minor downsides, however: Aerospace still doesn't have a good scriptable way to query and manage windows, especially floating windows, and no support for _focus follow mouse_ behavior. But those features are expected to be implemented at some time.
 
@@ -79,7 +79,7 @@ Aerospace is installed through Homebrew.
 brew install --cask nikitabobko/tap/aerospace
 ```
 
-On the first run, Aerospace will require some system permissions to work property, as well as being started at login.
+On the first run, Aerospace will require some system permissions to work properly, as well as being started at login.
 
 Its configuration file is located at `~/.config/aerospace/aerospace.toml`. For reference or samples, check the [Aerospace configuration documentation].
 
@@ -87,7 +87,7 @@ Its configuration file is located at `~/.config/aerospace/aerospace.toml`. For r
 
 Having a working Dropdown terminal is not fully possible with only Aerospace yet, due to the lack of commands for querying and managing floating windows.
 
-I have a working in progress solution using a mix of Alacritty window position arguments + Aerospace config. The configuration sample is below, and you can ready more about its limitations and issues, or collaborate on the [Aerospace DDTerm] discussion on GitHub.
+I have a working in progress solution using a mix of Alacritty window position arguments + Aerospace config. The configuration sample is below, and you can read more about its limitations and issues, or collaborate on the [Aerospace DDTerm] discussion on GitHub.
 
 ```toml
 [mode.main.binding]
