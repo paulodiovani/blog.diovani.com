@@ -10,3 +10,5 @@ mason-lspconfig
 fzf-lua
 TexLab
 bwtween
+dotfiles
+Yabai

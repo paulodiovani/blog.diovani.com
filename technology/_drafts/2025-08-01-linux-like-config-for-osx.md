@@ -19,8 +19,7 @@ Here is a short list if what changed, in case you prefer a short version and che
 | Swapping modifier keys                         | [Karabiner Elements]              |
 | `~/Library/KeyBindings/DefaultKeyBinding.dict` | [Karabiner Elements]              |
 | SKHD key bindings                              | [Aerospace], [Karabiner Elements] |
-| macOS Spaces                                   | [Aerospace]                       |
-| Yabai                                          | [Aerospace]                       |
+| Yabai / macOS Spaces                           | [Aerospace]                       |
 | Dropdown terminal                              | [WIP][AeroSpace DDTerm]           |
 
 On the other hand, the following tools and configurations remain the same:
@@ -46,7 +45,17 @@ I use a [PC-Style Shortcuts][Karabiner PC-Style Shortcuts] configuration to be a
 
 #### How to install Karabiner Elements
 
-TODO: install and configure instructions
+To install Karabiner Elements, download its `*.pkg` file from the website, or use Homebrew:
+
+```bash
+brew install --cask karabiner-elements
+```
+
+Then follow the remaining instructions on the [Karabiner Elements installation guide].
+
+Its configuration file is located at `~/.config/karabiner/karabiner.json`. It is not a user-friendly file, and it is much easier to configure using the GUI, but you can backup the configuration on your dotfiles.
+
+TODO: Add import rules instructions.
 
 ### Aerospace
 
@@ -64,20 +73,30 @@ There are a few minor downsides, however: Aerospace still doesn't have a good sc
 
 #### How to install Aerospace
 
-TODO: install and configure instructions
+Aerospace is installed through Homebrew.
+
+```bash
+brew install --cask nikitabobko/tap/aerospace
+```
+
+Its configuration file is located at `~/.config/aerospace/aerospace.toml`. For reference or samples, check the [Aerospace configuration documentation].
 
 ## Sources and References
 
-- [How to turn your macOS into a Linux-like Desktop]
 - Image Credits: `thekrzysiekart`([deviantart.com/thekrzysiekart/art/Penguin-Tux-Eating-An-Apple-354490341])
+- [Aerospace configuration documentation]
+- [How to turn your macOS into a Linux-like Desktop]
+- [Karabiner Elements installation guide]
 
 [Aerospace DDTerm]: https://github.com/nikitabobko/AeroSpace/discussions/1556
+[Aerospace configuration documentation]: https://nikitabobko.github.io/AeroSpace/guide#configuring-aerospace
 [Aerospace]: https://github.com/nikitabobko/AeroSpace
 [Alacritty]: https://alacritty.org/
 [Colima]: https://github.com/abiosoft/colima
 [Homebrew]: https://brew.sh/
 [How to turn your macOS into a Linux-like Desktop]: https://blog.codeminer42.com/how-to-turn-your-macos-into-a-linux-like-desktop/
 [Karabiner Elements features]: https://karabiner-elements.pqrs.org/docs/getting-started/features/
+[Karabiner Elements installation guide]: https://karabiner-elements.pqrs.org/docs/getting-started/installation/
 [Karabiner Elements]: https://karabiner-elements.pqrs.org/
 [Karabiner PC-Style Shortcuts]: https://ke-complex-modifications.pqrs.org/?q=PC-Style%20Shortcuts
 [Karabiner community rules]: https://ke-complex-modifications.pqrs.org/
