@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Improving your macOS to behave like a Linux Desktop (2025)
-image: /assets/media/2025-08-01-linux-like-config-for-osx/penguin_tux_eating_an_apple_by_thekrzysiekart_d5v1yhx-1400x800.webp
+image: /assets/media/2025-08-01-linux-like-config-for-macos/penguin_tux_eating_an_apple_by_thekrzysiekart_d5v1yhx-1400x800.webp
 ---
 
 In 2024, I wrote a blog post of [How to turn your macOS into a Linux-like Desktop] in [The Miners Blog].
