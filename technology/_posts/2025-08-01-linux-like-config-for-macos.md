@@ -2,6 +2,7 @@
 layout: post
 title: Improving your macOS to behave like a Linux Desktop (2025)
 image: /assets/media/2025-08-01-linux-like-config-for-macos/penguin_tux_eating_an_apple_by_thekrzysiekart_d5v1yhx-1400x800.webp
+date: 2025-08-05
 ---
 
 In 2024, I wrote a blog post about [How to turn your macOS into a Linux-like Desktop] in [The Miners Blog].
@@ -63,7 +64,7 @@ If you want to import community rules, just find them in the [Karabiner communit
 
 - Employs its own emulation of [virtual workspaces], which doesn't have the downsides or conflicts with macOS native Spaces.
 - Allows fast workspace switching, without animations
-- Have plain-text configuration
+- Use a plain-text configuration
 - Doesn't require disabling SIP (System Integrity Protection)
 - Defines its own key bindings, using the configuration file, avoiding the need for `skhd` or another tool
 
@@ -115,7 +116,7 @@ A similar configuration can be done with other terminal emulators too.
 
 To install [Alacritty] you can download from its website or use Homebrew.
 
-Due to the lack of [notarization], Alacritty app is held on quarantine by default, not allowing to start the application. To avoid this issue you can explicitly remove the quarantine as below.
+Due to the lack of [notarization], the Alacritty application is held on quarantine by default, not allowing it to be started. To avoid this issue you can explicitly remove the quarantine as below.
 
 ```bash
 brew install --cask alacritty --no-quarantine
@@ -125,6 +126,8 @@ brew install --cask alacritty --no-quarantine
 brew install --cask alacritty
 xattr -d com.apple.quarantine /Applications/Alacritty.app
 ```
+
+Please, be mindful that removing quarantine attributes from unknown applications might impose some risk to your computer. Proceed with caution and at your own discretion.
 
 #### Alternatives
 
