@@ -13,7 +13,7 @@ Previously, I have used Git Worktrees to work on _monorepos_ (whoever worked on 
 
 The adoption of AI has allowed developers to increase productivity exponentially, to the point that former methods of project estimations don't apply anymore. -- What used to take days or weeks of work by writing code, now can be done in a matter of hours.
 
-In this new scenario, we spend much more time designing systems and writing detailed specifications, or prompts, to be lent over to AI Agents for writing the actual code. Applications like Claude Code, Copilot, or Cursor, have evolved to the point to work almost fully unassisted, being able not only to write code, but also learn from it, test, fix, and improve.
+In this new scenario, we spend much more time designing systems and writing prompts to be lent over to AI Agents for writing the actual code. Applications like Claude Code, Copilot, or Cursor, have evolved to the point to work almost fully unassisted, being able not only to write code, but also learn from it, test, fix, and improve.
 
 ### But what is an AI Agent?
 
@@ -36,9 +36,15 @@ Given a prompt with its initial set of instructions, an AI Agent will perform a 
 - produce text output for the user to read
 - write to disk or use MCP and system tools to persist changes
 
-With the use of additional configurations and scripts we leverage these capabilities to create more complex workflows, from _planning modes_, _deep-thinking models_, and _spec-driven development_, we ought to provide enough information (or context) for AI Agents to be able to perform development tasks from start to finish with minimal human interaction.
+With the use of additional configurations and scripts we leverage these capabilities to create more complex workflows, from _planning modes_, _reasoning models_, and _spec-driven development_, we ought to provide enough information (or context) for AI Agents to be able to perform development tasks from start to finish with minimal human interaction.
 
-But these tasks handled to AI Agents often take time, from a couple of seconds to hours, which turns the developer into a spectator. In other words, it leaves the developer free to work on parallel tasks, such as review and test a PR from a co-worker, analyze a bug, refactor some old code, or simply start that other task that has been sitting in the backlog.
+For those unfamiliar with these terms, here is brief summary:
+
+- **Plan mode** is a feature from AI Agents to write a detailed plan before executing the intended tasks. The AI Agent will analyze the codebase, read documents and ask clarifying questions before outputting the detailed plan to review and ask for confirmation to execute.
+- **Reasoning models** are specialized models that use available information to generate predictions, make inferences, and draw conclusions, by breaking problems and analyzing them step by step.
+- **Spec-Driven Development** is a methodology that prioritizes the creation of a precise, machine-readable specification document over immediate coding. This document becomes the source of truth for an AI Agent to use when writing the code.
+
+But these workflows executed by AI Agents often take time, from a couple of minutes to several hours, which turns the developer into a spectator. In other words, it leaves the developer free to work on parallel tasks, such as review and test a pull request from a co-worker, analyze a bug, refactor some old code, or simply start that other task that has been sitting in the backlog.
 
 This is where Git Worktrees make all the difference, allowing the user to do these parallel tasks without interrupting or affecting the ongoing AI Agent work.
 
@@ -88,7 +94,7 @@ git worktree remove PATH
 
 Check `git worktree --help` for more commands and options.
 
-## Automate your workflow
+## Automate your Git Worktree workflow
 
 You don't have to memorize these commands or repeat them every time of you end up using Worktrees on daily basis.
 
@@ -125,9 +131,11 @@ You can even include a line to start or favorite AI Agent or Editor.
 
 ## References
 
+- [An Introduction To Plan Mode by Matt Pocock](https://www.aihero.dev/plan-mode-introduction)
 - [Git 2.5, including multiple worktrees and triangular workflows at GitHub Blog](https://github.blog/open-source/git/git-2-5-including-multiple-worktrees-and-triangular-workflows/)
 - [Git Worktree at git-scm.com](https://git-scm.com/docs/git-worktree)
 - [Spec-Driven Development at specdriven.ai](https://specdriven.ai/)
 - [Spec-driven development at Wikipedia](https://en.wikipedia.org/wiki/Spec-driven_development)
-- [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl by Birgitta Böckeler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html)
+- [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl by Birgitta Böckeler at MartinFowler.com](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html)
 - [What is an AI agent? at Google Cloud](https://cloud.google.com/discover/what-are-ai-agents)
+- [What is reasoning in AI? by Rina Diane Caballar, Cole Stryker at IBM](https://www.ibm.com/think/topics/ai-reasoning)
