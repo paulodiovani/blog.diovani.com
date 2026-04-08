@@ -94,7 +94,7 @@ git worktree remove PATH
 
 Check `git worktree --help` for more commands and options.
 
-## Automate your Git Worktree workflow
+### Automate your Git Worktree workflow
 
 You don't have to memorize these commands or repeat them every time of you end up using Worktrees on daily basis.
 
