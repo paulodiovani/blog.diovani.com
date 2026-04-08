@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Using multiple parallel AI Agents with Git Worktrees
+image: /assets/media/2026-04-07-parallel-agentic-workflow-using-git-worktrees/robots-working.png
+image_credits: https://chatgpt.com
 ---
 
 The adoption of AI has allowed us developers to increase productivity exponentially, to the point that former methods of project estimations don't apply anymore. What used to take days or weeks of work by writing code, now can be done in a matter of hours.
