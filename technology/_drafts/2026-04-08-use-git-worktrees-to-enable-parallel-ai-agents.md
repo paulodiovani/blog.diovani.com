@@ -5,9 +5,9 @@ image: /assets/media/2026-04-08-use-git-worktrees-to-enable-parallel-ai-agents/r
 image_credits: https://chatgpt.com
 ---
 
-Git Worktree is a command added in Git 2.5, back in July 2015, more than 10 years from now, and allow users to have multiple Worktrees (copies) of a single git repository located in different directories while sharing the same `.git` folder. Worktrees allow users to work on different branches simultaneously without need to `checkout` or `switch` between them, and without affecting each other.
+Git Worktree is a command added in Git 2.5, back in July 2015, more than 10 years from now, and allows users to have multiple Worktrees (copies) of a single git repository located in different directories while sharing the same `.git` folder. Worktrees allow users to work on different branches simultaneously without need to `checkout` or `switch` between them, and without affecting each other.
 
-Previously, I have used Git Worktrees to work on _monorepos_ (whoever worked on a big _monorepo_ knows that a new clone can take several minutes to complete), producing lightweight copies and improving speed. But it was recently, with the adoption of AI Agents in software development that Git Worktrees have proved its true value.
+Previously, I have used Git Worktrees to work on _monorepos_ (whoever worked on a big _monorepo_ knows that a new clone can take several minutes to complete), producing lightweight copies and improving speed. But it was recently, with the adoption of AI Agents in software development that Git Worktrees have proved their true value.
 
 ## Developing with the help of AI Agents
 
@@ -28,7 +28,7 @@ So, to be explicit, we need to define what an _AI Agent_ is in the context of th
 Given a prompt with its initial set of instructions, an AI Agent will perform a bunch of tasks to deliver what it was requested to. Some common tasks include:
 
 - read and analyze the existing codebase
-- read any documents it was pointed too, and others it may find
+- read any documents it was pointed to, and others it may find
 - use available MPC (Model Context Protocol) tools to gather extra information
 - use several operating system tools, mostly command line applications
 - ask additional questions for the user
@@ -38,7 +38,7 @@ Given a prompt with its initial set of instructions, an AI Agent will perform a 
 
 With the use of additional configurations and scripts we leverage these capabilities to create more complex workflows, from _planning modes_, _reasoning models_, and _spec-driven development_, we ought to provide enough information (or context) for AI Agents to be able to perform development tasks from start to finish with minimal human interaction.
 
-For those unfamiliar with these terms, here is brief summary:
+For those unfamiliar with these terms, here is a brief summary:
 
 - **Plan mode** is a feature from AI Agents to write a detailed plan before executing the intended tasks. The AI Agent will analyze the codebase, read documents and ask clarifying questions before outputting the detailed plan to review and ask for confirmation to execute.
 - **Reasoning models** are specialized models that use available information to generate predictions, make inferences, and draw conclusions, by breaking problems and analyzing them step by step.
@@ -59,7 +59,7 @@ $ git worktree add [-b NEW BRANCH] PATH [BASE BRANCH]
 Where
 
 - `PATH` is the destination directory for the Worktree. It is required.
-- `NEW BRANCh` is the newly created branch name. Worktrees always create a new branch.
+- `NEW BRANCH` is the newly created branch name. Worktrees always create a new branch.
   If none is provided, it will use the path as branch name.
 - `BASE BRANCH` is the branch used as a base, default to current branch.
 
@@ -101,7 +101,7 @@ Check `git worktree --help` for more commands and options.
 
 ### Automate your Git Worktree workflow
 
-You don't have to memorize these commands or repeat them every time of you end up using Worktrees on daily basis.
+You don't have to memorize these commands or repeat them every time you end up using Worktrees on daily basis.
 
 Instead, create a script or function to do the heavy lifting and place in your `.bashrc` or similar.
 
@@ -136,13 +136,13 @@ You can even include a line to start or favorite AI Agent or Editor.
 
 There are a few caveats, though...
 
-Since Git Worktrees are placed on different directories, you still need to setup your application (e.g. `bundle install`, `cargo build`), especially if you intend to run it or enable LSP (Language Server Protocol) servers. When starting services with `foreman start` or `docker-compose up` you must also take care to avoid port conflicts or exhausting system resources.
+Since Git Worktrees are placed on different directories, you still need to set up your application (e.g. `bundle install`, `cargo build`), especially if you intend to run it or enable LSP (Language Server Protocol) servers. When starting services with `foreman start` or `docker-compose up` you must also be careful to avoid port conflicts or exhausting system resources.
 
 Additionally, Worktrees can't share the same branch (e.g. can't have two different Worktrees pointing to `main` branch). Local history and memory from AI Agents will also not be shared across Worktrees.
 
 These are all minor issues and easily avoided. I myself keep the application running on a main Worktree and use it for my primary task at hand, while using separate ones for less important work.
 
-On the good side, using several Worktrees can speed up a lot the work for tasks that is expected to be done in parallel from start. For example, when writing a new API endpoint + its front-end consumer, or writing a library + use it from the main app.
+On the good side, using several Worktrees can greatly speed up the work for tasks that are expected to be done in parallel from start. For example, when writing a new API endpoint + its front-end consumer, or writing a library + use it from the main app.
 
 Git Worktrees were made to enable parallel work on different branches many years ago, but looking at it today it feels like they were made for AI assisted development. 🤖
 
@@ -158,7 +158,7 @@ For example, I use `tmux`, so I can easily create a script to add a Worktree and
 $ tmux new-window \; send-keys 'git worktree add ../my-worktree && cd ../my-worktree && claude' C-m
 ```
 
-Putting it all together, we wen create a new version of the previous function as follows.
+Putting it all together, we can create a new version of the previous function as follows.
 
 ```bash
 # Create a new tmux window
