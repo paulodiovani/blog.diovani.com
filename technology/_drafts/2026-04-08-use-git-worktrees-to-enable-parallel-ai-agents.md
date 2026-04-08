@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Git Worktrees to enable parallel tasks from AI Agents
-image: /assets/media/2026-04-07-parallel-agentic-workflow-using-git-worktrees/robots-working.png
+image: /assets/media/2026-04-08-use-git-worktrees-to-enable-parallel-ai-agents/robots-working.png
 image_credits: https://chatgpt.com
 ---
 
