@@ -13,3 +13,5 @@ bwtween
 dotfiles
 Yabai
 Alacritty
+Worktrees
+Worktree

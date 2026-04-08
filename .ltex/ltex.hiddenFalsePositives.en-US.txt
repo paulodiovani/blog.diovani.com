@@ -8,3 +8,4 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qmason.nvim and mason-lspconfig allows installing and configure Language Server from within Neovim.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qneovim-unokai-colorscheme\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAny project would do, so if you don't have a project at hand, fetch some open source one, such as the old microsoft/TypeScript-Node-Starter.\\E$"}
+{"rule":"NUMBERS_IN_WORDS","sentence":"^\\QShared history, so don't need to \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Dummy\\+|Dummy's\\+)[0-9]+\\Qrepeatedly\nReduced disk space\nIsolated development, in comparison to switching branches\\E$"}
