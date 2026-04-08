@@ -3,11 +3,13 @@ layout: post
 title: Using Git Worktrees to enable parallel tasks from AI Agents
 image: /assets/media/2026-04-08-use-git-worktrees-to-enable-parallel-ai-agents/robots-working-by-chatgpt.png
 image_credits: https://chatgpt.com
+excerpt_separator: <!--more-->
 ---
 
 Git Worktree is a command added in Git 2.5, back in July 2015, more than 10 years from now, and allows users to have multiple Worktrees (copies) of a single git repository located in different directories while sharing the same `.git` folder. Worktrees allow users to work on different branches simultaneously without need to `checkout` or `switch` between them, and without affecting each other.
 
 Previously, I have used Git Worktrees to work on _monorepos_ (whoever worked on a big _monorepo_ knows that a new clone can take several minutes to complete), producing lightweight copies and improving speed. But it was recently, with the adoption of AI Agents in software development that Git Worktrees have proved their true value.
+<!--more-->
 
 ## Developing with the help of AI Agents
 
@@ -25,11 +27,11 @@ So, to be explicit, we need to define what an _AI Agent_ is in the context of th
 
 ### How do they work?
 
-Given a prompt with its initial set of instructions, an AI Agent will perform a bunch of tasks to deliver what it was requested to. Some common tasks include:
+Given a prompt with its initial set of instructions, an AI Agent will perform a bunch of actions to deliver what it was requested to, including:
 
 - read and analyze the existing codebase
 - read any documents it was pointed to, and others it may find
-- use available MPC (Model Context Protocol) tools to gather extra information
+- use available MCP (Model Context Protocol) tools to gather extra information
 - use several operating system tools, mostly command line applications
 - ask additional questions for the user
 - search the internet or fetch web pages
@@ -50,7 +52,13 @@ This is where Git Worktrees make all the difference, allowing the user to do the
 
 ## Use Git Worktrees to enable parallel tasks
 
-To be able to do parallel tasks within the same repository -- by itself or also with an AI Agent -- a developer just has to add a new Worktree. From your primary repository Worktree, run:
+While Git Worktrees exist for a while now, a lot of people are starting to use them more often these days.
+
+> One of the hardest things for me to grasp in this new agentic development era was Git Worktrees. And their real power is simple: they let you do meaningful extra work without disrupting your current workflow.
+>
+> -- Paulo Vilarinho
+
+To be able to do parallel tasks within the same repository, a developer just has to add a new Worktree from their primary Worktree (or clone) by running:
 
 ```console
 $ git worktree add [-b NEW BRANCH] PATH [BASE BRANCH]
@@ -103,7 +111,7 @@ Check `git worktree --help` for more commands and options.
 
 You don't have to memorize these commands or repeat them every time you end up using Worktrees on daily basis.
 
-Instead, create a script or function to do the heavy lifting and place in your `.bashrc` or similar.
+Instead, create a script or function to do the heavy lifting and place in your `.bashrc` or preferred shell initialization script.
 
 ```bash
 # Creates a new Git worktree in a sibling directory using the provided name suffix,
@@ -130,7 +138,7 @@ git_worktree() {
 
 Update the function above as desired.
 
-You can even include a line to start or favorite AI Agent or Editor.
+You can even include a line to start or favorite AI Agent or Editor, having a single command to start the parallel work you intend to.
 
 ## Conclusion and Caveats
 
@@ -138,21 +146,21 @@ There are a few caveats, though...
 
 Since Git Worktrees are placed on different directories, you still need to set up your application (e.g. `bundle install`, `cargo build`), especially if you intend to run it or enable LSP (Language Server Protocol) servers. When starting services with `foreman start` or `docker-compose up` you must also be careful to avoid port conflicts or exhausting system resources.
 
-Additionally, Worktrees can't share the same branch (e.g. can't have two different Worktrees pointing to `main` branch). Local history and memory from AI Agents will also not be shared across Worktrees.
+Additionally, Worktrees can't share the same branch (e.g. can't have two different Worktrees pointing to `main` branch). History and memory from AI Agents will also not be shared across Worktrees, since they are usually stored in the local directory.
 
 These are all minor issues and easily avoided. I myself keep the application running on a main Worktree and use it for my primary task at hand, while using separate ones for less important work.
 
 On the good side, using several Worktrees can greatly speed up the work for tasks that are expected to be done in parallel from start. For example, when writing a new API endpoint + its front-end consumer, or writing a library + use it from the main app.
 
-Git Worktrees were made to enable parallel work on different branches many years ago, but looking at it today it feels like they were made for AI assisted development. 🤖
+Git Worktrees were created to enable parallel work on different branches many years ago, but looking at it today it feels like they were made for AI assisted development. 🤖
 
 ## Appendix: Using TMUX to switch across Git Worktrees
 
 If you use [tmux](https://github.com/tmux/tmux/wiki) or [GNU screen](https://www.gnu.org/software/screen/) they can give even more power to Git Worktrees + Ai Agents.
 
-These tools can be replaced by terminal tabs, or in-editor terminals, for switching between different Worktrees. But they provide an additional feature for the workflow proposed above: they are easily scriptable.
+These tools have similar capabilities to terminal tabs or in-editor terminals, for splitting or switching between different instances. But they provide an additional feature for the workflow proposed above: they are easily scriptable.
 
-For example, I use `tmux`, so I can easily create a script to add a Worktree and start AI in a new tmux window on a single command.
+For example, I use `tmux`, so I can create a script to add a Worktree and start AI in a new tmux window on a single command.
 
 ```console
 $ tmux new-window \; send-keys 'git worktree add ../my-worktree && cd ../my-worktree && claude' C-m
@@ -197,3 +205,4 @@ Then you can move across tmux windows as normal with `C-b p` and `C-b n`.
 - [Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl by Birgitta Böckeler at MartinFowler.com](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html)
 - [What is an AI agent? at Google Cloud](https://cloud.google.com/discover/what-are-ai-agents)
 - [What is reasoning in AI? by Rina Diane Caballar, Cole Stryker at IBM](https://www.ibm.com/think/topics/ai-reasoning)
+- [One of the hardest things for me to grasp... by Paulo Vilarinho at LinkedIn](https://www.linkedin.com/posts/paulovilarinho7_one-of-the-hardest-things-for-me-to-grasp-share-7445654250241712128-AkdG/)
