@@ -6,9 +6,9 @@ image_credits: https://chatgpt.com
 excerpt_separator: <!--more-->
 ---
 
-Git Worktree is a command added in Git 2.5, back in July 2015, more than 10 years from now, and allows users to have multiple Worktrees (copies) of a single git repository located in different directories while sharing the same `.git` folder. Worktrees allow users to work on different branches simultaneously without need to `checkout` or `switch` between them, and without affecting each other.
+Git Worktree is a command added in Git 2.5, back in July 2015, more than 10 years ago, and allows users to have multiple Worktrees (copies) of a single git repository located in different directories while sharing the same `.git` folder. Worktrees allow users to work on different branches simultaneously without needing to `checkout` or `switch` between them, and without affecting each other.
 
-Previously, I have used Git Worktrees to work on _monorepos_ (whoever worked on a big _monorepo_ knows that a new clone can take several minutes to complete), producing lightweight copies and improving speed. But it was recently, with the adoption of AI Agents in software development that Git Worktrees have proved their true value.
+Previously, I have used Git Worktrees to work on _monorepos_ (whoever worked on a big _monorepo_ knows that a new clone can take several minutes to complete), producing lightweight copies and improving speed. But it was recently, with the adoption of AI Agents in software development that Git Worktrees have proven their true value.
 <!--more-->
 
 ## Developing with the help of AI Agents
@@ -54,7 +54,7 @@ This is where Git Worktrees make all the difference, allowing the user to do the
 
 While Git Worktrees exist for a while now, a lot of people are starting to use them more often these days.
 
-> One of the hardest things for me to grasp in this new agentic development era was Git Worktrees. And their real power is simple: they let you do meaningful extra work without disrupting your current workflow.
+> One of the hardest things for me to grasp in this new agentic development era was Git Worktrees. And their real power is simple: they let you do additional meaningful work without disrupting your current workflow.
 >
 > -- Paulo Vilarinho
 
@@ -78,7 +78,7 @@ $ git worktree add -b my-new-branch ../my-new-worktree main
 Added worktree: ../my-new-worktree
 ```
 
-After creating a Git Worktree, simply move to its directory and start your AI Agent of choice (e.g. Claude Code), allowing the parallel work.
+After creating a Git Worktree, simply move to its directory and start your AI Agent of choice (e.g. Claude Code), allowing parallel work.
 
 ```console
 $ cd ../my-new-worktree
@@ -138,7 +138,7 @@ git_worktree() {
 
 Update the function above as desired.
 
-You can even include a line to start or favorite AI Agent or Editor, having a single command to start the parallel work you intend to.
+You can even include a line to start your favorite AI Agent or Editor, having a single command to start the parallel work you intend to.
 
 ## Conclusion and Caveats
 
@@ -150,13 +150,13 @@ Additionally, Worktrees can't share the same branch (e.g. can't have two differe
 
 These are all minor issues and easily avoided. I myself keep the application running on a main Worktree and use it for my primary task at hand, while using separate ones for less important work.
 
-On the good side, using several Worktrees can greatly speed up the work for tasks that are expected to be done in parallel from start. For example, when writing a new API endpoint + its front-end consumer, or writing a library + use it from the main app.
+On the good side, using several Worktrees can greatly speed up the work for tasks that are expected to be done in parallel from start. For example, when writing a new API endpoint + its front-end consumer, or writing a library + using it from the main app.
 
 Git Worktrees were created to enable parallel work on different branches many years ago, but looking at it today it feels like they were made for AI assisted development. 🤖
 
 ## Appendix: Using TMUX to switch across Git Worktrees
 
-If you use [tmux](https://github.com/tmux/tmux/wiki) or [GNU screen](https://www.gnu.org/software/screen/) they can give even more power to Git Worktrees + Ai Agents.
+If you use [tmux](https://github.com/tmux/tmux/wiki) or [GNU screen](https://www.gnu.org/software/screen/) they can give even more power to Git Worktrees + AI Agents.
 
 These tools have similar capabilities to terminal tabs or in-editor terminals, for splitting or switching between different instances. But they provide an additional feature for the workflow proposed above: they are easily scriptable.
 
