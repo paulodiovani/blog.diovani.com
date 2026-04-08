@@ -5,9 +5,9 @@ image: /assets/media/2026-04-07-parallel-agentic-workflow-using-git-worktrees/ro
 image_credits: https://chatgpt.com
 ---
 
-Git Worktree is a command added in Git 2.5, back in July 2015, more than 10 years from now, and allow users to have multiple Worktrees (multiple copies) of a single git repository located in different directories by sharing the same `.git` folder. Worktrees allow users to work on multiple branches simultaneously without need to `checkout` or `switch`, and without affecting each other.
+Git Worktree is a command added in Git 2.5, back in July 2015, more than 10 years from now, and allow users to have multiple Worktrees (copies) of a single git repository located in different directories while sharing the same `.git` folder. Worktrees allow users to work on different branches simultaneously without need to `checkout` or `switch` between them, and without affecting each other.
 
-Previously, I have used Git Worktrees to work on _monorepos_ -- who ever worked on a big _monorepo_ knows that a new clone can take several minutes to complete, producing lightweight copies and improving speed. But it was recently, with the adoption of AI Agents in software development that Git Worktrees have proved its true value.
+Previously, I have used Git Worktrees to work on _monorepos_ (whoever worked on a big _monorepo_ knows that a new clone can take several minutes to complete), producing lightweight copies and improving speed. But it was recently, with the adoption of AI Agents in software development that Git Worktrees have proved its true value.
 
 ## Developing with the help of AI Agents
 
@@ -17,7 +17,7 @@ In this new scenario, we spend much more time designing systems and writing deta
 
 ### But what is an AI Agent?
 
-The word _Agent_ can be a bit ambiguous due to how companies and applications based on AI (Artificial Intelligence, but mostly Large Language Models, or LLMs, in these cases) have been using and divulging them. The meaning of the word might also change over time in this fast-changing AI world.
+The word _Agent_ can be a bit ambiguous due to how companies and applications based on AI (Artificial Intelligence, but mostly Large Language Models) have been using and divulging them. The meaning of the word might also change over time in this fast-changing AI world.
 
 So, to be explicit, we need to define what an _AI Agent_ is in the context of this blog post.
 
@@ -38,9 +38,9 @@ Given a prompt with its initial set of instructions, an AI Agent will perform a 
 
 With the use of additional configurations and scripts we leverage these capabilities to create more complex workflows, from _planning modes_, _deep-thinking models_, and _spec-driven development_, we ought to provide enough information (or context) for AI Agents to be able to perform development tasks from start to finish with minimal human interaction.
 
-But these tasks handled to AI Agents often take time, which turns the developer into a spectator. In other words, it leaves the developer free to work on parallel tasks, being these to review and test a PR from a co-worker, analyze a bug, refactor some old code, or simply start that other task that has been sitting in the backlog.
+But these tasks handled to AI Agents often take time, from a couple of seconds to hours, which turns the developer into a spectator. In other words, it leaves the developer free to work on parallel tasks, such as review and test a PR from a co-worker, analyze a bug, refactor some old code, or simply start that other task that has been sitting in the backlog.
 
-This is where Git Worktrees make all the difference, allowing the user to start these parallel tasks without interrupting or affecting the ongoing AI Agent work.
+This is where Git Worktrees make all the difference, allowing the user to do these parallel tasks without interrupting or affecting the ongoing AI Agent work.
 
 ## Use Git Worktrees to enable parallel tasks
 
@@ -63,12 +63,14 @@ I usually create Worktrees in sibling directories and based on main. E.g.
 git worktree add -b my-new-branch ../my-new-worktree main
 ```
 
-After creating a Git Worktree, simply move to its directory and start your AI Agent of choice (e.g. Claude Code), allowing to do parallel work.
+After creating a Git Worktree, simply move to its directory and start your AI Agent of choice (e.g. Claude Code), allowing the parallel work.
 
 ```bash
 cd ../my-new-worktree
 claude
 ```
+
+There is no limit for how many Worktrees one can add.
 
 ### Listing and removing Worktrees
 
@@ -97,7 +99,8 @@ Instead, create a script or function to do the heavy lifting and place in your `
 # switches to the new worktree's path.
 #
 # Arguments:
-# - $1: Path suffix for worktree (e.g. new-feature => ../my-repos-new-feature). Also used as branch name.
+# - $1: Path suffix for worktree (e.g. new-feature => ../my-repos-new-feature).
+#       Also used as branch name.
 # - $2: (Optional) Base branch for the new worktree. Default to 'main'.
 #
 # Usage:
@@ -115,7 +118,8 @@ git_worktree() {
 ```
 
 Update the function above as desired.
-You can include a line to start or favorite AI Agent or Editor.
+
+You can even include a line to start or favorite AI Agent or Editor.
 
 ## Conclusion and Caveats
 
