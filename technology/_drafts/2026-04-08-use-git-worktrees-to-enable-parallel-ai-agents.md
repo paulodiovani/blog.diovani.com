@@ -134,6 +134,18 @@ You can even include a line to start or favorite AI Agent or Editor.
 
 ## Conclusion and Caveats
 
+There are a few caveats, though...
+
+Since Git Worktrees are placed on different directories, you still need to setup your application (e.g. `bundle install`, `cargo build`), especially if you intend to run it or enable LSP (Language Server Protocol) servers. When starting services with `foreman start` or `docker-compose up` you must also take care to avoid port conflicts or exhausting system resources.
+
+Additionally, Worktrees can't share the same branch (e.g. can't have two different Worktrees pointing to `main` branch). Local history and memory from AI Agents will also not be shared across Worktrees.
+
+These are all minor issues and easily avoided. I myself keep the application running on a main Worktree and use it for my primary task at hand, while using separate ones for less important work.
+
+On the good side, using several Worktrees can speed up a lot the work for tasks that is expected to be done in parallel from start. For example, when writing a new API endpoint + its front-end consumer, or writing a library + use it from the main app.
+
+Git Worktrees were made to enable parallel work on different branches many years ago, but looking at it today it feels like they were made for AI assisted development. 🤖
+
 ## References
 
 - [An Introduction To Plan Mode by Matt Pocock](https://www.aihero.dev/plan-mode-introduction)
