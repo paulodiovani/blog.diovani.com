@@ -146,6 +146,47 @@ On the good side, using several Worktrees can speed up a lot the work for tasks 
 
 Git Worktrees were made to enable parallel work on different branches many years ago, but looking at it today it feels like they were made for AI assisted development. 🤖
 
+## Appendix: Using TMUX to switch across Git Worktrees
+
+If you use [tmux](https://github.com/tmux/tmux/wiki) or [GNU screen](https://www.gnu.org/software/screen/) they can give even more power to Git Worktrees + Ai Agents.
+
+These tools can be replaced by terminal tabs, or in-editor terminals, for switching between different Worktrees. But they provide an additional feature for the workflow proposed above: they are easily scriptable.
+
+For example, I use `tmux`, so I can easily create a script to add a Worktree and start AI in a new tmux window on a single command.
+
+```console
+$ tmux new-window \; send-keys 'git worktree add ../my-worktree && cd ../my-worktree && claude' C-m
+```
+
+Putting it all together, we wen create a new version of the previous function as follows.
+
+```bash
+# Create a new tmux window
+# Add a new Git worktree in a sibling directory using the provided name suffix,
+# CD to the new worktree's path and start claude.
+#
+# Arguments:
+# - $1: Path suffix for worktree (e.g. new-feature => ../my-repos-new-feature).
+#       Also used as branch name.
+# - $2: (Optional) Base branch for the new worktree. Default to 'main'.
+#
+# Usage:
+#   claude_worktree new-feature [base_branch]
+#
+claude_worktree() {
+  local branch_name=$1
+  local base_branch=${2:-main}
+  local destination
+  destination=../$(basename "$PWD")-${branch_name//\//-}
+
+  tmux new-window \; \
+    send-keys "git worktree add -b $branch_name $destination $base_branch" C-m \; \
+    send-keys "cd $destination || return && claude" C-m \; \
+}
+```
+
+Then you can move across tmux windows as normal with `C-b p` and `C-b n`.
+
 ## References
 
 - [An Introduction To Plan Mode by Matt Pocock](https://www.aihero.dev/plan-mode-introduction)
