@@ -52,8 +52,8 @@ This is where Git Worktrees make all the difference, allowing the user to do the
 
 To be able to do parallel tasks within the same repository -- by itself or also with an AI Agent -- a developer just has to add a new Worktree. From your primary repository Worktree, run:
 
-```bash
-git worktree add [-b NEW BRANCH] PATH [BASE BRANCH]
+```console
+$ git worktree add [-b NEW BRANCH] PATH [BASE BRANCH]
 ```
 
 Where
@@ -65,15 +65,16 @@ Where
 
 I usually create Worktrees in sibling directories and based on main. E.g.
 
-```bash
-git worktree add -b my-new-branch ../my-new-worktree main
+```console
+$ git worktree add -b my-new-branch ../my-new-worktree main
+Added worktree: ../my-new-worktree
 ```
 
 After creating a Git Worktree, simply move to its directory and start your AI Agent of choice (e.g. Claude Code), allowing the parallel work.
 
-```bash
-cd ../my-new-worktree
-claude
+```console
+$ cd ../my-new-worktree
+$ claude
 ```
 
 There is no limit for how many Worktrees one can add.
@@ -82,14 +83,18 @@ There is no limit for how many Worktrees one can add.
 
 To list all existing Worktrees along with their current branches, run:
 
-```bash
-git worktree list
+```console
+$ git worktree list
+/home/diovani/Development/Git/blog.diovani.com    (main)
+/home/diovani/Development/Git/my-new-worktree     (my-new-branch)
 ```
 
 And to remove an existing Worktree, run:
 
-```bash
-git worktree remove PATH
+```console
+$ # git worktree remove PATH
+$ git worktree remove ../my-new-worktree
+Removed worktree: /home/diovani/Development/Git/my-new-worktree
 ```
 
 Check `git worktree --help` for more commands and options.
