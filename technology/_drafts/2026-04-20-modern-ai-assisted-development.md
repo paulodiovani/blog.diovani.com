@@ -46,3 +46,5 @@ title: Modern AI Assisted Development in 2026
 ## References
 
 - IBM Think Videos
+- [GitHub Copilot at Wikipedia](https://en.wikipedia.org/wiki/GitHub_Copilot)
+- [How Claude Code is built](https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built)
