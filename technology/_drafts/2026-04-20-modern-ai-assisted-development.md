@@ -48,3 +48,4 @@ title: Modern AI Assisted Development in 2026
 - IBM Think Videos
 - [GitHub Copilot at Wikipedia](https://en.wikipedia.org/wiki/GitHub_Copilot)
 - [How Claude Code is built](https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built)
+- [Agile Vibe Coding by Fabio Akita](https://akitaonrails.github.io/tropicalruby-2026/build/tropical-ruby-2026.html)
