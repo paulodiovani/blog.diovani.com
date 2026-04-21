@@ -49,3 +49,4 @@ title: Modern AI Assisted Development in 2026
 - [GitHub Copilot at Wikipedia](https://en.wikipedia.org/wiki/GitHub_Copilot)
 - [How Claude Code is built](https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built)
 - [Agile Vibe Coding by Fabio Akita](https://akitaonrails.github.io/tropicalruby-2026/build/tropical-ruby-2026.html)
+- [The five levels of AI-Driven Software Development](https://tijldullers.medium.com/the-five-levels-of-ai-driven-software-development-28dc0e75cac2)
