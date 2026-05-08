@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Modern AI Assisted Development in 2026
+title: The state of software development in 2026
 ---
 
 ## Draft <!-- delete me -->
@@ -43,8 +43,15 @@ title: Modern AI Assisted Development in 2026
     + [ ] security
     + [ ] performance
 
+In the last couple of years we have witnessed a huge leap in software development workflows. While a little earlier we had mostly autocomplete on steroids an AI a pair programmer, since the advent of Autonomous Agents, software development lifecycle had to evolve. In this blog post, we will explore this evolution by recollecting the major milestones of these changes, while also reflect on what the future holds for us.
+
+## The world before AI
+
+Software Development is a business area that evolves really fast by nature and from time to time there is some buzz that changes the whole industry. One of these significant milestones was the publication of Agile Manifesto in February 2001.
+
 ## References
 
+- [History: The Agile Manifesto](https://agilemanifesto.org/history.html)
 - IBM Think Videos
 - [GitHub Copilot at Wikipedia](https://en.wikipedia.org/wiki/GitHub_Copilot)
 - [How Claude Code is built](https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built)
